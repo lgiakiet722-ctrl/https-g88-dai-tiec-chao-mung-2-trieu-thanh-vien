@@ -1,177 +1,236 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* =====================================================
+   HIỂN THỊ NỘI DUNG
+===================================================== */
 
-<title>Thanh toán</title>
-
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
-    margin: 0;
-    padding: 20px;
-}
-
-.payment-card {
-    max-width: 600px;
-    margin: auto;
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-}
-
-h2 {
-    margin-top: 0;
-}
-
-.amount-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.amount-list button {
-    padding: 12px 18px;
-    border: 0;
-    border-radius: 8px;
-    background: #0bbf6f;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.amount-list button:hover {
-    background: #099e5d;
-}
-
-#qrImage {
-    display: block;
-    width: 300px;
-    height: 300px;
-    object-fit: contain;
-    margin: 20px auto;
-}
-
-.info {
-    text-align: center;
-}
-
-.amount {
-    color: red;
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.note {
-    margin-top: 15px;
-    font-weight: bold;
-}
-</style>
-</head>
-
-<body>
-
-<div class="payment-card">
-
-    <h2>Thanh toán chuyển khoản</h2>
-
-    <p>Chọn số tiền:</p>
-
-    <div class="amount-list">
-        <button onclick="changeAmount(50000)">50.000đ</button>
-        <button onclick="changeAmount(100000)">100.000đ</button>
-        <button onclick="changeAmount(200000)">200.000đ</button>
-        <button onclick="changeAmount(300000)">300.000đ</button>
-        <button onclick="changeAmount(500000)">500.000đ</button>
-        <button onclick="changeAmount(1000000)">1.000.000đ</button>
-    </div>
-
-    <div class="info">
-
-        <p>Số tiền thanh toán:</p>
-
-        <div id="amountText" class="amount">
-            300.000 VND
-        </div>
-
-        <!-- QR được tạo trực tiếp từ VietQR -->
-        <img
-            id="qrImage"
-            src=""
-            alt="Mã QR thanh toán"
-        >
-
-        <div class="note">
-            Nội dung chuyển khoản:
-            <span id="transferContent"></span>
-        </div>
-
-    </div>
-
-</div>
-
-<script>
-
-/*
-    THAY 3 THÔNG TIN NÀY BẰNG
-    THÔNG TIN TÀI KHOẢN CỦA WEBSITE HỢP PHÁP CỦA BẠN
-*/
-
-const BANK_ID = "YOUR_BANK";
-const ACCOUNT_NUMBER = "YOUR_ACCOUNT";
-const ACCOUNT_NAME = "YOUR ACCOUNT NAME";
+document.getElementById(
+    "transferContent"
+).textContent = noiDungCK;
 
 
-let currentAmount = 300000;
+/* =====================================================
+   TÍNH KHUYẾN MÃI
+===================================================== */
+
+const bonus =
+    AMOUNT *
+    BONUS_PERCENT /
+    100;
 
 
-/*
-    Tạo mã QR
-*/
-function updateQR() {
+const total =
+    AMOUNT +
+    bonus;
 
-    const content = "THANHTOAN";
 
-    const qrUrl =
-        "https://img.vietqr.io/image/" +
-        BANK_ID +
-        "-" +
-        ACCOUNT_NUMBER +
-        "-compact2.png" +
-        "?amount=" + currentAmount +
-        "&addInfo=" + encodeURIComponent(content) +
-        "&accountName=" + encodeURIComponent(ACCOUNT_NAME);
+/* =====================================================
+   FORMAT TIỀN
+===================================================== */
 
-    document.getElementById("qrImage").src = qrUrl;
+function formatMoney(number) {
 
-    document.getElementById("amountText").innerText =
-        currentAmount.toLocaleString("vi-VN") + " VND";
+    return number.toLocaleString("vi-VN")
+        + " VND";
 
-    document.getElementById("transferContent").innerText =
-        content;
 }
 
 
-/*
-    Khi chọn mệnh giá
-*/
-function changeAmount(amount) {
+/* =====================================================
+   HIỂN THỊ TIỀN
+===================================================== */
 
-    currentAmount = amount;
+document.getElementById(
+    "qrAmount"
+).textContent =
+    formatMoney(AMOUNT);
 
-    updateQR();
+
+document.getElementById(
+    "amountText"
+).textContent =
+    formatMoney(AMOUNT);
+
+
+document.getElementById(
+    "qrBonus"
+).textContent =
+    "+" +
+    BONUS_PERCENT +
+    "% KM = " +
+    formatMoney(bonus);
+
+
+document.getElementById(
+    "bonusText"
+).textContent =
+    formatMoney(bonus);
+
+
+document.getElementById(
+    "qrReceive"
+).textContent =
+    "Thực nhận: " +
+    formatMoney(total);
+
+
+document.getElementById(
+    "receiveText"
+).textContent =
+    formatMoney(total);
+
+
+/* =====================================================
+   TẠO QR VIETQR
+===================================================== */
+
+const qrURL =
+    "https://vietqr.app/img?" +
+
+    "bank=" +
+    encodeURIComponent(BANK_NAME) +
+
+    "&acc=" +
+    encodeURIComponent(ACCOUNT_NUMBER) +
+
+    "&template=standard" +
+
+    "&amount=" +
+    AMOUNT +
+
+    "&holder=" +
+    encodeURIComponent(ACCOUNT_NAME) +
+
+    "&addInfo=" +
+    encodeURIComponent(noiDungCK);
+
+
+document.getElementById(
+    "qr"
+).src = qrURL;
+
+
+/* =====================================================
+   COPY
+===================================================== */
+
+function copyText(id) {
+
+    const element =
+        document.getElementById(id);
+
+
+    const text =
+        element.textContent.trim();
+
+
+    navigator.clipboard.writeText(text)
+
+        .then(function() {
+
+            alert(
+                "Đã copy: " + text
+            );
+
+        })
+
+        .catch(function() {
+
+            alert(
+                "Không thể copy tự động."
+            );
+
+        });
+
 }
 
 
-/*
-    Hiển thị QR mặc định
-*/
-updateQR();
+/* =====================================================
+   COPY SỐ TIỀN
+===================================================== */
+
+function copyAmount() {
+
+    navigator.clipboard.writeText(
+        String(AMOUNT)
+    )
+
+    .then(function() {
+
+        alert(
+            "Đã copy số tiền: " +
+            AMOUNT
+        );
+
+    });
+
+}
+
+
+/* =====================================================
+   ĐẾM NGƯỢC
+===================================================== */
+
+let timeLeft =
+    COUNTDOWN_MINUTES * 60;
+
+
+const timerElement =
+    document.getElementById("timer");
+
+
+function updateTimer() {
+
+
+    const minutes =
+        Math.floor(
+            timeLeft / 60
+        );
+
+
+    const seconds =
+        timeLeft % 60;
+
+
+    timerElement.textContent =
+
+        minutes +
+
+        ":" +
+
+        String(seconds)
+            .padStart(2, "0");
+
+
+    if (timeLeft <= 0) {
+
+        clearInterval(timerInterval);
+
+
+        timerElement.textContent =
+            "HẾT THỜI GIAN";
+
+
+        return;
+
+    }
+
+
+    timeLeft--;
+
+}
+
+
+updateTimer();
+
+
+const timerInterval =
+    setInterval(
+        updateTimer,
+        1000
+    );
+
 
 </script>
 
 </body>
+
 </html>
