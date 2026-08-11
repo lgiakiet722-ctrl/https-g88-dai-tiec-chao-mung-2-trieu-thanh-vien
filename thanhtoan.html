@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>Thanh toán</title>
 
 <style>
+
+/* =========================
+   CÀI ĐẶT CHUNG
+========================= */
+
 * {
     box-sizing: border-box;
 }
@@ -22,6 +30,11 @@ body {
     width: min(950px, 94%);
     margin: auto;
 }
+
+
+/* =========================
+   HEADER
+========================= */
 
 .header {
     display: flex;
@@ -41,30 +54,61 @@ body {
     font-weight: bold;
 }
 
+
+/* =========================
+   KHUNG CHÍNH
+========================= */
+
 .card {
-    background: #fff;
+    background: white;
     border-radius: 12px;
     padding: 18px;
     box-shadow: 0 4px 18px rgba(0,0,0,.12);
 }
 
+
+/* =========================
+   THÔNG BÁO
+========================= */
+
 .notice {
-    background: linear-gradient(90deg,#ff3535,#ff7048);
-    color: #fff;
+    background: linear-gradient(
+        90deg,
+        #ff3535,
+        #ff7048
+    );
+
+    color: white;
+
     font-weight: bold;
+
     padding: 13px 16px;
+
     border-radius: 8px;
+
     margin-bottom: 15px;
 }
 
+
+/* =========================
+   ĐẾM NGƯỢC
+========================= */
+
 .countdown {
     text-align: center;
+
     background: #fff4d4;
-    border: 1px solid #ffc107;
+
+    border: 1px solid #ffbd00;
+
     color: #d40000;
+
     border-radius: 8px;
+
     padding: 12px;
+
     margin-bottom: 15px;
+
     font-weight: bold;
 }
 
@@ -73,166 +117,366 @@ body {
     margin-left: 8px;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-}
 
-.box {
-    border: 1px dashed #ccc;
-    border-radius: 9px;
-    padding: 18px;
-}
+/* =========================
+   THÔNG TIN TRÊN ĐẦU
+========================= */
 
-.box h2 {
-    font-size: 18px;
-    margin-top: 0;
-}
+.top-info {
+    display: flex;
 
-.sub {
-    color: #888;
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
     margin-bottom: 15px;
 }
 
-.qr {
-    width: 290px;
-    max-width: 100%;
-    display: block;
-    margin: 15px auto;
+.account-info,
+.transaction-info {
+
+    background: #f5f5f5;
+
+    padding: 11px 15px;
+
+    border-radius: 7px;
+
+    font-size: 15px;
 }
 
+.transaction-info strong {
+
+    color: #e00000;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+
+/* =========================
+   BOX
+========================= */
+
+.box {
+
+    border: 1px dashed #ccc;
+
+    border-radius: 9px;
+
+    padding: 18px;
+
+}
+
+.box h2 {
+
+    font-size: 18px;
+
+    margin-top: 0;
+
+}
+
+.sub {
+
+    color: #888;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* =========================
+   QR
+========================= */
+
+.qr {
+
+    width: 290px;
+
+    max-width: 100%;
+
+    display: block;
+
+    margin: 15px auto;
+
+}
+
+
+/* =========================
+   TIỀN
+========================= */
+
 .money {
+
     text-align: center;
+
     font-weight: bold;
+
 }
 
 .amount {
+
     color: #ff2020;
+
     font-size: 20px;
+
 }
 
 .bonus {
+
     color: #00a651;
+
     margin-top: 7px;
+
 }
 
 .receive {
+
     color: #00a651;
+
     margin-top: 5px;
+
     font-size: 18px;
+
 }
 
+
+/* =========================
+   BẢNG THÔNG TIN
+========================= */
+
 .info {
+
     width: 100%;
+
     border-collapse: collapse;
+
 }
 
 .info tr {
+
     border-bottom: 1px solid #eee;
+
 }
 
 .info td {
+
     padding: 13px 5px;
+
     vertical-align: middle;
+
 }
 
 .info td:first-child {
+
     width: 40%;
+
 }
 
 .value {
+
     font-weight: bold;
+
 }
 
 .red {
+
     color: #ff2020;
+
 }
 
 .orange {
+
     color: #ff8500;
+
 }
 
+
+/* =========================
+   NÚT COPY
+========================= */
+
 .copy-btn {
+
     float: right;
+
     border: 0;
+
     background: #12b76a;
+
     color: white;
+
     padding: 7px 12px;
+
     border-radius: 6px;
+
     cursor: pointer;
+
     font-weight: bold;
+
+    margin-left: 7px;
+
 }
 
 .copy-btn:hover {
+
     background: #0d9958;
+
 }
 
+
+/* =========================
+   MÃ GIAO DỊCH
+========================= */
+
 .code-box {
+
     margin-top: 18px;
+
     padding: 13px;
+
     text-align: center;
+
     background: #f5f5f5;
+
     border-radius: 8px;
+
 }
 
 .code-box strong {
+
     color: #e00000;
+
     letter-spacing: 1px;
+
 }
 
+
+/* =========================
+   LƯU Ý
+========================= */
+
 .note {
+
     margin-top: 18px;
+
     padding: 18px;
+
     border: 1px dashed #ccc;
+
     border-radius: 8px;
+
 }
 
 .note h3 {
+
     margin-top: 0;
+
     color: #ff2020;
+
 }
 
 .note p {
+
     line-height: 1.6;
+
 }
 
+
+/* =========================
+   NÚT QUAY LẠI
+========================= */
+
 .back {
+
     display: block;
+
     width: fit-content;
+
     margin: 20px auto 5px;
+
     padding: 11px 24px;
+
     background: #15b8b2;
+
     color: white;
+
     text-decoration: none;
+
     border-radius: 25px;
+
     font-weight: bold;
+
 }
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 700px) {
 
     .header {
+
         flex-direction: column;
+
         gap: 10px;
+
         text-align: center;
+
+    }
+
+    .top-info {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
     }
 
     .grid {
+
         grid-template-columns: 1fr;
+
     }
 
     .logo {
+
         font-size: 30px;
+
     }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="container">
 
-    <!-- HEADER -->
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
     <div class="header">
 
         <div class="logo">
@@ -240,8 +484,13 @@ body {
         </div>
 
         <div class="user">
-            Tài khoản:
-            <span id="topUsername">---</span>
+
+            Tên tài khoản:
+
+            <span id="topUsername">
+                ---
+            </span>
+
         </div>
 
     </div>
@@ -249,16 +498,26 @@ body {
 
     <div class="card">
 
-        <!-- KHUYẾN MÃI -->
+
+        <!-- =========================
+             KHUYẾN MÃI
+        ========================== -->
+
         <div class="notice">
-            🎁 Khuyến mãi: Nạp tiền +20% giá trị nạp
+
+            🎁 Khuyến mãi tháng 8:
+            Nạp tiền +20% giá trị nạp ngay hôm nay!
+
         </div>
 
 
-        <!-- ĐẾM NGƯỢC -->
+        <!-- =========================
+             ĐẾM NGƯỢC
+        ========================== -->
+
         <div class="countdown">
 
-            ⏳ Thời gian còn lại:
+            ⏳ Thời gian thanh toán còn lại:
 
             <span id="timer">
                 10:00
@@ -267,21 +526,75 @@ body {
         </div>
 
 
+        <!-- =========================
+             TÀI KHOẢN + MÃ GIAO DỊCH
+        ========================== -->
+
+        <div class="top-info">
+
+
+            <div class="account-info">
+
+                👤 Tài khoản:
+
+                <strong id="accountTop">
+                    ---
+                </strong>
+
+            </div>
+
+
+            <div class="transaction-info">
+
+                🔑 Mã giao dịch:
+
+                <strong id="transactionCode">
+                    ------------
+                </strong>
+
+                <button
+                    class="copy-btn"
+                    onclick="copyText('transactionCode')">
+
+                    Copy
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =========================
+             2 CỘT
+        ========================== -->
+
         <div class="grid">
 
-            <!-- ======================
-                 QR
-            ======================= -->
+
+            <!-- =========================
+                 CỘT QR
+            ========================== -->
 
             <div class="box">
 
+
                 <h2>
-                    Cách 1: Chuyển khoản bằng mã QR
+
+                    Cách 1:
+                    Chuyển khoản bằng mã QR
+
                 </h2>
 
+
                 <div class="sub">
-                    Mở ứng dụng ngân hàng và quét QRCode
+
+                    Mở ứng dụng ngân hàng
+                    và quét QRCode
+
                 </div>
+
 
                 <img
                     id="qr"
@@ -289,44 +602,61 @@ body {
                     alt="QR chuyển khoản"
                 >
 
+
                 <div class="money">
+
 
                     <div
                         id="qrAmount"
                         class="amount">
+
                     </div>
+
 
                     <div
                         id="qrBonus"
                         class="bonus">
+
                     </div>
+
 
                     <div
                         id="qrReceive"
                         class="receive">
+
                     </div>
 
+
                 </div>
+
 
             </div>
 
 
-            <!-- ======================
-                 THÔNG TIN CHUYỂN KHOẢN
-            ======================= -->
+            <!-- =========================
+                 CỘT CHUYỂN KHOẢN
+            ========================== -->
 
             <div class="box">
 
+
                 <h2>
+
                     Cách 2:
                     Chuyển khoản
-                    <span class="red">thủ công</span>
+
+                    <span class="red">
+                        thủ công
+                    </span>
+
                 </h2>
 
 
                 <table class="info">
 
+
                     <!-- NGÂN HÀNG -->
+
                     <tr>
 
                         <td>
@@ -336,8 +666,16 @@ body {
                         <td class="value">
 
                             <span id="bankName">
-                                SACOMBANK
+                                Sacombank
                             </span>
+
+                            <button
+                                class="copy-btn"
+                                onclick="copyText('bankName')">
+
+                                Copy
+
+                            </button>
 
                         </td>
 
@@ -345,6 +683,7 @@ body {
 
 
                     <!-- TÀI KHOẢN GAME -->
+
                     <tr>
 
                         <td>
@@ -359,8 +698,10 @@ body {
 
                             <button
                                 class="copy-btn"
-                                onclick="copyValue('gameAccount')">
+                                onclick="copyText('gameAccount')">
+
                                 Copy
+
                             </button>
 
                         </td>
@@ -368,7 +709,8 @@ body {
                     </tr>
 
 
-                    <!-- SỐ TK -->
+                    <!-- SỐ TÀI KHOẢN -->
+
                     <tr>
 
                         <td>
@@ -383,8 +725,10 @@ body {
 
                             <button
                                 class="copy-btn"
-                                onclick="copyValue('accountNumber')">
+                                onclick="copyText('accountNumber')">
+
                                 Copy
+
                             </button>
 
                         </td>
@@ -392,7 +736,8 @@ body {
                     </tr>
 
 
-                    <!-- CHỦ TK -->
+                    <!-- CHỦ TÀI KHOẢN -->
+
                     <tr>
 
                         <td>
@@ -407,8 +752,10 @@ body {
 
                             <button
                                 class="copy-btn"
-                                onclick="copyValue('accountName')">
+                                onclick="copyText('accountName')">
+
                                 Copy
+
                             </button>
 
                         </td>
@@ -417,6 +764,7 @@ body {
 
 
                     <!-- SỐ TIỀN -->
+
                     <tr>
 
                         <td>
@@ -432,7 +780,9 @@ body {
                             <button
                                 class="copy-btn"
                                 onclick="copyAmount()">
+
                                 Copy
+
                             </button>
 
                         </td>
@@ -441,6 +791,7 @@ body {
 
 
                     <!-- NỘI DUNG -->
+
                     <tr>
 
                         <td>
@@ -455,18 +806,23 @@ body {
 
                             <button
                                 class="copy-btn"
-                                onclick="copyValue('transferContent')">
+                                onclick="copyText('transferContent')">
+
                                 Copy
+
                             </button>
 
                         </td>
 
                     </tr>
 
+
                 </table>
 
 
-                <!-- KHUYẾN MÃI -->
+                <!-- =========================
+                     KHUYẾN MÃI
+                ========================== -->
 
                 <div class="money">
 
@@ -475,6 +831,7 @@ body {
                     <span
                         id="bonusText"
                         class="red">
+
                     </span>
 
                     <br>
@@ -484,34 +841,43 @@ body {
                     <span
                         id="receiveText"
                         class="receive">
+
                     </span>
 
                 </div>
 
 
-                <!-- MÃ NỘI DUNG -->
+                <!-- =========================
+                     MÃ GIAO DỊCH
+                ========================== -->
 
                 <div class="code-box">
 
-                    Nội dung chuyển khoản:
+                    🔑 Mã giao dịch:
 
                     <strong id="codeDisplay">
+                        ------------
                     </strong>
 
                     <button
                         class="copy-btn"
-                        onclick="copyCode()">
+                        onclick="copyText('codeDisplay')">
+
                         Copy
+
                     </button>
 
                 </div>
+
 
             </div>
 
         </div>
 
 
-        <!-- LƯU Ý -->
+        <!-- =========================
+             LƯU Ý
+        ========================== -->
 
         <div class="note">
 
@@ -519,138 +885,243 @@ body {
                 Lưu ý quan trọng:
             </h3>
 
-            <p>
-                1. Chuyển khoản chính xác số tiền và nội dung hiển thị.
-            </p>
 
             <p>
-                2. Kiểm tra kỹ thông tin ngân hàng trước khi chuyển.
+                1. Chuyển khoản cần nhập chính xác
+                số tiền và nội dung hiển thị.
             </p>
 
+
             <p>
-                3. Không cung cấp OTP hoặc mật khẩu ngân hàng.
+                2. Kiểm tra kỹ thông tin ngân hàng
+                trước khi chuyển khoản.
+            </p>
+
+
+            <p>
+                3. Không cung cấp OTP hoặc mật khẩu
+                ngân hàng cho bất kỳ ai.
             </p>
 
         </div>
 
 
+        <!-- =========================
+             QUAY LẠI
+        ========================== -->
+
         <a
             href="index.html"
             class="back">
+
             ← Quay lại
+
         </a>
+
 
     </div>
 
 </div>
 
 
+
 <script>
 
-/* =================================================
-   CẤU HÌNH
-   ================================================= */
+/* =====================================================
+   CẤU HÌNH WEBSITE
+===================================================== */
+
 
 /*
-   CHỈ CẦN ĐỔI SỐ TIỀN Ở ĐÂY
+    CHỈ ĐỔI MỆNH GIÁ Ở DÒNG NÀY
+
+    Ví dụ:
+
+    300000
+    500000
+    1000000
+    2000000
+
 */
 
 const AMOUNT = 300000;
 
 
 /*
-   PHẦN TRĂM KHUYẾN MÃI
+    KHUYẾN MÃI
 */
 
 const BONUS_PERCENT = 20;
 
 
 /*
-   THỜI GIAN ĐẾM NGƯỢC
+    THỜI GIAN ĐẾM NGƯỢC
+
+    10 = 10 phút
 */
 
 const COUNTDOWN_MINUTES = 10;
 
 
 /*
-   THÔNG TIN NGÂN HÀNG
+    THÔNG TIN NGÂN HÀNG
 */
 
-const BANK_NAME = "SACOMBANK";
+const BANK_NAME = "Sacombank";
 
 const ACCOUNT_NUMBER = "070137130244";
 
 const ACCOUNT_NAME = "LE GIA KIET";
 
 
-/* =================================================
-   LẤY TÊN GAME TỪ INDEX
-   ================================================= */
+/* =====================================================
+   LẤY TÊN NGƯỜI DÙNG
+===================================================== */
 
 const username =
     localStorage.getItem("username") || "THANHVIEN";
 
 
-/* =================================================
+document.getElementById(
+    "topUsername"
+).textContent = username;
+
+
+document.getElementById(
+    "accountTop"
+).textContent = username;
+
+
+document.getElementById(
+    "gameAccount"
+).textContent = username;
+
+
+/* =====================================================
+   TẠO MÃ GIAO DỊCH 12 SỐ NGẪU NHIÊN
+===================================================== */
+
+function taoMaGiaoDich() {
+
+    let ma = "";
+
+    for (
+        let i = 0;
+        i < 12;
+        i++
+    ) {
+
+        ma += Math.floor(
+            Math.random() * 10
+        );
+
+    }
+
+    return ma;
+}
+
+
+const maGiaoDich =
+    taoMaGiaoDich();
+
+
+/* =====================================================
+   HIỂN THỊ MÃ GIAO DỊCH
+===================================================== */
+
+document.getElementById(
+    "transactionCode"
+).textContent = maGiaoDich;
+
+
+document.getElementById(
+    "codeDisplay"
+).textContent = maGiaoDich;
+
+
+/* =====================================================
    TẠO NỘI DUNG CHUYỂN KHOẢN
-   ================================================= */
+=====================================================
 
-/*
-   Lần đầu:
-   taxik83h39
+   Dạng:
 
-   Lần tiếp:
-   taxik83h40
+   taxikjv783u
+   taxikab291x
+   taxikm4p82q
 
-   Lần tiếp:
-   taxik83h41
-*/
+   Luôn bắt đầu bằng:
 
-let counter =
-    Number(
-        localStorage.getItem("taxikCounter")
-    );
+   taxik
+
+===================================================== */
+
+function taoNoiDungCK() {
+
+    const kyTu =
+        "abcdefghijklmnopqrstuvwxyz0123456789";
+
+    let phanSau = "";
 
 
-if (!counter) {
+    /*
+        Tạo 6 ký tự ngẫu nhiên
+    */
 
-    counter = 39;
+    for (
+        let i = 0;
+        i < 6;
+        i++
+    ) {
+
+        const viTri =
+            Math.floor(
+                Math.random() *
+                kyTu.length
+            );
+
+
+        phanSau +=
+            kyTu[viTri];
+
+    }
+
+
+    return "taxik" + phanSau;
 
 }
 
 
-/*
-   Tạo mã
-*/
-
-const transferContent =
-    "taxik83h" + counter;
+const noiDungCK =
+    taoNoiDungCK();
 
 
-/*
-   Tăng số cho lần mở tiếp theo
-*/
+/* =====================================================
+   HIỂN THỊ NỘI DUNG
+===================================================== */
 
-localStorage.setItem(
-    "taxikCounter",
-    counter + 1
-);
+document.getElementById(
+    "transferContent"
+).textContent = noiDungCK;
 
 
-/* =================================================
+/* =====================================================
    TÍNH KHUYẾN MÃI
-   ================================================= */
+===================================================== */
 
 const bonus =
-    AMOUNT * BONUS_PERCENT / 100;
+    AMOUNT *
+    BONUS_PERCENT /
+    100;
+
 
 const total =
-    AMOUNT + bonus;
+    AMOUNT +
+    bonus;
 
 
-/* =================================================
+/* =====================================================
    FORMAT TIỀN
-   ================================================= */
+===================================================== */
 
 function formatMoney(number) {
 
@@ -660,47 +1131,21 @@ function formatMoney(number) {
 }
 
 
-/* =================================================
-   HIỂN THỊ TÊN
-   ================================================= */
-
-document.getElementById(
-    "topUsername"
-).textContent = username;
-
-document.getElementById(
-    "gameAccount"
-).textContent = username;
-
-
-/* =================================================
-   HIỂN THỊ NỘI DUNG CK
-   ================================================= */
-
-document.getElementById(
-    "transferContent"
-).textContent =
-    transferContent;
-
-document.getElementById(
-    "codeDisplay"
-).textContent =
-    transferContent;
-
-
-/* =================================================
+/* =====================================================
    HIỂN THỊ TIỀN
-   ================================================= */
+===================================================== */
 
 document.getElementById(
     "qrAmount"
 ).textContent =
     formatMoney(AMOUNT);
 
+
 document.getElementById(
     "amountText"
 ).textContent =
     formatMoney(AMOUNT);
+
 
 document.getElementById(
     "qrBonus"
@@ -710,10 +1155,12 @@ document.getElementById(
     "% KM = " +
     formatMoney(bonus);
 
+
 document.getElementById(
     "bonusText"
 ).textContent =
     formatMoney(bonus);
+
 
 document.getElementById(
     "qrReceive"
@@ -721,28 +1168,36 @@ document.getElementById(
     "Thực nhận: " +
     formatMoney(total);
 
+
 document.getElementById(
     "receiveText"
 ).textContent =
     formatMoney(total);
 
 
-/* =================================================
-   TẠO QR
-   ================================================= */
+/* =====================================================
+   TẠO QR VIETQR
+===================================================== */
 
 const qrURL =
     "https://vietqr.app/img?" +
-    "bank=Sacombank" +
+
+    "bank=" +
+    encodeURIComponent(BANK_NAME) +
+
     "&acc=" +
     encodeURIComponent(ACCOUNT_NUMBER) +
+
     "&template=standard" +
+
     "&amount=" +
     AMOUNT +
+
     "&holder=" +
     encodeURIComponent(ACCOUNT_NAME) +
+
     "&addInfo=" +
-    encodeURIComponent(transferContent);
+    encodeURIComponent(noiDungCK);
 
 
 document.getElementById(
@@ -750,19 +1205,22 @@ document.getElementById(
 ).src = qrURL;
 
 
-/* =================================================
+/* =====================================================
    COPY
-   ================================================= */
+===================================================== */
 
-function copyValue(id) {
+function copyText(id) {
 
     const element =
         document.getElementById(id);
 
+
     const text =
         element.textContent.trim();
 
+
     navigator.clipboard.writeText(text)
+
         .then(function() {
 
             alert(
@@ -770,6 +1228,7 @@ function copyValue(id) {
             );
 
         })
+
         .catch(function() {
 
             alert(
@@ -781,15 +1240,16 @@ function copyValue(id) {
 }
 
 
-/* =================================================
+/* =====================================================
    COPY SỐ TIỀN
-   ================================================= */
+===================================================== */
 
 function copyAmount() {
 
     navigator.clipboard.writeText(
         String(AMOUNT)
     )
+
     .then(function() {
 
         alert(
@@ -802,33 +1262,13 @@ function copyAmount() {
 }
 
 
-/* =================================================
-   COPY NỘI DUNG CK
-   ================================================= */
-
-function copyCode() {
-
-    navigator.clipboard.writeText(
-        transferContent
-    )
-    .then(function() {
-
-        alert(
-            "Đã copy: " +
-            transferContent
-        );
-
-    });
-
-}
-
-
-/* =================================================
+/* =====================================================
    ĐẾM NGƯỢC
-   ================================================= */
+===================================================== */
 
 let timeLeft =
     COUNTDOWN_MINUTES * 60;
+
 
 const timerElement =
     document.getElementById("timer");
@@ -836,24 +1276,35 @@ const timerElement =
 
 function updateTimer() {
 
+
     const minutes =
-        Math.floor(timeLeft / 60);
+        Math.floor(
+            timeLeft / 60
+        );
+
 
     const seconds =
         timeLeft % 60;
 
+
     timerElement.textContent =
+
         minutes +
+
         ":" +
-        String(seconds).padStart(2, "0");
+
+        String(seconds)
+            .padStart(2, "0");
 
 
     if (timeLeft <= 0) {
 
-        clearInterval(timer);
+        clearInterval(timerInterval);
+
 
         timerElement.textContent =
             "HẾT THỜI GIAN";
+
 
         return;
 
@@ -867,13 +1318,16 @@ function updateTimer() {
 
 updateTimer();
 
-const timer =
+
+const timerInterval =
     setInterval(
         updateTimer,
         1000
     );
 
+
 </script>
 
 </body>
+
 </html>
