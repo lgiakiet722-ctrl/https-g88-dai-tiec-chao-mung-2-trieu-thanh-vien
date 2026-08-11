@@ -2,9 +2,10 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+          content="width=device-width, initial-scale=1.0,
+                   maximum-scale=1.0,
+                   user-scalable=no">
 
     <title>Đại Tiệc Chào Mừng 2 Triệu Thành Viên</title>
 
@@ -26,42 +27,50 @@
             background:
                 linear-gradient(
                     to bottom,
-                    #033d3b 0%,
-                    #08786f 380px,
+                    #033d3b 0px,
+                    #08786f 300px,
                     #08786f 100%
                 );
+
             color: white;
             overflow-x: hidden;
         }
 
+
         /* =========================
-           KHUNG CHÍNH
+           KHUNG TRANG
         ========================= */
 
         .page {
             width: 100%;
             min-height: 100vh;
+
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 50px 25px;
+
+            padding: 60px 20px;
         }
 
         .container {
-            width: 1100px;
+            width: 1150px;
             max-width: 100%;
+
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+
             gap: 70px;
         }
 
+
         /* =========================
-           BÊN TRÁI - PHẦN QUÀ
+           PHẦN ẢNH BÊN TRÁI
         ========================= */
 
         .left {
             width: 55%;
+
             display: flex;
             justify-content: center;
             align-items: center;
@@ -70,29 +79,17 @@
         .gift-image {
             width: 650px;
             max-width: 100%;
+
             height: auto;
-            object-fit: contain;
+
             display: block;
+
+            object-fit: contain;
         }
 
-        /* Nếu chưa có ảnh phần thưởng */
-        .gift-placeholder {
-            width: 600px;
-            max-width: 100%;
-            min-height: 400px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            text-align: center;
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
-        }
 
         /* =========================
-           BÊN PHẢI - FORM
+           KHUNG FORM
         ========================= */
 
         .right {
@@ -104,30 +101,96 @@
             border: 2px solid #f7bd00;
             border-radius: 22px;
 
-            padding: 30px 35px 35px;
+            padding: 35px 35px 35px;
 
-            background: rgba(5, 100, 92, 0.45);
+            background: rgba(8, 120, 111, 0.85);
 
             box-shadow:
                 0 10px 30px rgba(0, 0, 0, 0.15);
         }
 
+
         /* =========================
            LOGO
         ========================= */
 
-        .logo {
-            display: block;
+        .logo-box {
+            width: 100%;
 
-            width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin-top: -105px;
+            margin-bottom: 20px;
+
+            min-height: 100px;
+        }
+
+        .logo-image {
+            width: 310px;
             max-width: 90%;
 
             height: auto;
 
-            margin: -105px auto 15px;
+            display: block;
 
             object-fit: contain;
         }
+
+
+        /* LOGO DỰ PHÒNG
+           Nếu logo.png không tồn tại,
+           phần này vẫn hiện */
+
+        .logo-fallback {
+            display: none;
+
+            text-align: center;
+
+            line-height: 0.95;
+
+            font-weight: 900;
+
+            color: #ffd21a;
+
+            text-shadow:
+                2px 2px 0 #b56a00,
+                0 0 8px rgba(255, 210, 26, 0.4);
+        }
+
+        .logo-fallback .small {
+            display: block;
+
+            font-size: 17px;
+
+            margin-bottom: 2px;
+        }
+
+        .logo-fallback .number {
+            display: inline-block;
+
+            font-size: 70px;
+
+            font-weight: 900;
+
+            color: #ffd21a;
+        }
+
+        .logo-fallback .million {
+            font-size: 28px;
+
+            vertical-align: middle;
+        }
+
+        .logo-fallback .member {
+            display: block;
+
+            font-size: 20px;
+
+            margin-top: -5px;
+        }
+
 
         /* =========================
            TIÊU ĐỀ
@@ -137,6 +200,7 @@
             width: 100%;
 
             border: 2px solid #f7bd00;
+
             border-radius: 40px;
 
             padding: 13px 15px;
@@ -144,14 +208,16 @@
             color: #ffd21a;
 
             font-size: 21px;
+
             line-height: 1.25;
 
             font-weight: bold;
 
             text-align: center;
 
-            margin-bottom: 28px;
+            margin-bottom: 30px;
         }
+
 
         /* =========================
            LABEL
@@ -162,17 +228,18 @@
 
             color: #ffd21a;
 
-            font-size: 17px;
+            font-size: 18px;
 
             font-weight: bold;
 
             text-align: center;
 
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
+
         /* =========================
-           Ô NHẬP
+           Ô NHẬP TÊN
         ========================= */
 
         .username {
@@ -196,7 +263,7 @@
 
             outline: none;
 
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
 
         .username::placeholder {
@@ -207,8 +274,9 @@
             border-color: #ffd21a;
 
             box-shadow:
-                0 0 0 3px rgba(247, 189, 0, 0.15);
+                0 0 0 3px rgba(247, 189, 0, 0.18);
         }
+
 
         /* =========================
            THÔNG BÁO
@@ -217,11 +285,11 @@
         .message {
             width: 100%;
 
-            min-height: 55px;
+            min-height: 60px;
 
             background: white;
 
-            border-radius: 5px;
+            border-radius: 6px;
 
             color: #333;
 
@@ -229,13 +297,11 @@
 
             align-items: center;
 
-            justify-content: flex-start;
-
-            padding: 12px 15px;
+            padding: 12px 18px;
 
             margin-bottom: 20px;
 
-            font-size: 16px;
+            font-size: 18px;
         }
 
         .message.show {
@@ -243,8 +309,10 @@
         }
 
         .message-icon {
-            width: 30px;
-            height: 30px;
+            width: 34px;
+            height: 34px;
+
+            min-width: 34px;
 
             border-radius: 50%;
 
@@ -254,17 +322,18 @@
 
             display: flex;
 
-            align-items: center;
             justify-content: center;
+            align-items: center;
+
+            font-size: 23px;
 
             font-weight: bold;
-
-            flex-shrink: 0;
         }
 
         .message-text {
-            margin-left: 10px;
+            margin-left: 12px;
         }
+
 
         /* =========================
            NÚT KIỂM TRA
@@ -289,7 +358,7 @@
 
             color: white;
 
-            font-size: 18px;
+            font-size: 19px;
 
             font-weight: bold;
 
@@ -298,18 +367,19 @@
             box-shadow:
                 0 4px 10px rgba(0, 0, 0, 0.25);
 
-            transition: 0.2s ease;
+            transition: 0.2s;
         }
 
         .check:hover {
-            transform: translateY(-2px);
+            background: #12a9b5;
 
-            background: #13aab5;
+            transform: translateY(-2px);
         }
 
         .check:active {
             transform: scale(0.97);
         }
+
 
         /* =========================
            LINK
@@ -326,7 +396,7 @@
 
             align-items: center;
 
-            gap: 20px;
+            gap: 15px;
         }
 
         .links a {
@@ -345,18 +415,19 @@
             text-decoration: underline;
         }
 
+
         /* =========================
            THEO DÕI
         ========================= */
 
         .follow {
-            margin-top: 25px;
+            margin-top: 26px;
 
             text-align: center;
 
             color: white;
 
-            font-size: 15px;
+            font-size: 16px;
 
             font-weight: bold;
         }
@@ -366,14 +437,14 @@
 
             margin-left: 8px;
 
-            gap: 8px;
+            gap: 10px;
 
             vertical-align: middle;
         }
 
         .social a {
-            width: 34px;
-            height: 34px;
+            width: 36px;
+            height: 36px;
 
             display: flex;
 
@@ -382,19 +453,20 @@
 
             border-radius: 50%;
 
-            background: #169bd5;
+            background: #159bdd;
 
             color: white;
 
             text-decoration: none;
 
-            font-weight: bold;
+            font-size: 18px;
 
-            font-size: 16px;
+            font-weight: bold;
         }
 
+
         /* =========================
-           MOBILE
+           ĐIỆN THOẠI
         ========================= */
 
         @media (max-width: 700px) {
@@ -404,33 +476,24 @@
                     linear-gradient(
                         to bottom,
                         #033d3b 0px,
-                        #08786f 380px,
+                        #08786f 160px,
                         #08786f 100%
                     );
             }
 
             .page {
-                width: 100%;
-
                 min-height: 100vh;
 
-                padding: 80px 15px 50px;
-
                 display: block;
+
+                padding: 138px 20px 80px;
             }
 
             .container {
                 width: 100%;
 
-                display: flex;
-
-                flex-direction: column;
-
-                gap: 0;
+                display: block;
             }
-
-            /* Ẩn phần ảnh lớn trên mobile
-               để giao diện giống mẫu điện thoại */
 
             .left {
                 display: none;
@@ -439,58 +502,170 @@
             .right {
                 width: 100%;
 
-                max-width: 520px;
+                max-width: 550px;
 
                 margin: 0 auto;
 
+                border-left: 2px solid #f7bd00;
+                border-right: 2px solid #f7bd00;
+
                 border-radius: 0;
 
-                border-left: none;
-                border-right: none;
-
-                padding: 25px 22px 40px;
+                padding:
+                    35px 30px 40px;
 
                 background:
-                    rgba(8, 120, 111, 0.9);
+                    rgba(8, 120, 111, 0.92);
             }
 
-            .logo {
-                width: 300px;
 
-                max-width: 90%;
+            /* Logo điện thoại */
 
-                margin: -75px auto 25px;
+            .logo-box {
+                margin-top: -105px;
+
+                margin-bottom: 35px;
+
+                min-height: 105px;
             }
+
+            .logo-image {
+                width: 330px;
+
+                max-width: 95%;
+            }
+
+            .logo-fallback .number {
+                font-size: 65px;
+            }
+
+
+            /* Tiêu đề */
 
             .title {
                 font-size: 21px;
 
-                padding: 13px 12px;
+                padding: 14px 12px;
 
-                margin-bottom: 35px;
+                margin-bottom: 48px;
             }
 
+
+            /* Label */
+
             .label {
+                font-size: 19px;
+
+                margin-bottom: 15px;
+            }
+
+
+            /* Input */
+
+            .username {
+                height: 64px;
+
                 font-size: 18px;
 
-                margin-bottom: 12px;
+                margin-bottom: 25px;
+            }
+
+
+            /* Message */
+
+            .message {
+                min-height: 80px;
+
+                font-size: 18px;
+
+                padding: 14px 18px;
+
+                margin-bottom: 28px;
+            }
+
+            .message-icon {
+                width: 40px;
+                height: 40px;
+
+                min-width: 40px;
+
+                font-size: 25px;
+            }
+
+
+            /* Button */
+
+            .check {
+                min-width: 300px;
+
+                max-width: 100%;
+
+                height: 65px;
+
+                font-size: 19px;
+            }
+
+
+            /* Links */
+
+            .links {
+                margin-top: 35px;
+
+                justify-content: space-between;
+
+                gap: 10px;
+            }
+
+            .links a {
+                font-size: 15px;
+            }
+
+
+            /* Social */
+
+            .follow {
+                margin-top: 28px;
+
+                font-size: 17px;
+            }
+
+            .social a {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+
+        /* =========================
+           ĐIỆN THOẠI NHỎ
+        ========================= */
+
+        @media (max-width: 400px) {
+
+            .page {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .right {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .title {
+                font-size: 18px;
+
+                margin-bottom: 40px;
             }
 
             .username {
-                height: 62px;
+                height: 60px;
 
-                font-size: 18px;
-
-                margin-bottom: 20px;
+                font-size: 17px;
             }
 
             .message {
-                min-height: 60px;
-
                 font-size: 17px;
-
-                margin-left: 0;
-                margin-right: 0;
             }
 
             .check {
@@ -501,67 +676,13 @@
                 font-size: 18px;
             }
 
-            .links {
-                margin-top: 28px;
-
-                justify-content: center;
-
-                gap: 25px;
-            }
-
-            .links a {
-                font-size: 14px;
-            }
-
-            .follow {
-                margin-top: 25px;
-
-                font-size: 16px;
-            }
-        }
-
-        /* =========================
-           MOBILE NHỎ
-        ========================= */
-
-        @media (max-width: 400px) {
-
-            .page {
-                padding-left: 0;
-                padding-right: 0;
-            }
-
-            .right {
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-
-            .title {
-                font-size: 18px;
-            }
-
-            .username {
-                height: 58px;
-
-                font-size: 17px;
-            }
-
-            .check {
-                min-width: 245px;
-
-                height: 58px;
-            }
-
-            .links {
-                gap: 15px;
-            }
-
             .links a {
                 font-size: 13px;
             }
         }
     </style>
 </head>
+
 
 <body>
 
@@ -575,58 +696,82 @@
 
         <div class="left">
 
-            <!--
-                Nếu bạn có ảnh phần thưởng,
-                đặt tên file là:
-
-                phanthuong.png
-
-                rồi bỏ dấu <!-- --> bên dưới.
-            -->
-
             <img
                 src="phanthuong.png"
-                alt="Đại tiệc 2 triệu thành viên - Phần thưởng"
+                alt="Phần thưởng"
                 class="gift-image"
-                onerror="this.style.display='none'; document.getElementById('giftText').style.display='flex';"
             >
-
-            <div
-                id="giftText"
-                class="gift-placeholder"
-                style="display:none;"
-            >
-                ĐẠI TIỆC CHÀO MỪNG<br>
-                2 TRIỆU THÀNH VIÊN
-            </div>
 
         </div>
 
 
         <!-- =========================
-             PHẦN FORM
+             FORM
         ========================== -->
 
         <div class="right">
 
-            <!-- LOGO -->
 
-            <img
-                src="logo.png"
-                alt="Logo"
-                class="logo"
-                onerror="this.style.display='none';"
-            >
+            <!-- =========================
+                 LOGO
+            ========================== -->
+
+            <div class="logo-box">
+
+                <!--
+                    Nếu bạn có file logo.png
+                    thì đặt logo.png cùng thư mục
+                    với index.html.
+                -->
+
+                <img
+                    src="logo.png"
+                    alt="Đại tiệc chào mừng 2 triệu thành viên"
+                    class="logo-image"
+                    id="logoImage"
+                >
 
 
-            <!-- TIÊU ĐỀ -->
+                <!-- Logo dự phòng -->
+
+                <div
+                    class="logo-fallback"
+                    id="logoFallback"
+                >
+
+                    <span class="small">
+                        ĐẠI TIỆC CHÀO MỪNG
+                    </span>
+
+                    <span class="number">
+                        2
+                    </span>
+
+                    <span class="million">
+                        TRIỆU
+                    </span>
+
+                    <span class="member">
+                        ✦ THÀNH VIÊN ✦
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 TIÊU ĐỀ
+            ========================== -->
 
             <div class="title">
                 ĐẠI TIỆC THÁNG 8 KM 20% GIÁ TRỊ!
             </div>
 
 
-            <!-- LABEL -->
+            <!-- =========================
+                 TÊN TÀI KHOẢN
+            ========================== -->
 
             <label
                 class="label"
@@ -635,8 +780,6 @@
                 Tên tài khoản:
             </label>
 
-
-            <!-- INPUT -->
 
             <input
                 type="text"
@@ -648,50 +791,59 @@
             >
 
 
-            <!-- THÔNG BÁO -->
+            <!-- =========================
+                 THÔNG BÁO
+            ========================== -->
 
             <div
-                id="message"
                 class="message"
+                id="message"
             >
-                <span class="message-icon">✓</span>
 
-                <span
-                    class="message-text"
-                    id="messageText"
-                >
-                    Đã nhập thông tin.
+                <span class="message-icon">
+                    ✓
                 </span>
+
+                <span class="message-text">
+                    Đã xác thực
+                </span>
+
             </div>
 
 
-            <!-- BUTTON -->
+            <!-- =========================
+                 NÚT
+            ========================== -->
 
             <button
                 type="button"
                 class="check"
-                onclick="kiemTra()"
+                id="checkButton"
             >
                 KIỂM TRA NGAY
             </button>
 
 
-            <!-- LINK -->
+            <!-- =========================
+                 LINK
+            ========================== -->
 
             <div class="links">
 
-                <a href="#" onclick="return false;">
+                <a href="#">
                     Thông tin chương trình &gt;
                 </a>
 
-                <a href="#" onclick="return false;">
+                <a href="#">
                     Trang phát code &gt;
                 </a>
 
             </div>
 
 
-            <!-- SOCIAL -->
+            <!-- =========================
+                 SOCIAL
+            ========================== -->
 
             <div class="follow">
 
@@ -702,7 +854,6 @@
                     <a
                         href="#"
                         title="Telegram"
-                        onclick="return false;"
                     >
                         ➤
                     </a>
@@ -710,7 +861,6 @@
                     <a
                         href="#"
                         title="Facebook"
-                        onclick="return false;"
                     >
                         f
                     </a>
@@ -729,30 +879,54 @@
 <script>
 
     /* =====================================
-       HIỂN THỊ THÔNG BÁO KHI NHẬP TÊN
+       LOGO FALLBACK
     ===================================== */
 
-    const usernameInput =
+    const logoImage =
+        document.getElementById("logoImage");
+
+    const logoFallback =
+        document.getElementById("logoFallback");
+
+
+    logoImage.addEventListener(
+        "error",
+        function () {
+
+            logoImage.style.display = "none";
+
+            logoFallback.style.display = "block";
+
+        }
+    );
+
+
+    /* =====================================
+       NHẬP TÊN
+    ===================================== */
+
+    const username =
         document.getElementById("username");
 
     const message =
         document.getElementById("message");
 
-    const messageText =
-        document.getElementById("messageText");
 
-
-    usernameInput.addEventListener(
+    username.addEventListener(
         "input",
         function () {
 
-            const username =
-                usernameInput.value.trim();
+            const value =
+                username.value.trim();
 
-            if (username !== "") {
 
-                messageText.textContent =
-                    "Đã nhập: " + username;
+            if (value !== "") {
+
+                /*
+                    Theo yêu cầu:
+                    không hiện "Đã nhập: ..."
+                    mà hiện "Đã xác thực"
+                */
 
                 message.classList.add("show");
 
@@ -767,49 +941,53 @@
 
 
     /* =====================================
-       NÚT KIỂM TRA NGAY
+       KIỂM TRA NGAY
     ===================================== */
 
-    function kiemTra() {
-
-        const username =
-            usernameInput.value.trim();
+    const checkButton =
+        document.getElementById("checkButton");
 
 
-        /* Không cho bỏ trống */
+    checkButton.addEventListener(
+        "click",
+        function () {
 
-        if (username === "") {
+            const value =
+                username.value.trim();
 
-            alert(
-                "Vui lòng nhập tên người dùng!"
+
+            if (value === "") {
+
+                alert(
+                    "Vui lòng nhập tên người dùng!"
+                );
+
+                username.focus();
+
+                return;
+            }
+
+
+            /*
+                Lưu tên tài khoản
+                để thanhtoan.html sử dụng.
+            */
+
+            localStorage.setItem(
+                "username",
+                value
             );
 
-            usernameInput.focus();
 
-            return;
+            /*
+                Chuyển sang trang thanh toán
+            */
+
+            window.location.href =
+                "thanhtoan.html";
+
         }
-
-
-        /* Lưu tên người dùng */
-
-        localStorage.setItem(
-            "username",
-            username
-        );
-
-
-        /*
-            Chuyển sang trang thanh toán.
-
-            index.html
-            thanhtoan.html
-
-            phải nằm cùng thư mục.
-        */
-
-        window.location.href =
-            "thanhtoan.html";
-    }
+    );
 
 </script>
 
