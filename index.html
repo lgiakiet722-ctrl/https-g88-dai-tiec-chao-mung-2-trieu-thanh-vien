@@ -362,7 +362,21 @@ body {
             >
                 KIỂM TRA NGAY
             </button>
+<script>
+document.getElementById("checkButton").addEventListener("click", function () {
 
+    const username = document.getElementById("username").value.trim();
+
+    if (username === "") {
+        alert("Vui lòng nhập tên tài khoản game!");
+        return;
+    }
+
+    localStorage.setItem("gameUsername", username);
+
+    window.location.href = "./thanhtoan.html";
+});
+</script>
             <div class="links">
 
                 <a href="#">
