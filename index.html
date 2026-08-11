@@ -1,383 +1,310 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
-    <title>Đại tiệc chào mừng 2 triệu thành viên</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html,
-        body {
-            width: 100%;
-            min-height: 100%;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #087d73;
-            color: #ffffff;
-        }
-
-        .page {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 55px;
-        }
-
-        /* =========================
-           LOGO
-        ========================= */
-
-        .logo-area {
-            width: 55%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo {
-            display: block;
-            width: 100%;
-            max-width: 680px;
-            height: auto;
-            object-fit: contain;
-        }
-
-        .logo-fallback {
-            display: none;
-            text-align: center;
-            color: #ffd21c;
-            font-size: 38px;
-            line-height: 1.15;
-            font-weight: 900;
-            text-transform: uppercase;
-        }
-
-        /* =========================
-           CARD
-        ========================= */
-
-        .card {
-            width: 430px;
-            max-width: 100%;
-            padding: 38px 36px;
-            border: 3px solid #ffc400;
-            border-radius: 20px;
-            background: #087d73;
-            text-align: center;
-        }
-
-        .event {
-            border: 3px solid #ffc400;
-            border-radius: 60px;
-            padding: 18px 25px;
-            margin-bottom: 40px;
-
-            color: #ffd21c;
-            font-size: 27px;
-            line-height: 1.15;
-            font-weight: 900;
-        }
-
-        .label {
-            display: block;
-            margin-bottom: 15px;
-
-            color: #ffd21c;
-            font-size: 23px;
-            font-weight: 700;
-        }
-
-        .username {
-            width: 100%;
-            height: 62px;
-            border: 3px solid #ffc400;
-            border-radius: 40px;
-
-            background: #ffffff;
-            color: #222222;
-
-            text-align: center;
-            font-size: 21px;
-            outline: none;
-        }
-
-        .username::placeholder {
-            color: #999999;
-        }
-
-        .username:focus {
-            box-shadow: 0 0 0 3px rgba(255, 196, 0, 0.2);
-        }
-
-        /* =========================
-           MESSAGE
-        ========================= */
-
-        .message {
-            width: 100%;
-            min-height: 65px;
-            margin-top: 22px;
-
-            display: none;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-
-            border-radius: 8px;
-            background: #ffffff;
-            color: #333333;
-
-            font-size: 20px;
-        }
-
-        .checkmark {
-            width: 38px;
-            height: 38px;
-
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 50%;
-            background: #2fbd68;
-            color: white;
-
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        /* =========================
-           BUTTON
-        ========================= */
-
-        .check {
-            width: 100%;
-            min-height: 62px;
-            margin-top: 28px;
-
-            border: 3px solid #ffffff;
-            border-radius: 40px;
-
-            background: #22aec0;
-            color: #ffffff;
-
-            font-size: 23px;
-            font-weight: 900;
-
-            cursor: pointer;
-
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-
-            transition:
-                transform 0.15s ease,
-                background 0.15s ease;
-        }
-
-        .check:hover {
-            background: #159aaa;
-        }
-
-        .check:active {
-            transform: scale(0.98);
-        }
-
-        .check:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-        }
-
-        /* =========================
-           LINKS
-        ========================= */
-
-        .links {
-            margin-top: 30px;
-
-            display: flex;
-            justify-content: space-between;
-            gap: 15px;
-        }
-
-        .links a {
-            color: #ffd21c;
-            text-decoration: none;
-            font-size: 17px;
-            font-weight: 700;
-        }
-
-        .links a:hover {
-            text-decoration: underline;
-        }
-
-        .follow {
-            margin-top: 28px;
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        .social {
-            margin-top: 12px;
-
-            display: flex;
-            justify-content: center;
-            gap: 14px;
-        }
-
-        .social a {
-            width: 46px;
-            height: 46px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 50%;
-            background: #159ddd;
-
-            color: white;
-            text-decoration: none;
-
-            font-weight: bold;
-            font-size: 19px;
-        }
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 800px) {
-
-            .page {
-                align-items: flex-start;
-                padding: 35px 18px 50px;
-            }
-
-            .container {
-                flex-direction: column;
-                gap: 18px;
-                max-width: 560px;
-            }
-
-            .logo-area {
-                width: 100%;
-            }
-
-            .logo {
-                width: 90%;
-                max-width: 500px;
-            }
-
-            .card {
-                width: 100%;
-                padding: 32px 22px;
-            }
-
-            .event {
-                font-size: 23px;
-                padding: 17px 18px;
-                margin-bottom: 38px;
-            }
-
-            .label {
-                font-size: 21px;
-            }
-
-            .username {
-                height: 58px;
-                font-size: 19px;
-            }
-
-            .check {
-                font-size: 21px;
-            }
-
-            .links a {
-                font-size: 15px;
-            }
-        }
-
-        /* =========================
-           IPHONE
-        ========================= */
-
-        @media (max-width: 480px) {
-
-            .page {
-                padding: 25px 14px 40px;
-            }
-
-            .container {
-                gap: 8px;
-            }
-
-            .logo {
-                width: 96%;
-            }
-
-            .card {
-                border-width: 2px;
-                border-radius: 0;
-                padding: 28px 18px;
-            }
-
-            .event {
-                font-size: 21px;
-                border-width: 2px;
-                padding: 16px 15px;
-                margin-bottom: 38px;
-            }
-
-            .label {
-                font-size: 20px;
-            }
-
-            .username {
-                height: 58px;
-                border-width: 2px;
-            }
-
-            .message {
-                font-size: 17px;
-            }
-
-            .check {
-                min-height: 58px;
-                font-size: 20px;
-            }
-
-            .links {
-                margin-top: 27px;
-            }
-
-            .links a {
-                font-size: 14px;
-            }
-
-            .follow {
-                font-size: 17px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Đại tiệc chào mừng 2 triệu thành viên</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #0d8278;
+    color: #ffffff;
+}
+
+/* ===== TRANG ===== */
+.page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+}
+
+/* ===== BỐ CỤC PC ===== */
+.container {
+    width: min(1100px, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+}
+
+/* ===== LOGO ===== */
+.logo-area {
+    width: 52%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ===== FORM ===== */
+.card {
+    width: 430px;
+    max-width: 100%;
+    border: 3px solid #ffc400;
+    border-radius: 20px;
+    padding: 38px 35px;
+    background: #0d8278;
+    text-align: center;
+}
+
+/* Tiêu đề chương trình */
+.event {
+    border: 3px solid #ffc400;
+    border-radius: 60px;
+    padding: 20px 18px;
+    color: #ffc400;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 42px;
+}
+
+/* Label */
+.label {
+    display: block;
+    color: #ffc400;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+/* Input */
+.username {
+    width: 100%;
+    height: 64px;
+    border: 3px solid #ffc400;
+    border-radius: 40px;
+    padding: 0 25px;
+    font-size: 20px;
+    text-align: center;
+    outline: none;
+    background: #ffffff;
+    color: #222222;
+}
+
+.username:focus {
+    border-color: #ffffff;
+}
+
+/* Thông báo */
+.message {
+    display: none;
+    width: 100%;
+    min-height: 70px;
+    margin-top: 22px;
+    background: #ffffff;
+    border-radius: 8px;
+    color: #333333;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 20px;
+}
+
+.message.show {
+    display: flex;
+}
+
+.checkmark {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #2dbb67;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+/* Nút */
+.check {
+    width: 100%;
+    height: 64px;
+    margin-top: 22px;
+    border: 3px solid #ffffff;
+    border-radius: 40px;
+    background: #27b5c5;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,.25);
+}
+
+.check:hover {
+    background: #20a7b6;
+}
+
+.check:active {
+    transform: scale(.98);
+}
+
+/* Links */
+.links {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.links a {
+    color: #ffc400;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* Theo dõi */
+.follow {
+    margin-top: 28px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 12px;
+}
+
+.social a {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #159ddd;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+    .page {
+        padding: 20px 15px 40px;
+        align-items: flex-start;
+    }
+
+    .container {
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo-area {
+        width: 100%;
+    }
+
+    .logo {
+        width: 90%;
+        max-width: 500px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 500px;
+        padding: 28px 20px;
+        border-radius: 0;
+        border-width: 2px;
+    }
+
+    .event {
+        font-size: 21px;
+        padding: 17px 12px;
+        margin-bottom: 35px;
+    }
+
+    .label {
+        font-size: 20px;
+    }
+
+    .username {
+        height: 60px;
+        font-size: 18px;
+    }
+
+    .check {
+        height: 60px;
+        font-size: 21px;
+    }
+
+    .message {
+        font-size: 18px;
+    }
+
+    .links a {
+        font-size: 15px;
+    }
+}
+
+/* ===== IPHONE ===== */
+@media (max-width: 430px) {
+
+    .page {
+        padding: 10px 10px 30px;
+    }
+
+    .container {
+        gap: 5px;
+    }
+
+    .logo {
+        width: 95%;
+    }
+
+    .card {
+        padding: 25px 15px;
+    }
+
+    .event {
+        font-size: 19px;
+    }
+
+    .label {
+        font-size: 19px;
+    }
+
+    .links {
+        gap: 8px;
+    }
+
+    .links a {
+        font-size: 14px;
+    }
+}
+</style>
 </head>
 
 <body>
@@ -386,41 +313,28 @@
 
     <div class="container">
 
-        <!-- =========================
-             LOGO
-        ========================== -->
-
+        <!-- LOGO -->
         <div class="logo-area">
 
             <img
                 id="logo"
                 class="logo"
-                src="./4387413a-ea82-4d2e-8f1b-b04ddb2ec70b1.png"
+                src="4387413a-ea82-4d2e-8f1b-b04ddb2ec70b1.png"
                 alt="Đại tiệc chào mừng 2 triệu thành viên"
-                onerror="showLogoFallback()"
+                onerror="showLogoError()"
             >
-
-            <div id="logoFallback" class="logo-fallback">
-                ĐẠI TIỆC CHÀO MỪNG<br>
-                2 TRIỆU THÀNH VIÊN
-            </div>
 
         </div>
 
 
-        <!-- =========================
-             FORM
-        ========================== -->
-
+        <!-- FORM -->
         <div class="card">
 
             <div class="event">
                 ĐẠI TIỆC THÁNG 8 KM 20% GIÁ TRỊ!
             </div>
 
-            <label
-                class="label"
-                for="username">
+            <label class="label" for="username">
                 Tên tài khoản:
             </label>
 
@@ -430,19 +344,22 @@
                 type="text"
                 placeholder="Nhập tên người dùng"
                 autocomplete="off"
-                autocapitalize="none"
                 spellcheck="false"
             >
 
             <div id="message" class="message">
+
                 <span class="checkmark">✓</span>
+
                 <span>Đã xác thực</span>
+
             </div>
 
             <button
                 id="checkButton"
                 class="check"
-                type="button">
+                type="button"
+            >
                 KIỂM TRA NGAY
             </button>
 
@@ -452,29 +369,27 @@
                     Thông tin chương trình &gt;
                 </a>
 
-                <a href="./thanhtoan.html">
+                <a href="thanhtoan.html">
                     Trang phát code &gt;
                 </a>
 
             </div>
 
             <div class="follow">
+
                 Theo dõi thêm:
-            </div>
 
-            <div class="social">
+                <div class="social">
 
-                <a
-                    href="#"
-                    aria-label="Telegram">
-                    ➤
-                </a>
+                    <a href="#" aria-label="Telegram">
+                        ➤
+                    </a>
 
-                <a
-                    href="#"
-                    aria-label="Facebook">
-                    f
-                </a>
+                    <a href="#" aria-label="Facebook">
+                        f
+                    </a>
+
+                </div>
 
             </div>
 
@@ -487,104 +402,114 @@
 
 <script>
 
-    /* =========================
-       LOGO FALLBACK
-    ========================== */
+/*
+=================================================
+LƯU TÊN TÀI KHOẢN
+=================================================
+*/
 
-    function showLogoFallback() {
+const usernameInput = document.getElementById("username");
+const message = document.getElementById("message");
+const checkButton = document.getElementById("checkButton");
 
-        const logo = document.getElementById("logo");
-        const fallback = document.getElementById("logoFallback");
 
-        if (logo) {
-            logo.style.display = "none";
-        }
+/*
+=================================================
+KHI BẤM KIỂM TRA NGAY
+=================================================
+*/
 
-        if (fallback) {
-            fallback.style.display = "block";
-        }
+checkButton.addEventListener("click", function () {
+
+    const username = usernameInput.value.trim();
+
+    if (username === "") {
+
+        alert("Vui lòng nhập tên tài khoản.");
+
+        usernameInput.focus();
+
+        return;
     }
 
 
-    /* =========================
-       KIỂM TRA TÀI KHOẢN
-    ========================== */
+    /*
+    Lưu chính xác tên người dùng
+    vào localStorage.
+    */
 
-    document.addEventListener("DOMContentLoaded", function () {
-
-        const usernameInput =
-            document.getElementById("username");
-
-        const checkButton =
-            document.getElementById("checkButton");
-
-        const message =
-            document.getElementById("message");
+    localStorage.setItem(
+        "gameAccount",
+        username
+    );
 
 
-        /* Nếu trước đó đã nhập tên,
-           tự điền lại tên */
+    /*
+    Hiện Đã xác thực
+    */
 
-        const savedAccount =
-            localStorage.getItem("gameAccount");
-
-        if (savedAccount) {
-            usernameInput.value = savedAccount;
-        }
+    message.classList.add("show");
 
 
-        checkButton.addEventListener("click", function () {
+    /*
+    Chuyển sang thanhtoan.html
+    sau một khoảng ngắn.
+    */
 
-            const username =
-                usernameInput.value.trim();
+    setTimeout(function () {
 
+        window.location.href = "thanhtoan.html";
 
-            /* Không cho bỏ trống */
+    }, 500);
 
-            if (username === "") {
-
-                alert("Vui lòng nhập tên người dùng!");
-
-                usernameInput.focus();
-
-                return;
-            }
+});
 
 
-            /* Lưu tên tài khoản */
+/*
+=================================================
+CHO PHÉP NHẤN ENTER
+=================================================
+*/
 
-            localStorage.setItem(
-                "gameAccount",
-                username
-            );
+usernameInput.addEventListener("keydown", function (event) {
+
+    if (event.key === "Enter") {
+
+        checkButton.click();
+
+    }
+
+});
 
 
-            /* Hiện Đã xác thực */
+/*
+=================================================
+NẾU LOGO KHÔNG TẢI ĐƯỢC
+=================================================
+*/
 
-            message.style.display = "flex";
+function showLogoError() {
 
+    const logo = document.getElementById("logo");
 
-            /* Khóa nút trong lúc chuyển trang */
+    logo.style.display = "none";
 
-            checkButton.disabled = true;
+    const logoArea = document.querySelector(".logo-area");
 
+    logoArea.innerHTML = `
+        <div style="
+            color:#ffc400;
+            font-size:28px;
+            font-weight:900;
+            text-align:center;
+            line-height:1.3;
+        ">
+            ĐẠI TIỆC CHÀO MỪNG<br>
+            2 TRIỆU THÀNH VIÊN
+        </div>
+    `;
 
-            /*
-             * Chuyển sang thanhtoan.html
-             * Đường dẫn tương đối,
-             * chạy được trên GitHub Pages.
-             */
-
-            setTimeout(function () {
-
-                window.location.href =
-                    "./thanhtoan.html";
-
-            }, 500);
-
-        });
-
-    });
+}
 
 </script>
 
