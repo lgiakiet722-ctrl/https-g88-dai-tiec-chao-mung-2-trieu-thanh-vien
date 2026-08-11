@@ -2,220 +2,483 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <title>Thanh toán</title>
+    <title>Đại tiệc chào mừng 2 triệu thành viên</title>
 
     <style>
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
         }
 
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f1f3f5;
-            color: #222;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #087d73;
+            color: #ffffff;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
         }
 
         .container {
-            width: 92%;
-            max-width: 600px;
-            margin: 30px auto;
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 55px;
+        }
+
+        /* =========================
+           LOGO
+        ========================= */
+
+        .logo-area {
+            width: 55%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .logo {
-            text-align: center;
-            font-size: 36px;
-            font-weight: 800;
-            color: #16b5b5;
-            margin-bottom: 25px;
+            display: block;
+            width: 100%;
+            max-width: 680px;
+            height: auto;
+            object-fit: contain;
         }
+
+        .logo-fallback {
+            display: none;
+            text-align: center;
+            color: #ffd21c;
+            font-size: 38px;
+            line-height: 1.15;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        /* =========================
+           CARD
+        ========================= */
 
         .card {
-            background: white;
-            border-radius: 16px;
-            padding: 25px;
-            box-shadow: 0 5px 20px rgba(0,0,0,.08);
-        }
-
-        .title {
+            width: 430px;
+            max-width: 100%;
+            padding: 38px 36px;
+            border: 3px solid #ffc400;
+            border-radius: 20px;
+            background: #087d73;
             text-align: center;
-            font-size: 26px;
-            font-weight: bold;
-            margin-bottom: 25px;
         }
 
-        label {
+        .event {
+            border: 3px solid #ffc400;
+            border-radius: 60px;
+            padding: 18px 25px;
+            margin-bottom: 40px;
+
+            color: #ffd21c;
+            font-size: 27px;
+            line-height: 1.15;
+            font-weight: 900;
+        }
+
+        .label {
             display: block;
-            font-weight: bold;
-            margin-bottom: 8px;
+            margin-bottom: 15px;
+
+            color: #ffd21c;
+            font-size: 23px;
+            font-weight: 700;
         }
 
-        input {
+        .username {
             width: 100%;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 16px;
+            height: 62px;
+            border: 3px solid #ffc400;
+            border-radius: 40px;
+
+            background: #ffffff;
+            color: #222222;
+
+            text-align: center;
+            font-size: 21px;
             outline: none;
         }
 
-        input:focus {
-            border-color: #16b5b5;
+        .username::placeholder {
+            color: #999999;
         }
 
-        .amount-title {
-            margin-top: 25px;
-            font-weight: bold;
+        .username:focus {
+            box-shadow: 0 0 0 3px rgba(255, 196, 0, 0.2);
         }
 
-        .amount-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-top: 12px;
-        }
-
-        .amount-btn {
-            padding: 14px;
-            border: 2px solid #16b5b5;
-            background: white;
-            color: #16a5a5;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .amount-btn.active {
-            background: #16b5b5;
-            color: white;
-        }
-
-        .check-btn {
-            width: 100%;
-            margin-top: 25px;
-            padding: 16px;
-            border: 0;
-            border-radius: 9px;
-            background: #12b76a;
-            color: white;
-            font-size: 17px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .check-btn:hover {
-            background: #0d9e5b;
-        }
+        /* =========================
+           MESSAGE
+        ========================= */
 
         .message {
+            width: 100%;
+            min-height: 65px;
+            margin-top: 22px;
+
             display: none;
-            margin-top: 15px;
-            padding: 12px;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+
             border-radius: 8px;
-            background: #ffe8e8;
-            color: #d60000;
-            text-align: center;
+            background: #ffffff;
+            color: #333333;
+
+            font-size: 20px;
+        }
+
+        .checkmark {
+            width: 38px;
+            height: 38px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+            background: #2fbd68;
+            color: white;
+
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .check {
+            width: 100%;
+            min-height: 62px;
+            margin-top: 28px;
+
+            border: 3px solid #ffffff;
+            border-radius: 40px;
+
+            background: #22aec0;
+            color: #ffffff;
+
+            font-size: 23px;
+            font-weight: 900;
+
+            cursor: pointer;
+
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+
+            transition:
+                transform 0.15s ease,
+                background 0.15s ease;
+        }
+
+        .check:hover {
+            background: #159aaa;
+        }
+
+        .check:active {
+            transform: scale(0.98);
+        }
+
+        .check:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        /* =========================
+           LINKS
+        ========================= */
+
+        .links {
+            margin-top: 30px;
+
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .links a {
+            color: #ffd21c;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        .follow {
+            margin-top: 28px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .social {
+            margin-top: 12px;
+
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .social a {
+            width: 46px;
+            height: 46px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+            background: #159ddd;
+
+            color: white;
+            text-decoration: none;
+
+            font-weight: bold;
+            font-size: 19px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .page {
+                align-items: flex-start;
+                padding: 35px 18px 50px;
+            }
+
+            .container {
+                flex-direction: column;
+                gap: 18px;
+                max-width: 560px;
+            }
+
+            .logo-area {
+                width: 100%;
+            }
+
+            .logo {
+                width: 90%;
+                max-width: 500px;
+            }
+
+            .card {
+                width: 100%;
+                padding: 32px 22px;
+            }
+
+            .event {
+                font-size: 23px;
+                padding: 17px 18px;
+                margin-bottom: 38px;
+            }
+
+            .label {
+                font-size: 21px;
+            }
+
+            .username {
+                height: 58px;
+                font-size: 19px;
+            }
+
+            .check {
+                font-size: 21px;
+            }
+
+            .links a {
+                font-size: 15px;
+            }
+        }
+
+        /* =========================
+           IPHONE
+        ========================= */
+
+        @media (max-width: 480px) {
+
+            .page {
+                padding: 25px 14px 40px;
+            }
+
+            .container {
+                gap: 8px;
+            }
+
+            .logo {
+                width: 96%;
+            }
+
+            .card {
+                border-width: 2px;
+                border-radius: 0;
+                padding: 28px 18px;
+            }
+
+            .event {
+                font-size: 21px;
+                border-width: 2px;
+                padding: 16px 15px;
+                margin-bottom: 38px;
+            }
+
+            .label {
+                font-size: 20px;
+            }
+
+            .username {
+                height: 58px;
+                border-width: 2px;
+            }
+
+            .message {
+                font-size: 17px;
+            }
+
+            .check {
+                min-height: 58px;
+                font-size: 20px;
+            }
+
+            .links {
+                margin-top: 27px;
+            }
+
+            .links a {
+                font-size: 14px;
+            }
+
+            .follow {
+                font-size: 17px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="page">
 
-    <div class="logo">
-        THANH TOÁN
-    </div>
+    <div class="container">
 
-    <div class="card">
+        <!-- =========================
+             LOGO
+        ========================== -->
 
-        <div class="title">
-            Thông tin thanh toán
-        </div>
+        <div class="logo-area">
 
-        <label for="username">
-            Tên người dùng
-        </label>
-
-        <input
-            type="text"
-            id="username"
-            placeholder="Nhập tên người dùng"
-            autocomplete="off"
-            spellcheck="false"
-        >
-
-        <div class="amount-title">
-            Chọn mệnh giá
-        </div>
-
-        <div class="amount-list">
-
-            <button
-                type="button"
-                class="amount-btn"
-                data-amount="50000"
+            <img
+                id="logo"
+                class="logo"
+                src="./4387413a-ea82-4d2e-8f1b-b04ddb2ec70b1.png"
+                alt="Đại tiệc chào mừng 2 triệu thành viên"
+                onerror="showLogoFallback()"
             >
-                50.000đ
-            </button>
 
-            <button
-                type="button"
-                class="amount-btn"
-                data-amount="100000"
-            >
-                100.000đ
-            </button>
-
-            <button
-                type="button"
-                class="amount-btn"
-                data-amount="200000"
-            >
-                200.000đ
-            </button>
-
-            <button
-                type="button"
-                class="amount-btn active"
-                data-amount="300000"
-            >
-                300.000đ
-            </button>
-
-            <button
-                type="button"
-                class="amount-btn"
-                data-amount="500000"
-            >
-                500.000đ
-            </button>
-
-            <button
-                type="button"
-                class="amount-btn"
-                data-amount="1000000"
-            >
-                1.000.000đ
-            </button>
+            <div id="logoFallback" class="logo-fallback">
+                ĐẠI TIỆC CHÀO MỪNG<br>
+                2 TRIỆU THÀNH VIÊN
+            </div>
 
         </div>
 
-        <button
-            type="button"
-            id="checkButton"
-            class="check-btn"
-        >
-            KIỂM TRA NGAY
-        </button>
 
-        <div
-            id="message"
-            class="message"
-        ></div>
+        <!-- =========================
+             FORM
+        ========================== -->
+
+        <div class="card">
+
+            <div class="event">
+                ĐẠI TIỆC THÁNG 8 KM 20% GIÁ TRỊ!
+            </div>
+
+            <label
+                class="label"
+                for="username">
+                Tên tài khoản:
+            </label>
+
+            <input
+                id="username"
+                class="username"
+                type="text"
+                placeholder="Nhập tên người dùng"
+                autocomplete="off"
+                autocapitalize="none"
+                spellcheck="false"
+            >
+
+            <div id="message" class="message">
+                <span class="checkmark">✓</span>
+                <span>Đã xác thực</span>
+            </div>
+
+            <button
+                id="checkButton"
+                class="check"
+                type="button">
+                KIỂM TRA NGAY
+            </button>
+
+            <div class="links">
+
+                <a href="#">
+                    Thông tin chương trình &gt;
+                </a>
+
+                <a href="./thanhtoan.html">
+                    Trang phát code &gt;
+                </a>
+
+            </div>
+
+            <div class="follow">
+                Theo dõi thêm:
+            </div>
+
+            <div class="social">
+
+                <a
+                    href="#"
+                    aria-label="Telegram">
+                    ➤
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="Facebook">
+                    f
+                </a>
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -224,73 +487,102 @@
 
 <script>
 
-let selectedAmount = 300000;
+    /* =========================
+       LOGO FALLBACK
+    ========================== */
+
+    function showLogoFallback() {
+
+        const logo = document.getElementById("logo");
+        const fallback = document.getElementById("logoFallback");
+
+        if (logo) {
+            logo.style.display = "none";
+        }
+
+        if (fallback) {
+            fallback.style.display = "block";
+        }
+    }
 
 
-// Chọn mệnh giá
-document.querySelectorAll(".amount-btn").forEach(function(button) {
+    /* =========================
+       KIỂM TRA TÀI KHOẢN
+    ========================== */
 
-    button.addEventListener("click", function() {
+    document.addEventListener("DOMContentLoaded", function () {
 
-        document
-            .querySelectorAll(".amount-btn")
-            .forEach(function(btn) {
-                btn.classList.remove("active");
-            });
+        const usernameInput =
+            document.getElementById("username");
 
-        this.classList.add("active");
-
-        selectedAmount = Number(
-            this.dataset.amount
-        );
-
-    });
-
-});
-
-
-// Bấm KIỂM TRA NGAY
-document
-    .getElementById("checkButton")
-    .addEventListener("click", function() {
-
-        const username =
-            document
-            .getElementById("username")
-            .value
-            .trim();
+        const checkButton =
+            document.getElementById("checkButton");
 
         const message =
             document.getElementById("message");
 
 
-        if (username === "") {
+        /* Nếu trước đó đã nhập tên,
+           tự điền lại tên */
 
-            message.style.display = "block";
-            message.textContent =
-                "Vui lòng nhập tên người dùng.";
+        const savedAccount =
+            localStorage.getItem("gameAccount");
 
-            return;
+        if (savedAccount) {
+            usernameInput.value = savedAccount;
         }
 
 
-        // Lưu tên
-        localStorage.setItem(
-            "paymentUsername",
-            username
-        );
+        checkButton.addEventListener("click", function () {
+
+            const username =
+                usernameInput.value.trim();
 
 
-        // Lưu mệnh giá
-        localStorage.setItem(
-            "paymentAmount",
-            selectedAmount
-        );
+            /* Không cho bỏ trống */
+
+            if (username === "") {
+
+                alert("Vui lòng nhập tên người dùng!");
+
+                usernameInput.focus();
+
+                return;
+            }
 
 
-        // Chuyển sang trang thanh toán
-        window.location.href =
-            "thanhtoan.html";
+            /* Lưu tên tài khoản */
+
+            localStorage.setItem(
+                "gameAccount",
+                username
+            );
+
+
+            /* Hiện Đã xác thực */
+
+            message.style.display = "flex";
+
+
+            /* Khóa nút trong lúc chuyển trang */
+
+            checkButton.disabled = true;
+
+
+            /*
+             * Chuyển sang thanhtoan.html
+             * Đường dẫn tương đối,
+             * chạy được trên GitHub Pages.
+             */
+
+            setTimeout(function () {
+
+                window.location.href =
+                    "./thanhtoan.html";
+
+            }, 500);
+
+        });
 
     });
 
