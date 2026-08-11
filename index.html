@@ -2,217 +2,31 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Đại tiệc chào mừng</title>
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Đại Tiệc Chào Mừng 2 Triệu Thành Viên</title>
 <style>
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #07847d;
-    color: white;
-}
-
-.container {
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
-    padding: 25px 20px 60px;
-    text-align: center;
-}
-
-.title {
-    font-size: 42px;
-    line-height: 1.15;
-    font-weight: 900;
-    color: #ffd400;
-    margin-bottom: 25px;
-}
-
-.box {
-    border: 3px solid #ffd400;
-    padding: 35px 25px;
-}
-
-.promo {
-    border: 3px solid #ffd400;
-    border-radius: 60px;
-    padding: 25px 15px;
-    font-size: 27px;
-    font-weight: bold;
-    color: #ffd400;
-    margin-bottom: 50px;
-}
-
-.label {
-    font-size: 25px;
-    font-weight: bold;
-    color: #ffd400;
-    margin-bottom: 20px;
-}
-
-input {
-    width: 100%;
-    height: 80px;
-    border-radius: 50px;
-    border: 4px solid #ffd400;
-    background: white;
-    text-align: center;
-    font-size: 25px;
-    font-weight: bold;
-    color: #222;
-    outline: none;
-    padding: 10px 20px;
-}
-
-button {
-    width: 100%;
-    height: 80px;
-    margin-top: 35px;
-    border-radius: 50px;
-    border: 4px solid white;
-    background: #2aaec3;
-    color: white;
-    font-size: 27px;
-    font-weight: 900;
-    cursor: pointer;
-    box-shadow: 0 8px 15px rgba(0,0,0,.25);
-}
-
-.links {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 35px;
-    color: #ffd400;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.follow {
-    margin-top: 45px;
-    font-size: 23px;
-    font-weight: bold;
-}
-
-.social {
-    margin-top: 20px;
-}
-
-.social span {
-    display: inline-flex;
-    width: 65px;
-    height: 65px;
-    margin: 0 8px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: #159de0;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-#error {
-    display: none;
-    color: #ffdede;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-@media(max-width:500px) {
-    .title {
-        font-size: 38px;
-    }
-
-    .promo {
-        font-size: 23px;
-    }
-
-    .label {
-        font-size: 23px;
-    }
-}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial;background:radial-gradient(circle,#117d73,#08635c 50%,#033e3a);min-height:100vh;color:white}.page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:25px}.wrap{width:min(1100px,100%);display:grid;grid-template-columns:1fr 430px;gap:70px;align-items:center}.left{text-align:center}.left h1{color:#ffd43b;font-size:58px;line-height:1.05;text-shadow:0 5px 8px #0006}.left p{margin-top:20px;font-weight:bold}.card{border:2px solid #ffc400;border-radius:20px;padding:25px;text-align:center;background:#05696255}.logo{width:230px;max-width:100%;margin:0 auto 18px;display:block}.event{border:2px solid #ffc400;border-radius:30px;padding:12px;color:#ffd43b;font-weight:900;margin-bottom:22px}.label{color:#ffd43b;font-weight:bold;margin-bottom:8px}input{width:100%;height:50px;border:2px solid #ffc400;border-radius:28px;text-align:center;font-size:16px;outline:0}.error{height:24px;margin-top:8px;color:#ffd43b;font-weight:bold;font-size:14px}.btn{border:2px solid white;border-radius:30px;padding:13px 28px;background:#16c4c8;color:white;font-size:17px;font-weight:900;cursor:pointer;box-shadow:0 6px 12px #0005}.btn:hover{filter:brightness(1.08);transform:translateY(-2px)}@media(max-width:800px){.wrap{grid-template-columns:1fr;gap:30px}.left h1{font-size:40px}}
 </style>
 </head>
-
 <body>
-
-<div class="container">
-
-    <div class="title">
-        ĐẠI TIỆC CHÀO<br>
-        MỪNG<br>
-        2 TRIỆU THÀNH VIÊN
-    </div>
-
-    <div class="box">
-
-        <div class="promo">
-            ĐẠI TIỆC THÁNG 8 KM 20% GIÁ TRỊ!
-        </div>
-
-        <div class="label">
-            Tên tài khoản:
-        </div>
-
-        <input
-            id="username"
-            type="text"
-            placeholder="Nhập tên tài khoản"
-            autocomplete="off"
-        >
-
-        <div id="error">
-            Vui lòng nhập tên tài khoản.
-        </div>
-
-        <button onclick="goPayment()">
-            KIỂM TRA NGAY
-        </button>
-
-        <div class="links">
-            <span>Thông tin chương trình &gt;</span>
-            <span>Trang phát code &gt;</span>
-        </div>
-
-        <div class="follow">
-            Theo dõi thêm:
-        </div>
-
-        <div class="social">
-            <span>➤</span>
-            <span>f</span>
-        </div>
-
-    </div>
-
-</div>
-
+<div class="page"><div class="wrap">
+<div class="left"><h1>ĐẠI TIỆC<br>CHÀO MỪNG</h1><p>Chương trình đặc biệt dành cho thành viên</p></div>
+<div class="card">
+<img src="logo.png" class="logo" alt="Logo" onerror="this.style.display='none'">
+<div class="event">ĐẠI TIỆC THÁNG 8 KM 20% GIÁ TRỊ!</div>
+<div class="label">Tên tài khoản:</div>
+<input id="username" placeholder="Nhập tên người dùng" autocomplete="off">
+<div class="error" id="error"></div>
+<button class="btn" onclick="kiemTra()">KIỂM TRA NGAY</button>
+</div></div></div>
 <script>
-function goPayment() {
-
-    const username =
-        document.getElementById("username").value.trim();
-
-    if (username === "") {
-        document.getElementById("error").style.display = "block";
-        return;
-    }
-
-    /*
-       KHÔNG lưu tên.
-       Chỉ truyền tên sang trang thanh toán.
-    */
-
-    window.location.href =
-        "thanhtoan.html?user=" +
-        encodeURIComponent(username);
+function kiemTra(){
+ const u=document.getElementById('username').value.trim();
+ if(!u){document.getElementById('error').textContent='Vui lòng nhập tên người dùng!';return}
+ localStorage.setItem('username',u);
+ location.href='thanhtoan.html';
 }
+document.getElementById('username').addEventListener('keydown',e=>{if(e.key==='Enter')kiemTra()});
 </script>
-
 </body>
 </html>
