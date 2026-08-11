@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thanh toán</title>
+<style>
+*{box-sizing:border-box}body{font-family:Arial;background:#f3f5f5;color:#222;margin:0}.header,.card{width:min(1080px,94%);margin:auto}.header{display:flex;justify-content:space-between;align-items:center;padding:20px 0 10px}.header h1{color:#19b9aa;font-size:42px}.user{color:#f33;font-weight:bold}.card{background:white;border-radius:14px;padding:20px;box-shadow:0 3px 15px #0003}.notice{background:linear-gradient(90deg,#ff4545,#ff7043);color:white;padding:13px 18px;border-radius:8px;font-weight:bold;margin-bottom:20px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.box{border:1px dashed #ccc;border-radius:10px;padding:20px}.box h2{font-size:17px}.sub{color:#777;margin:6px 0 20px}.qr{width:min(300px,100%);display:block;margin:auto}.amount{text-align:center;color:#f33;font-size:21px;font-weight:bold;margin-top:10px}.bonus{text-align:center;color:#00a65a;font-weight:bold;margin-top:6px}.info{width:100%;border-collapse:collapse}.info td{padding:14px 8px;border-bottom:1px solid #eee}.value{font-weight:bold}.red{color:#f33}.copy{float:right;background:#14b86b;color:white;border:0;padding:7px 14px;border-radius:6px;cursor:pointer}.note{margin-top:18px;border:1px dashed #ccc;border-radius:10px;padding:18px}.note h3{color:#f33}.note p{line-height:1.5}.warning{margin-top:15px;padding:12px;background:#fff8df;color:#765900;border-radius:8px;font-size:14px}.back{display:block;width:max-content;margin:20px auto 0;background:#13b7ad;color:white;text-decoration:none;padding:12px 24px;border-radius:25px;font-weight:bold}@media(max-width:800px){.grid{grid-template-columns:1fr}.header{flex-direction:column;align-items:flex-start}.header h1{font-size:34px}}
+</style>
+</head>
+<body>
+<div class="header"><h1>GG88</h1><div class="user" id="user"></div></div>
+<div class="card">
+<div class="notice">🔥 Khuyến mãi tháng 8: Nạp tiền +20% giá trị nạp ngay hôm nay!</div>
+<div class="grid">
+<div class="box">
+<h2>Cách 1: Chuyển khoản bằng mã QR</h2>
+<div class="sub">Mở ứng dụng ngân hàng và quét QRCode</div>
+<img id="qr" class="qr" alt="QR chuyển khoản">
+<div class="amount" id="amount"></div>
+<div class="bonus" id="bonus"></div>
+<div class="bonus" id="receive"></div>
+</div>
+<div class="box">
+<h2>Cách 2: Chuyển khoản <span class="red">thủ công</span></h2>
+<table class="info">
+<tr><td>Ngân hàng</td><td class="value">SACOMBANK</td></tr>
+<tr><td>Tài khoản Game</td><td class="value" style="color:#f90">E</td></tr>
+<tr><td>Số TK</td><td class="value">070137130244 <button class="copy" onclick="copyText('070137130244')">Copy</button></td></tr>
+<tr><td>Chủ TK</td><td class="value red">LE GIA KIET</td></tr>
+<tr><td>Số tiền</td><td class="value red" id="amount2"></td></tr>
+<tr><td>Nội dung</td><td class="value red" id="content"></td></tr>
+</table>
+<div style="margin-top:15px;text-align:right;font-weight:bold">🎁 Khuyến mãi +20%: <span class="red" id="bonus2"></span><br>Tổng tiền nhận: <span style="color:#00a65a" id="receive2"></span></div>
+</div></div>
+<div class="note"><h3>Lưu ý quan trọng:</h3><p>1. Chuyển khoản cần nhập chính xác số tiền và nội dung hiển thị.</p><p>2. Kiểm tra kỹ thông tin ngân hàng trước khi chuyển khoản.</p><p>3. Không cung cấp OTP hoặc mật khẩu ngân hàng.</p></div>
+<div class="warning">⚠️ File HTML này chỉ hiển thị thông tin và tạo QR. Nó không thể tự xác nhận tiền đã vào tài khoản. Muốn xác nhận giao dịch tự động cần API/webhook ở phía máy chủ.</div>
+<a class="back" href="index.html">← Quay lại</a>
+</div>
+<script>
+/* ĐỔI MỆNH GIÁ Ở ĐÂY DUY NHẤT */
+const AMOUNT=300000;
+const BONUS=Math.round(AMOUNT*0.20);
+const RECEIVE=AMOUNT+BONUS;
+const user=localStorage.getItem('username')||'khachhang';
+const content=(user.replace(/[^a-zA-Z0-9]/g,'').slice(0,20)||'THANHVIEN');
+const money=n=>new Intl.NumberFormat('vi-VN').format(n)+' VND';
+document.getElementById('user').textContent='Tên tài khoản: '+user;
+document.getElementById('amount').textContent=money(AMOUNT);
+document.getElementById('bonus').textContent='+20% KM = '+money(BONUS);
+document.getElementById('receive').textContent='Thực nhận: '+money(RECEIVE);
+document.getElementById('amount2').textContent=money(AMOUNT);
+document.getElementById('bonus2').textContent=money(BONUS);
+document.getElementById('receive2').textContent=money(RECEIVE);
+document.getElementById('content').textContent=content;
+document.getElementById('qr').src='https://img.vietqr.io/image/970403-070137130244-compact2.png?amount='+AMOUNT+'&addInfo='+encodeURIComponent(content)+'&accountName='+encodeURIComponent('LE GIA KIET');
+function copyText(t){navigator.clipboard.writeText(t).then(()=>alert('Đã copy: '+t)).catch(()=>alert('Hãy copy thủ công: '+t))}
+</script>
+</body>
+</html>
