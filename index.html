@@ -1,696 +1,218 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
-<title>Thanh toán</title>
+<title>Đại tiệc chào mừng</title>
 
 <style>
-
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    background: #f1f3f5;
     font-family: Arial, sans-serif;
-    color: #222;
+    background: #07847d;
+    color: white;
 }
 
 .container {
-    max-width: 1100px;
+    width: 100%;
+    max-width: 600px;
     margin: auto;
-    padding: 25px 18px 50px;
+    padding: 25px 20px 60px;
+    text-align: center;
 }
 
-.logo {
-    font-size: 36px;
+.title {
+    font-size: 42px;
+    line-height: 1.15;
     font-weight: 900;
-    color: #16a6a6;
+    color: #ffd400;
+    margin-bottom: 25px;
 }
 
-.account-top {
-    text-align: right;
-    margin-top: -35px;
-    font-size: 18px;
-    font-weight: bold;
-    color: red;
-}
-
-.payment-box {
-    margin-top: 35px;
-    background: white;
-    border-radius: 18px;
-    padding: 18px;
-    box-shadow: 0 4px 20px rgba(0,0,0,.08);
+.box {
+    border: 3px solid #ffd400;
+    padding: 35px 25px;
 }
 
 .promo {
-    background: linear-gradient(
-        90deg,
-        #ff3030,
-        #ff6748
-    );
-
-    color: white;
-    padding: 17px;
-    border-radius: 9px;
-    font-size: 17px;
-    font-weight: bold;
-}
-
-.timer {
-    margin-top: 14px;
-    background: #fff4d4;
-    border: 1px solid #ffbd00;
-    border-radius: 8px;
-    padding: 18px;
-    text-align: center;
-    color: #c00;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-#timer {
+    border: 3px solid #ffd400;
+    border-radius: 60px;
+    padding: 25px 15px;
     font-size: 27px;
-    margin-left: 15px;
+    font-weight: bold;
+    color: #ffd400;
+    margin-bottom: 50px;
 }
 
-.account {
-    margin-top: 15px;
-    background: #f5f5f5;
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 18px;
+.label {
+    font-size: 25px;
+    font-weight: bold;
+    color: #ffd400;
+    margin-bottom: 20px;
 }
 
-.account strong {
-    color: red;
-}
-
-.payment-card {
-    margin-top: 15px;
-    border: 1px dashed #ccc;
-    border-radius: 10px;
-    padding: 15px;
-}
-
-.payment-card h2 {
-    margin-top: 0;
-    font-size: 20px;
-}
-
-.payment-card p {
-    color: #888;
-}
-
-
-/* =========================
-   QR
-========================= */
-
-.qr-box {
-    width: 320px;
-    height: 320px;
-
-    margin: 20px auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+input {
+    width: 100%;
+    height: 80px;
+    border-radius: 50px;
+    border: 4px solid #ffd400;
     background: white;
-}
-
-#qrImage {
-    display: block;
-
-    width: 300px;
-    height: 300px;
-
-    object-fit: contain;
-}
-
-#qrError {
-    display: none;
     text-align: center;
-    color: red;
+    font-size: 25px;
     font-weight: bold;
+    color: #222;
+    outline: none;
+    padding: 10px 20px;
 }
 
-
-/* =========================
-   TIỀN
-========================= */
-
-.amount {
-    text-align: center;
-    color: red;
-    font-size: 24px;
-    font-weight: bold;
+button {
+    width: 100%;
+    height: 80px;
+    margin-top: 35px;
+    border-radius: 50px;
+    border: 4px solid white;
+    background: #2aaec3;
+    color: white;
+    font-size: 27px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0,0,0,.25);
 }
 
-.receive {
-    text-align: center;
-    color: #00a83b;
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 8px;
-}
-
-
-/* =========================
-   CHUYỂN KHOẢN
-========================= */
-
-.manual {
-    margin-top: 15px;
-    border: 1px dashed #ccc;
-    border-radius: 10px;
-    padding: 15px;
-}
-
-.row {
+.links {
     display: flex;
     justify-content: space-between;
+    margin-top: 35px;
+    color: #ffd400;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.follow {
+    margin-top: 45px;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.social {
+    margin-top: 20px;
+}
+
+.social span {
+    display: inline-flex;
+    width: 65px;
+    height: 65px;
+    margin: 0 8px;
     align-items: center;
-    gap: 15px;
-
-    border-bottom: 1px solid #eee;
-    padding: 13px 5px;
-}
-
-.row:last-child {
-    border-bottom: none;
-}
-
-.value {
-    color: red;
+    justify-content: center;
+    border-radius: 50%;
+    background: #159de0;
+    font-size: 28px;
     font-weight: bold;
 }
 
-.copy {
-    border: 0;
-    background: #16b86b;
-    color: white;
-    border-radius: 6px;
-    padding: 9px 15px;
+#error {
+    display: none;
+    color: #ffdede;
+    margin-top: 10px;
     font-weight: bold;
 }
 
-
-@media(max-width:600px) {
-
-    .container {
-        padding: 15px 10px;
+@media(max-width:500px) {
+    .title {
+        font-size: 38px;
     }
 
-    .logo {
-        text-align: center;
+    .promo {
+        font-size: 23px;
     }
 
-    .account-top {
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .payment-box {
-        padding: 10px;
-    }
-
-    .qr-box {
-        width: 300px;
-        height: 300px;
-    }
-
-    #qrImage {
-        width: 280px;
-        height: 280px;
-    }
-
-    .row {
-        flex-wrap: wrap;
+    .label {
+        font-size: 23px;
     }
 }
-
 </style>
-
 </head>
-
 
 <body>
 
 <div class="container">
 
-    <div class="logo">
-        GG88
+    <div class="title">
+        ĐẠI TIỆC CHÀO<br>
+        MỪNG<br>
+        2 TRIỆU THÀNH VIÊN
     </div>
 
-    <div class="account-top">
-        Tên tài khoản:
-        <span id="topAccount"></span>
-    </div>
-
-
-    <div class="payment-box">
+    <div class="box">
 
         <div class="promo">
-            🎁 Khuyến mãi tháng 8:
-            Nạp tiền +20% giá trị nạp ngay hôm nay!
+            ĐẠI TIỆC THÁNG 8 KM 20% GIÁ TRỊ!
         </div>
 
-
-        <div class="timer">
-
-            ⏳ Thời gian thanh toán còn lại:
-
-            <span id="timer">
-                10:00
-            </span>
-
+        <div class="label">
+            Tên tài khoản:
         </div>
 
+        <input
+            id="username"
+            type="text"
+            placeholder="Nhập tên tài khoản"
+            autocomplete="off"
+        >
 
-        <div class="account">
-
-            👤 Tài khoản:
-
-            <strong id="accountName"></strong>
-
+        <div id="error">
+            Vui lòng nhập tên tài khoản.
         </div>
 
+        <button onclick="goPayment()">
+            KIỂM TRA NGAY
+        </button>
 
-        <!-- =========================
-             QR THANH TOÁN
-        ========================== -->
+        <div class="links">
+            <span>Thông tin chương trình &gt;</span>
+            <span>Trang phát code &gt;</span>
+        </div>
 
-        <section class="payment-card">
+        <div class="follow">
+            Theo dõi thêm:
+        </div>
 
-            <h2>
-                Cách 1: Chuyển khoản bằng mã QR
-            </h2>
-
-            <p>
-                Mở ứng dụng ngân hàng và quét QRCode
-            </p>
-
-
-            <div class="qr-box">
-
-                <img
-                    id="qrImage"
-                    alt="Mã QR thanh toán"
-                >
-
-            </div>
-
-            <div id="qrError">
-                Không tải được mã QR.
-            </div>
-
-
-            <div class="amount">
-
-                <span id="amountText"></span>
-                VND
-
-            </div>
-
-
-            <div class="receive">
-
-                +20% KM =
-                <span id="bonusText"></span>
-                VND
-
-            </div>
-
-
-            <div class="receive">
-
-                Thực nhận:
-                <span id="receiveText"></span>
-                VND
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             CHUYỂN KHOẢN THỦ CÔNG
-        ========================== -->
-
-        <section class="payment-card">
-
-            <h2>
-                Cách 2:
-                <span style="color:red">
-                    Chuyển khoản thủ công
-                </span>
-            </h2>
-
-
-            <div class="manual">
-
-                <div class="row">
-
-                    <span>
-                        Ngân hàng
-                    </span>
-
-                    <span class="value">
-                        Sacombank
-                    </span>
-
-                </div>
-
-
-                <div class="row">
-
-                    <span>
-                        Số tài khoản
-                    </span>
-
-                    <span class="value">
-                        070137130244
-                    </span>
-
-                </div>
-
-
-                <div class="row">
-
-                    <span>
-                        Chủ TK
-                    </span>
-
-                    <span class="value">
-                        LE GIA KIET
-                    </span>
-
-                </div>
-
-
-                <div class="row">
-
-                    <span>
-                        Số tiền
-                    </span>
-
-                    <span
-                        class="value"
-                        id="manualAmount">
-                    </span>
-
-                </div>
-
-
-                <div class="row">
-
-                    <span>
-                        Nội dung
-                    </span>
-
-                    <span
-                        class="value"
-                        id="transferContent">
-                    </span>
-
-                    <button
-                        class="copy"
-                        onclick="copyContent()">
-                        Copy
-                    </button>
-
-                </div>
-
-            </div>
-
-        </section>
+        <div class="social">
+            <span>➤</span>
+            <span>f</span>
+        </div>
 
     </div>
 
 </div>
 
-
 <script>
+function goPayment() {
 
-/* =================================================
-   CẤU HÌNH
-================================================= */
+    const username =
+        document.getElementById("username").value.trim();
 
-
-/*
-   ĐỔI MỆNH GIÁ Ở ĐÂY
-
-   300000 = 300.000đ
-   500000 = 500.000đ
-   1000000 = 1.000.000đ
-*/
-
-const AMOUNT = 300000;
-
-
-/*
-   THÔNG TIN NHẬN TIỀN
-*/
-
-const BANK_ID = "STB";
-
-const ACCOUNT_NUMBER = "070137130244";
-
-const ACCOUNT_OWNER = "LE GIA KIET";
-
-
-/* =================================================
-   LẤY TÊN TÀI KHOẢN TỪ INDEX
-================================================= */
-
-const params =
-    new URLSearchParams(
-        window.location.search
-    );
-
-const username =
-    params.get("user");
-
-
-/*
-   Nếu không có tên thì báo lỗi.
-*/
-
-if (!username) {
-
-    document.getElementById("accountName")
-        .textContent = "Không xác định";
-
-    document.getElementById("topAccount")
-        .textContent = "Không xác định";
-
-} else {
+    if (username === "") {
+        document.getElementById("error").style.display = "block";
+        return;
+    }
 
     /*
-       Dùng textContent để hiển thị
-       chính xác tên người nhập.
+       KHÔNG lưu tên.
+       Chỉ truyền tên sang trang thanh toán.
     */
 
-    document.getElementById("accountName")
-        .textContent = username;
-
-    document.getElementById("topAccount")
-        .textContent = username;
-
+    window.location.href =
+        "thanhtoan.html?user=" +
+        encodeURIComponent(username);
 }
-
-
-/* =================================================
-   TÍNH TIỀN
-================================================= */
-
-const bonus =
-    Math.round(AMOUNT * 0.20);
-
-const receive =
-    AMOUNT + bonus;
-
-
-function money(number) {
-
-    return number.toLocaleString("vi-VN");
-
-}
-
-
-document.getElementById("amountText")
-    .textContent = money(AMOUNT);
-
-document.getElementById("bonusText")
-    .textContent = money(bonus);
-
-document.getElementById("receiveText")
-    .textContent = money(receive);
-
-document.getElementById("manualAmount")
-    .textContent =
-        money(AMOUNT) + " VND";
-
-
-/* =================================================
-   NỘI DUNG CHUYỂN KHOẢN
-================================================= */
-
-const content =
-    username
-        ? "NAP " + username
-        : "NAP TIEN";
-
-
-document.getElementById("transferContent")
-    .textContent = content;
-
-
-/* =================================================
-   TẠO LINK QR VIETQR
-================================================= */
-
-
-/*
-   VietQR Quick Link có dạng:
-
-   https://img.vietqr.io/image/
-   BANK-SOTAIKHOAN-TEMPLATE.png
-   ?amount=...
-   &addInfo=...
-   &accountName=...
-
-   VietQR hiện hỗ trợ Quick Link để
-   nhúng trực tiếp bằng thẻ <img>.
-*/
-
-
-const qrUrl =
-    "https://img.vietqr.io/image/" +
-    BANK_ID +
-    "-" +
-    ACCOUNT_NUMBER +
-    "-qr_only.png" +
-    "?amount=" +
-    encodeURIComponent(AMOUNT) +
-    "&addInfo=" +
-    encodeURIComponent(content) +
-    "&accountName=" +
-    encodeURIComponent(ACCOUNT_OWNER);
-
-
-/*
-   Hiển thị QR
-*/
-
-const qrImage =
-    document.getElementById("qrImage");
-
-qrImage.src = qrUrl;
-
-
-/*
-   Nếu QR lỗi thì hiện thông báo
-*/
-
-qrImage.onerror = function() {
-
-    qrImage.style.display = "none";
-
-    document.getElementById("qrError")
-        .style.display = "block";
-
-};
-
-
-/* =================================================
-   COPY
-================================================= */
-
-function copyContent() {
-
-    navigator.clipboard
-        .writeText(content)
-        .then(function() {
-
-            alert(
-                "Đã copy nội dung: " +
-                content
-            );
-
-        });
-
-}
-
-
-/* =================================================
-   ĐẾM NGƯỢC
-================================================= */
-
-let secondsLeft = 10 * 60;
-
-const timer =
-    document.getElementById("timer");
-
-
-const countdown =
-    setInterval(function() {
-
-        let minutes =
-            Math.floor(secondsLeft / 60);
-
-        let seconds =
-            secondsLeft % 60;
-
-
-        timer.textContent =
-            String(minutes).padStart(2, "0")
-            + ":" +
-            String(seconds).padStart(2, "0");
-
-
-        if (secondsLeft <= 0) {
-
-            clearInterval(countdown);
-
-            timer.textContent = "00:00";
-
-        }
-
-
-        secondsLeft--;
-
-    }, 1000);
-
-
-/* =================================================
-   KHÔNG LƯU TÊN
-================================================= */
-
-/*
-   KHÔNG có:
-
-   localStorage
-   sessionStorage
-   cookie
-
-   Tên chỉ tồn tại trong lần mở trang này.
-*/
-
 </script>
 
 </body>
-
 </html>
