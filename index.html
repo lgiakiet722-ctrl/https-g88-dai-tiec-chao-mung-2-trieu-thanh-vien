@@ -2,31 +2,495 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Đại Tiệc Chào Mừng 2 Triệu Thành Viên</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial;background:radial-gradient(circle,#117d73,#08635c 50%,#033e3a);min-height:100vh;color:white}.page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:25px}.wrap{width:min(1100px,100%);display:grid;grid-template-columns:1fr 430px;gap:70px;align-items:center}.left{text-align:center}.left h1{color:#ffd43b;font-size:58px;line-height:1.05;text-shadow:0 5px 8px #0006}.left p{margin-top:20px;font-weight:bold}.card{border:2px solid #ffc400;border-radius:20px;padding:25px;text-align:center;background:#05696255}.logo{width:230px;max-width:100%;margin:0 auto 18px;display:block}.event{border:2px solid #ffc400;border-radius:30px;padding:12px;color:#ffd43b;font-weight:900;margin-bottom:22px}.label{color:#ffd43b;font-weight:bold;margin-bottom:8px}input{width:100%;height:50px;border:2px solid #ffc400;border-radius:28px;text-align:center;font-size:16px;outline:0}.error{height:24px;margin-top:8px;color:#ffd43b;font-weight:bold;font-size:14px}.btn{border:2px solid white;border-radius:30px;padding:13px 28px;background:#16c4c8;color:white;font-size:17px;font-weight:900;cursor:pointer;box-shadow:0 6px 12px #0005}.btn:hover{filter:brightness(1.08);transform:translateY(-2px)}@media(max-width:800px){.wrap{grid-template-columns:1fr;gap:30px}.left h1{font-size:40px}}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    min-height:100vh;
+    background:
+        radial-gradient(circle at 50% 45%, #087d72 0%, #05645f 35%, #033d3b 100%);
+    color:white;
+}
+
+/* Toàn bộ trang */
+.container{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+}
+
+/* Khu vực chính */
+.main{
+    width:1200px;
+    max-width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:80px;
+}
+
+/* =========================
+   BÊN TRÁI
+========================= */
+
+.left{
+    width:55%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.left-content{
+    width:620px;
+    max-width:100%;
+    text-align:center;
+}
+
+/* Logo lớn */
+.logo-main{
+    width:260px;
+    max-width:80%;
+    height:auto;
+    display:block;
+    margin:0 auto 5px;
+}
+
+/* Hình quà / xe / phần thưởng */
+.prize-image{
+    width:580px;
+    max-width:100%;
+    height:auto;
+    display:block;
+    margin:-5px auto 0;
+}
+
+/* =========================
+   BÊN PHẢI
+========================= */
+
+.right{
+    width:480px;
+    max-width:100%;
+}
+
+/* Logo phía trên form */
+.logo-top{
+    width:250px;
+    max-width:75%;
+    display:block;
+    margin:0 auto -5px;
+}
+
+/* Khung */
+.card{
+    border:2px solid #f5bd16;
+    border-radius:20px;
+    padding:75px 45px 35px;
+    background:rgba(10,116,106,0.45);
+    box-shadow:
+        0 0 20px rgba(0,0,0,0.15),
+        inset 0 0 20px rgba(255,255,255,0.02);
+    position:relative;
+}
+
+/* Tiêu đề khuyến mãi */
+.event-title{
+    width:100%;
+    border:2px solid #f5bd16;
+    border-radius:40px;
+    padding:12px 15px;
+    text-align:center;
+
+    color:#ffd12a;
+    font-size:20px;
+    font-weight:bold;
+
+    margin-bottom:28px;
+}
+
+/* Label */
+.label{
+    color:#ffd12a;
+    text-align:center;
+    font-weight:bold;
+    font-size:16px;
+    margin-bottom:10px;
+}
+
+/* Input */
+.username{
+    width:100%;
+    height:52px;
+
+    border:2px solid #f5bd16;
+    border-radius:30px;
+
+    background:white;
+    color:#222;
+
+    text-align:center;
+    font-size:17px;
+    outline:none;
+
+    padding:0 20px;
+}
+
+.username::placeholder{
+    color:#999;
+}
+
+/* Nút */
+.check-btn{
+    display:block;
+    margin:28px auto 0;
+
+    padding:13px 35px;
+
+    border:none;
+    border-radius:35px;
+
+    background:#16c3cc;
+    color:white;
+
+    font-size:18px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    border:2px solid white;
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,0.3);
+
+    transition:0.2s;
+}
+
+.check-btn:hover{
+    transform:translateY(-2px);
+    background:#0db2bb;
+}
+
+.check-btn:active{
+    transform:scale(0.97);
+}
+
+/* Thông báo */
+.message{
+    display:none;
+    margin-top:15px;
+    padding:10px;
+    border-radius:8px;
+    background:white;
+    color:#087d72;
+    text-align:center;
+    font-weight:bold;
+}
+
+/* Phần link phía dưới */
+.links{
+    display:flex;
+    justify-content:center;
+    gap:35px;
+    margin-top:20px;
+}
+
+.links a{
+    color:#ffd12a;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.links a:hover{
+    text-decoration:underline;
+}
+
+/* Theo dõi */
+.follow{
+    text-align:center;
+    margin-top:20px;
+    font-size:14px;
+}
+
+.social{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    width:28px;
+    height:28px;
+
+    border-radius:50%;
+
+    background:#169de5;
+    color:white;
+
+    margin-left:8px;
+
+    font-weight:bold;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+    .container{
+        padding:25px 15px;
+    }
+
+    .main{
+        flex-direction:column;
+        gap:30px;
+    }
+
+    .left{
+        width:100%;
+    }
+
+    .right{
+        width:100%;
+        max-width:480px;
+    }
+
+    .left-content{
+        max-width:550px;
+    }
+
+    .logo-main{
+        width:220px;
+    }
+
+    .prize-image{
+        width:500px;
+    }
+
+    .card{
+        padding:65px 25px 30px;
+    }
+}
+
+@media(max-width:500px){
+
+    .logo-main{
+        width:190px;
+    }
+
+    .prize-image{
+        width:100%;
+    }
+
+    .card{
+        padding:55px 18px 25px;
+        border-radius:15px;
+    }
+
+    .event-title{
+        font-size:15px;
+        padding:11px 8px;
+    }
+
+    .check-btn{
+        font-size:16px;
+    }
+
+    .links{
+        gap:15px;
+    }
+}
 </style>
 </head>
+
 <body>
-<div class="page"><div class="wrap">
-<div class="left"><h1>ĐẠI TIỆC<br>CHÀO MỪNG</h1><p>Chương trình đặc biệt dành cho thành viên</p></div>
-<div class="card">
-<img src="logo.png" class="logo" alt="Logo" onerror="this.style.display='none'">
-<div class="event">ĐẠI TIỆC THÁNG 8 KM 20% GIÁ TRỊ!</div>
-<div class="label">Tên tài khoản:</div>
-<input id="username" placeholder="Nhập tên người dùng" autocomplete="off">
-<div class="error" id="error"></div>
-<button class="btn" onclick="kiemTra()">KIỂM TRA NGAY</button>
-</div></div></div>
+
+<div class="container">
+
+    <div class="main">
+
+        <!-- =========================
+             BÊN TRÁI
+        ========================== -->
+
+        <div class="left">
+
+            <div class="left-content">
+
+                <!-- LOGO LỚN -->
+                <img
+                    src="logo.png"
+                    class="logo-main"
+                    alt="Đại tiệc 2 triệu thành viên"
+                >
+
+                <!-- HÌNH XE / QUÀ / SỰ KIỆN -->
+                <img
+                    src="quatang.png"
+                    class="prize-image"
+                    alt="Phần thưởng"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             BÊN PHẢI
+        ========================== -->
+
+        <div class="right">
+
+            <!-- LOGO TRÊN KHUNG -->
+            <img
+                src="logo.png"
+                class="logo-top"
+                alt="Logo"
+            >
+
+            <div class="card">
+
+                <!-- TIÊU ĐỀ -->
+                <div class="event-title">
+                    ĐẠI TIỆC THÁNG 8 KM 20% GIÁ TRỊ!
+                </div>
+
+                <!-- TÊN TÀI KHOẢN -->
+                <div class="label">
+                    Tên tài khoản:
+                </div>
+
+                <input
+                    type="text"
+                    id="username"
+                    class="username"
+                    placeholder="Nhập tên người dùng"
+                    autocomplete="off"
+                >
+
+                <!-- THÔNG BÁO -->
+                <div id="message" class="message">
+                    ✓ Kiểm tra thành công!
+                </div>
+
+                <!-- NÚT -->
+                <button
+                    class="check-btn"
+                    onclick="kiemTra()"
+                >
+                    KIỂM TRA NGAY
+                </button>
+
+                <!-- LINK -->
+                <div class="links">
+
+                    <a href="#">
+                        Thông tin chương trình &gt;
+                    </a>
+
+                    <a href="#">
+                        Trang phát code &gt;
+                    </a>
+
+                </div>
+
+                <!-- THEO DÕI -->
+                <div class="follow">
+
+                    Theo dõi thêm:
+
+                    <span class="social">➤</span>
+                    <span class="social">f</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
 <script>
+
+/* =========================
+   KIỂM TRA TÀI KHOẢN
+========================= */
+
 function kiemTra(){
- const u=document.getElementById('username').value.trim();
- if(!u){document.getElementById('error').textContent='Vui lòng nhập tên người dùng!';return}
- localStorage.setItem('username',u);
- location.href='thanhtoan.html';
+
+    const username =
+        document.getElementById("username").value.trim();
+
+    const message =
+        document.getElementById("message");
+
+    if(username === ""){
+
+        message.style.display = "block";
+        message.style.color = "#e60000";
+        message.innerHTML =
+            "⚠ Vui lòng nhập tên người dùng!";
+
+        return;
+    }
+
+    /*
+       Lưu tên tài khoản
+       để trang thanh toán có thể lấy lại.
+    */
+
+    localStorage.setItem(
+        "username",
+        username
+    );
+
+    message.style.display = "block";
+    message.style.color = "#087d72";
+    message.innerHTML =
+        "✓ Kiểm tra thành công!";
+
+    /*
+       Nếu bạn có trang thanh toán:
+       đổi thanh-toan.html thành tên file của bạn.
+    */
+
+    setTimeout(function(){
+
+        window.location.href =
+            "thanhtoan.html";
+
+    },800);
 }
-document.getElementById('username').addEventListener('keydown',e=>{if(e.key==='Enter')kiemTra()});
+
+
+/* Nhấn Enter cũng kiểm tra */
+
+document
+.getElementById("username")
+.addEventListener("keydown", function(e){
+
+    if(e.key === "Enter"){
+        kiemTra();
+    }
+
+});
+
 </script>
+
 </body>
 </html>
