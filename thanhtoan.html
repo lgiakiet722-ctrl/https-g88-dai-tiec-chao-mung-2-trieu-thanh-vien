@@ -306,26 +306,23 @@ body {
 
 
             <div class="qr-box">
+
     <img
         id="qrImage"
         src="./qr.png"
-        alt="Mã QR"
+        alt="Mã QR thanh toán"
         style="display:block; width:260px; max-width:100%; height:auto; margin:0 auto;"
         onerror="this.style.display='none'; document.getElementById('qrError').style.display='block';"
     >
 
-    <div id="qrError" style="display:none; text-align:center; padding:40px 10px;">
+    <div
+        id="qrError"
+        style="display:none; text-align:center; padding:40px 10px;"
+    >
         Không tải được mã QR.
     </div>
-</div>
-                    id="qrError"
-                    class="qr-error"
-                    style="display:none;"
-                >
-                    Không tải được mã QR.
-                </div>
 
-            </div>
+</div>
 
 
             <div class="amount">
