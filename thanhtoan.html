@@ -306,22 +306,18 @@ body {
 
 
             <div class="qr-box">
+    <img
+        id="qrImage"
+        src="./qr.png"
+        alt="Mã QR"
+        style="display:block; width:260px; max-width:100%; height:auto; margin:0 auto;"
+        onerror="this.style.display='none'; document.getElementById('qrError').style.display='block';"
+    >
 
-                <!--
-                Đặt file QR của bạn cùng thư mục
-                với thanhtoan.html và đặt tên:
-
-                qr.png
-                -->
-
-                <img
-                    id="qrImage"
-                    src="qr.png"
-                    alt="Mã QR thanh toán"
-                    onerror="showQrError()"
-                >
-
-                <div
+    <div id="qrError" style="display:none; text-align:center; padding:40px 10px;">
+        Không tải được mã QR.
+    </div>
+</div>
                     id="qrError"
                     class="qr-error"
                     style="display:none;"
