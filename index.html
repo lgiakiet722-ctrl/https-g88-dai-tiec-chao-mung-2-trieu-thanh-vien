@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+          content="width=device-width, initial-scale=1.0">
 
-    <title>Đại tiệc chào mừng 2 triệu thành viên</title>
+    <title>Đại tiệc chào mừng</title>
 
     <style>
         * {
@@ -15,7 +15,6 @@
         html,
         body {
             margin: 0;
-            padding: 0;
             min-height: 100%;
             font-family: Arial, Helvetica, sans-serif;
         }
@@ -36,15 +35,15 @@
         .container {
             width: min(1100px, 100%);
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             gap: 50px;
         }
 
-        /* ================= LOGO ================= */
+        /* LOGO */
 
         .logo-area {
-            flex: 1;
+            width: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -54,48 +53,42 @@
             display: block;
             width: min(520px, 100%);
             height: auto;
-            object-fit: contain;
         }
 
         .logo-fallback {
             display: none;
             text-align: center;
-            font-size: 42px;
+            font-size: 38px;
             font-weight: 900;
-            line-height: 1.05;
-            color: #ffd21c;
-            text-shadow:
-                2px 2px 0 #8b2800,
-                4px 4px 0 #ff5a00;
+            line-height: 1.1;
         }
 
-        /* ================= FORM ================= */
+        /* CARD */
 
         .card {
             width: 100%;
             max-width: 520px;
-            border: 3px solid #f7c91c;
-            border-radius: 18px;
             padding: 38px 35px;
+            border: 3px solid #f5c518;
+            border-radius: 18px;
             background: #087d73;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, .12);
         }
 
         .event {
-            border: 3px solid #f7c91c;
+            padding: 20px;
+            border: 3px solid #f5c518;
             border-radius: 60px;
-            padding: 20px 25px;
             text-align: center;
-            font-size: 27px;
-            line-height: 1.25;
+            font-size: 26px;
             font-weight: 800;
-            margin-bottom: 45px;
+            line-height: 1.25;
+            margin-bottom: 42px;
         }
 
         .label {
             display: block;
             text-align: center;
-            font-size: 24px;
+            font-size: 23px;
             font-weight: 700;
             margin-bottom: 18px;
         }
@@ -103,100 +96,77 @@
         .username {
             width: 100%;
             height: 64px;
-            border: 3px solid #f7c91c;
-            border-radius: 40px;
-            background: white;
-            color: #333;
-            text-align: center;
-            font-size: 21px;
-            outline: none;
             padding: 0 20px;
-        }
-
-        .username::placeholder {
-            color: #999;
+            border: 3px solid #f5c518;
+            border-radius: 40px;
+            outline: none;
+            background: white;
+            text-align: center;
+            font-size: 20px;
         }
 
         .username:focus {
-            box-shadow: 0 0 0 4px rgba(247, 201, 28, .2);
+            box-shadow: 0 0 0 4px rgba(245,197,24,.2);
         }
-
-        /* ================= BUTTON ================= */
 
         .check {
             width: 100%;
-            height: 65px;
-            margin-top: 30px;
+            height: 64px;
+            margin-top: 28px;
             border: 3px solid white;
             border-radius: 40px;
             background: #20b5c5;
             color: white;
-            font-size: 25px;
+            font-size: 24px;
             font-weight: 900;
             cursor: pointer;
-            box-shadow: 0 5px 12px rgba(0, 0, 0, .2);
         }
-
-        .check:active {
-            transform: scale(.98);
-        }
-
-        /* ================= MESSAGE ================= */
 
         .message {
             display: none;
-            margin-top: 25px;
+            margin-top: 22px;
             padding: 18px;
             border-radius: 8px;
             background: white;
             color: #333;
-            font-size: 20px;
             text-align: center;
+            font-size: 20px;
         }
 
-        .message.success {
+        .message.show {
             display: block;
         }
 
         .checkmark {
             display: inline-flex;
-            justify-content: center;
-            align-items: center;
             width: 38px;
             height: 38px;
             margin-right: 8px;
+            justify-content: center;
+            align-items: center;
             border-radius: 50%;
             background: #2dbb63;
             color: white;
             font-weight: bold;
         }
 
-        /* ================= LINKS ================= */
-
         .links {
             display: flex;
             justify-content: space-between;
-            gap: 15px;
-            margin-top: 32px;
+            margin-top: 30px;
         }
 
         .links a {
             color: #ffd21c;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 17px;
-        }
-
-        .links a:hover {
-            text-decoration: underline;
+            font-weight: bold;
         }
 
         .follow {
-            text-align: center;
             margin-top: 28px;
+            text-align: center;
             color: white;
-            font-size: 18px;
-            font-weight: 700;
+            font-weight: bold;
         }
 
         .social {
@@ -210,21 +180,19 @@
             width: 45px;
             height: 45px;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             border-radius: 50%;
             background: #159bd3;
             color: white;
             text-decoration: none;
-            font-weight: bold;
         }
 
-        /* ================= MOBILE ================= */
+        /* MOBILE */
 
         @media (max-width: 768px) {
 
             .page {
-                min-height: 100vh;
                 padding: 20px 16px 40px;
                 align-items: flex-start;
             }
@@ -232,12 +200,10 @@
             .container {
                 flex-direction: column;
                 gap: 10px;
-                width: 100%;
             }
 
             .logo-area {
                 width: 100%;
-                margin-top: 5px;
             }
 
             .logo {
@@ -245,36 +211,25 @@
             }
 
             .card {
-                width: 100%;
                 max-width: 540px;
-                padding: 38px 22px;
-                border-radius: 0;
-                border-left: 0;
-                border-right: 0;
+                padding: 38px 20px;
             }
 
             .event {
-                font-size: 23px;
-                padding: 17px 18px;
-                margin-bottom: 40px;
+                font-size: 22px;
             }
 
             .label {
-                font-size: 22px;
+                font-size: 21px;
             }
 
             .username {
                 height: 62px;
-                font-size: 19px;
             }
 
             .check {
                 height: 62px;
-                font-size: 23px;
-            }
-
-            .links a {
-                font-size: 16px;
+                font-size: 22px;
             }
         }
 
@@ -282,15 +237,6 @@
 
             .event {
                 font-size: 20px;
-            }
-
-            .card {
-                padding-left: 18px;
-                padding-right: 18px;
-            }
-
-            .links {
-                gap: 8px;
             }
 
             .links a {
@@ -317,12 +263,15 @@
                 onerror="showLogoError()"
             >
 
-            <div id="logoFallback" class="logo-fallback">
+            <div
+                id="logoFallback"
+                class="logo-fallback">
                 ĐẠI TIỆC CHÀO MỪNG<br>
                 2 TRIỆU THÀNH VIÊN
             </div>
 
         </div>
+
 
         <!-- FORM -->
         <div class="card">
@@ -349,16 +298,22 @@
             <div
                 id="message"
                 class="message">
+
                 <span class="checkmark">✓</span>
+
                 <span>Đã xác thực</span>
+
             </div>
 
             <button
                 id="checkButton"
                 class="check"
                 type="button">
+
                 KIỂM TRA NGAY
+
             </button>
+
 
             <div class="links">
 
@@ -372,13 +327,16 @@
 
             </div>
 
+
             <div class="follow">
+
                 Theo dõi thêm:
 
                 <div class="social">
-                    <a href="#" aria-label="Telegram">➤</a>
-                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#">➤</a>
+                    <a href="#">f</a>
                 </div>
+
             </div>
 
         </div>
@@ -386,6 +344,7 @@
     </div>
 
 </div>
+
 
 <script>
 
@@ -398,34 +357,28 @@
     const checkButton =
         document.getElementById("checkButton");
 
-    /*
-     * Hiển thị logo dự phòng nếu file PNG
-     * không tải được.
-     */
+
+    /* Logo lỗi */
+
     function showLogoError() {
 
-        const logo =
-            document.getElementById("logo");
+        document.getElementById("logo")
+            .style.display = "none";
 
-        const fallback =
-            document.getElementById("logoFallback");
-
-        logo.style.display = "none";
-        fallback.style.display = "block";
+        document.getElementById("logoFallback")
+            .style.display = "block";
     }
 
-    /*
-     * KIỂM TRA NGAY
-     *
-     * Không dùng localStorage.
-     * Tên chỉ được giữ trong phiên hiện tại.
-     */
+
+    /* KIỂM TRA NGAY */
+
     checkButton.addEventListener("click", function () {
 
         const username =
             usernameInput.value.trim();
 
-        if (!username) {
+
+        if (username === "") {
 
             alert("Vui lòng nhập tên tài khoản.");
 
@@ -434,27 +387,32 @@
             return;
         }
 
+
         /*
-         * Chỉ lưu trong phiên trình duyệt hiện tại,
-         * không lưu lâu dài.
+         * Chỉ lưu trong phiên hiện tại.
+         * Không dùng localStorage.
          */
+
         sessionStorage.setItem(
             "gameUsername",
             username
         );
 
-        /*
-         * Hiển thị trạng thái xác nhận.
-         */
-        message.classList.add("success");
+
+        /* Hiển thị Đã xác thực */
+
+        message.classList.add("show");
+
 
         /*
-         * Sau khi xác nhận tên,
-         * chuyển sang trang thanh toán.
+         * Chuyển sang thanhtoan.html
+         * sau khi xác nhận.
          */
+
         setTimeout(function () {
 
-            window.location.href = "./thanhtoan.html";
+            window.location.href =
+                "./thanhtoan.html";
 
         }, 500);
 
