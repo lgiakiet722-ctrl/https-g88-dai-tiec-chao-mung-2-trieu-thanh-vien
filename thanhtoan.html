@@ -540,16 +540,18 @@
 
                 <div class="qr-box">
 
-                    <!--
-                    Bạn có thể thay phần này
-                    bằng ảnh QR thật của bạn.
-                    -->
+    <img
+        src="./qr.png"
+        alt="Mã QR thanh toán"
+        class="qr-image"
+        onerror="this.style.display='none'; document.getElementById('qr-error').style.display='block';"
+    >
 
-                    <div class="qr-placeholder">
+    <div id="qr-error" class="qr-error">
+        Không tải được mã QR.
+    </div>
 
-                        QR CODE
-
-                    </div>
+</div>
 
                     <div class="amount">
                         300.000 VND
