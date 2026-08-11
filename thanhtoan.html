@@ -2,12 +2,16 @@
 <html lang="vi">
 
 <head>
+
 <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>Thanh toán</title>
+
 
 <style>
 
@@ -20,14 +24,20 @@
 }
 
 body {
+
     margin: 0;
+
     font-family: Arial, sans-serif;
+
     background: #f3f5f5;
+
     color: #222;
 }
 
 .container {
+
     width: min(950px, 94%);
+
     margin: auto;
 }
 
@@ -37,20 +47,29 @@ body {
 ========================= */
 
 .header {
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     padding: 25px 0;
 }
 
 .logo {
+
     font-size: 36px;
+
     font-weight: 800;
+
     color: #16b8b2;
 }
 
 .user {
+
     color: #ff3030;
+
     font-weight: bold;
 }
 
@@ -60,9 +79,13 @@ body {
 ========================= */
 
 .card {
+
     background: white;
+
     border-radius: 12px;
+
     padding: 18px;
+
     box-shadow: 0 4px 18px rgba(0,0,0,.12);
 }
 
@@ -72,6 +95,7 @@ body {
 ========================= */
 
 .notice {
+
     background: linear-gradient(
         90deg,
         #ff3535,
@@ -95,6 +119,7 @@ body {
 ========================= */
 
 .countdown {
+
     text-align: center;
 
     background: #fff4d4;
@@ -113,7 +138,9 @@ body {
 }
 
 #timer {
+
     font-size: 24px;
+
     margin-left: 8px;
 }
 
@@ -123,6 +150,7 @@ body {
 ========================= */
 
 .top-info {
+
     display: flex;
 
     justify-content: space-between;
@@ -151,7 +179,6 @@ body {
     color: #e00000;
 
     letter-spacing: 1px;
-
 }
 
 
@@ -160,6 +187,7 @@ body {
 ========================= */
 
 .grid {
+
     display: grid;
 
     grid-template-columns: 1fr 1fr;
@@ -179,7 +207,6 @@ body {
     border-radius: 9px;
 
     padding: 18px;
-
 }
 
 .box h2 {
@@ -187,7 +214,6 @@ body {
     font-size: 18px;
 
     margin-top: 0;
-
 }
 
 .sub {
@@ -195,7 +221,6 @@ body {
     color: #888;
 
     margin-bottom: 15px;
-
 }
 
 
@@ -213,6 +238,7 @@ body {
 
     margin: 15px auto;
 
+    min-height: 50px;
 }
 
 
@@ -225,7 +251,6 @@ body {
     text-align: center;
 
     font-weight: bold;
-
 }
 
 .amount {
@@ -233,7 +258,6 @@ body {
     color: #ff2020;
 
     font-size: 20px;
-
 }
 
 .bonus {
@@ -241,7 +265,6 @@ body {
     color: #00a651;
 
     margin-top: 7px;
-
 }
 
 .receive {
@@ -251,7 +274,6 @@ body {
     margin-top: 5px;
 
     font-size: 18px;
-
 }
 
 
@@ -264,13 +286,11 @@ body {
     width: 100%;
 
     border-collapse: collapse;
-
 }
 
 .info tr {
 
     border-bottom: 1px solid #eee;
-
 }
 
 .info td {
@@ -278,31 +298,26 @@ body {
     padding: 13px 5px;
 
     vertical-align: middle;
-
 }
 
 .info td:first-child {
 
     width: 40%;
-
 }
 
 .value {
 
     font-weight: bold;
-
 }
 
 .red {
 
     color: #ff2020;
-
 }
 
 .orange {
 
     color: #ff8500;
-
 }
 
 
@@ -329,13 +344,11 @@ body {
     font-weight: bold;
 
     margin-left: 7px;
-
 }
 
 .copy-btn:hover {
 
     background: #0d9958;
-
 }
 
 
@@ -354,7 +367,6 @@ body {
     background: #f5f5f5;
 
     border-radius: 8px;
-
 }
 
 .code-box strong {
@@ -362,7 +374,6 @@ body {
     color: #e00000;
 
     letter-spacing: 1px;
-
 }
 
 
@@ -379,7 +390,6 @@ body {
     border: 1px dashed #ccc;
 
     border-radius: 8px;
-
 }
 
 .note h3 {
@@ -387,13 +397,11 @@ body {
     margin-top: 0;
 
     color: #ff2020;
-
 }
 
 .note p {
 
     line-height: 1.6;
-
 }
 
 
@@ -420,7 +428,6 @@ body {
     border-radius: 25px;
 
     font-weight: bold;
-
 }
 
 
@@ -437,7 +444,6 @@ body {
         gap: 10px;
 
         text-align: center;
-
     }
 
     .top-info {
@@ -445,19 +451,16 @@ body {
         flex-direction: column;
 
         align-items: stretch;
-
     }
 
     .grid {
 
         grid-template-columns: 1fr;
-
     }
 
     .logo {
 
         font-size: 30px;
-
     }
 
 }
@@ -554,10 +557,9 @@ body {
 
                 <button
                     class="copy-btn"
-                    onclick="copyText('transactionCode')">
-
+                    onclick="copyText('transactionCode')"
+                >
                     Copy
-
                 </button>
 
             </div>
@@ -608,22 +610,22 @@ body {
 
                     <div
                         id="qrAmount"
-                        class="amount">
-
+                        class="amount"
+                    >
                     </div>
 
 
                     <div
                         id="qrBonus"
-                        class="bonus">
-
+                        class="bonus"
+                    >
                     </div>
 
 
                     <div
                         id="qrReceive"
-                        class="receive">
-
+                        class="receive"
+                    >
                     </div>
 
 
@@ -671,10 +673,9 @@ body {
 
                             <button
                                 class="copy-btn"
-                                onclick="copyText('bankName')">
-
+                                onclick="copyText('bankName')"
+                            >
                                 Copy
-
                             </button>
 
                         </td>
@@ -698,10 +699,9 @@ body {
 
                             <button
                                 class="copy-btn"
-                                onclick="copyText('gameAccount')">
-
+                                onclick="copyText('gameAccount')"
+                            >
                                 Copy
-
                             </button>
 
                         </td>
@@ -725,10 +725,9 @@ body {
 
                             <button
                                 class="copy-btn"
-                                onclick="copyText('accountNumber')">
-
+                                onclick="copyText('accountNumber')"
+                            >
                                 Copy
-
                             </button>
 
                         </td>
@@ -752,10 +751,9 @@ body {
 
                             <button
                                 class="copy-btn"
-                                onclick="copyText('accountName')">
-
+                                onclick="copyText('accountName')"
+                            >
                                 Copy
-
                             </button>
 
                         </td>
@@ -779,10 +777,9 @@ body {
 
                             <button
                                 class="copy-btn"
-                                onclick="copyAmount()">
-
+                                onclick="copyAmount()"
+                            >
                                 Copy
-
                             </button>
 
                         </td>
@@ -806,10 +803,9 @@ body {
 
                             <button
                                 class="copy-btn"
-                                onclick="copyText('transferContent')">
-
+                                onclick="copyText('transferContent')"
+                            >
                                 Copy
-
                             </button>
 
                         </td>
@@ -830,8 +826,8 @@ body {
 
                     <span
                         id="bonusText"
-                        class="red">
-
+                        class="red"
+                    >
                     </span>
 
                     <br>
@@ -840,8 +836,8 @@ body {
 
                     <span
                         id="receiveText"
-                        class="receive">
-
+                        class="receive"
+                    >
                     </span>
 
                 </div>
@@ -861,10 +857,9 @@ body {
 
                     <button
                         class="copy-btn"
-                        onclick="copyText('codeDisplay')">
-
+                        onclick="copyText('codeDisplay')"
+                    >
                         Copy
-
                     </button>
 
                 </div>
@@ -885,18 +880,15 @@ body {
                 Lưu ý quan trọng:
             </h3>
 
-
             <p>
                 1. Chuyển khoản cần nhập chính xác
                 số tiền và nội dung hiển thị.
             </p>
 
-
             <p>
                 2. Kiểm tra kỹ thông tin ngân hàng
                 trước khi chuyển khoản.
             </p>
-
 
             <p>
                 3. Không cung cấp OTP hoặc mật khẩu
@@ -911,11 +903,10 @@ body {
         ========================== -->
 
         <a
-            href="index.html"
-            class="back">
-
+            href="./index.html"
+            class="back"
+        >
             ← Quay lại
-
         </a>
 
 
@@ -941,64 +932,129 @@ body {
     500000
     1000000
     2000000
-
 */
 
 const AMOUNT = 300000;
 
 
-/*
-    KHUYẾN MÃI
-*/
+/* =========================
+   KHUYẾN MÃI
+========================= */
 
 const BONUS_PERCENT = 20;
 
 
-/*
-    THỜI GIAN ĐẾM NGƯỢC
-
-    10 = 10 phút
-*/
+/* =========================
+   THỜI GIAN ĐẾM NGƯỢC
+========================= */
 
 const COUNTDOWN_MINUTES = 10;
 
 
-/*
-    THÔNG TIN NGÂN HÀNG
-*/
+/* =========================
+   THÔNG TIN NGÂN HÀNG
+========================= */
 
-const BANK_NAME = "Sacombank";
+const BANK_NAME =
+    "Sacombank";
 
-const ACCOUNT_NUMBER = "070137130244";
+const ACCOUNT_NUMBER =
+    "070137130244";
 
-const ACCOUNT_NAME = "LE GIA KIET";
+const ACCOUNT_NAME =
+    "LE GIA KIET";
 
 
 /* =====================================================
-   LẤY TÊN NGƯỜI DÙNG
+   LẤY USERNAME TỪ URL
 ===================================================== */
 
-const username =
-    localStorage.getItem("username") || "THANHVIEN";
 
+/*
+    index.html sẽ chuyển người dùng
+    sang:
+
+    thanhtoan.html?username=TenNguoiDung
+
+    URLSearchParams sẽ lấy chính xác
+    tên vừa nhập.
+*/
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+let username =
+    params.get("username");
+
+
+/*
+    Giải mã và làm sạch dữ liệu.
+*/
+
+username =
+    username
+        ? username.trim()
+        : "";
+
+
+/*
+    Nếu không có username,
+    không cho trang thanh toán
+    hiển thị tài khoản giả.
+*/
+
+if (username === "") {
+
+    alert(
+        "Không tìm thấy tên tài khoản. Vui lòng nhập tên tài khoản trước."
+    );
+
+    window.location.href =
+        "./index.html";
+
+}
+
+
+/* =====================================================
+   HIỂN THỊ USERNAME
+===================================================== */
+
+
+/*
+    Tên tài khoản trên đầu.
+*/
 
 document.getElementById(
     "topUsername"
-).textContent = username;
+).textContent =
+    username;
 
+
+/*
+    Tài khoản phía trên.
+*/
 
 document.getElementById(
     "accountTop"
-).textContent = username;
+).textContent =
+    username;
 
+
+/*
+    Tài khoản Game.
+*/
 
 document.getElementById(
     "gameAccount"
-).textContent = username;
+).textContent =
+    username;
 
 
 /* =====================================================
-   TẠO MÃ GIAO DỊCH 12 SỐ NGẪU NHIÊN
+   TẠO MÃ GIAO DỊCH
 ===================================================== */
 
 function taoMaGiaoDich() {
@@ -1011,9 +1067,10 @@ function taoMaGiaoDich() {
         i++
     ) {
 
-        ma += Math.floor(
-            Math.random() * 10
-        );
+        ma +=
+            Math.floor(
+                Math.random() * 10
+            );
 
     }
 
@@ -1031,29 +1088,32 @@ const maGiaoDich =
 
 document.getElementById(
     "transactionCode"
-).textContent = maGiaoDich;
+).textContent =
+    maGiaoDich;
 
 
 document.getElementById(
     "codeDisplay"
-).textContent = maGiaoDich;
+).textContent =
+    maGiaoDich;
 
 
 /* =====================================================
    TẠO NỘI DUNG CHUYỂN KHOẢN
-=====================================================
-
-   Dạng:
-
-   taxikjv783u
-   taxikab291x
-   taxikm4p82q
-
-   Luôn bắt đầu bằng:
-
-   taxik
-
 ===================================================== */
+
+
+/*
+    Dạng:
+
+    taxikjv783u
+    taxikab291x
+    taxikm4p82q
+
+    Luôn bắt đầu bằng:
+
+    taxik
+*/
 
 function taoNoiDungCK() {
 
@@ -1061,11 +1121,6 @@ function taoNoiDungCK() {
         "abcdefghijklmnopqrstuvwxyz0123456789";
 
     let phanSau = "";
-
-
-    /*
-        Tạo 6 ký tự ngẫu nhiên
-    */
 
     for (
         let i = 0;
@@ -1079,15 +1134,12 @@ function taoNoiDungCK() {
                 kyTu.length
             );
 
-
         phanSau +=
             kyTu[viTri];
 
     }
 
-
     return "taxik" + phanSau;
-
 }
 
 
@@ -1101,7 +1153,8 @@ const noiDungCK =
 
 document.getElementById(
     "transferContent"
-).textContent = noiDungCK;
+).textContent =
+    noiDungCK;
 
 
 /* =====================================================
@@ -1125,7 +1178,8 @@ const total =
 
 function formatMoney(number) {
 
-    return number.toLocaleString("vi-VN")
+    return number
+        .toLocaleString("vi-VN")
         + " VND";
 
 }
@@ -1179,30 +1233,52 @@ document.getElementById(
    TẠO QR VIETQR
 ===================================================== */
 
+
+/*
+    QR được tạo dựa trên:
+
+    - Ngân hàng
+    - Số tài khoản
+    - Số tiền
+    - Chủ tài khoản
+    - Nội dung chuyển khoản
+*/
+
 const qrURL =
     "https://vietqr.app/img?" +
 
     "bank=" +
-    encodeURIComponent(BANK_NAME) +
+    encodeURIComponent(
+        BANK_NAME
+    ) +
 
     "&acc=" +
-    encodeURIComponent(ACCOUNT_NUMBER) +
+    encodeURIComponent(
+        ACCOUNT_NUMBER
+    ) +
 
     "&template=standard" +
 
     "&amount=" +
-    AMOUNT +
+    encodeURIComponent(
+        AMOUNT
+    ) +
 
     "&holder=" +
-    encodeURIComponent(ACCOUNT_NAME) +
+    encodeURIComponent(
+        ACCOUNT_NAME
+    ) +
 
     "&addInfo=" +
-    encodeURIComponent(noiDungCK);
+    encodeURIComponent(
+        noiDungCK
+    );
 
 
 document.getElementById(
     "qr"
-).src = qrURL;
+).src =
+    qrURL;
 
 
 /* =====================================================
@@ -1214,17 +1290,18 @@ function copyText(id) {
     const element =
         document.getElementById(id);
 
-
     const text =
         element.textContent.trim();
 
 
-    navigator.clipboard.writeText(text)
+    navigator.clipboard
+        .writeText(text)
 
         .then(function() {
 
             alert(
-                "Đã copy: " + text
+                "Đã copy: " +
+                text
             );
 
         })
@@ -1246,18 +1323,27 @@ function copyText(id) {
 
 function copyAmount() {
 
-    navigator.clipboard.writeText(
-        String(AMOUNT)
-    )
+    navigator.clipboard
+        .writeText(
+            String(AMOUNT)
+        )
 
-    .then(function() {
+        .then(function() {
 
-        alert(
-            "Đã copy số tiền: " +
-            AMOUNT
-        );
+            alert(
+                "Đã copy số tiền: " +
+                AMOUNT
+            );
 
-    });
+        })
+
+        .catch(function() {
+
+            alert(
+                "Không thể copy tự động."
+            );
+
+        });
 
 }
 
@@ -1271,11 +1357,12 @@ let timeLeft =
 
 
 const timerElement =
-    document.getElementById("timer");
+    document.getElementById(
+        "timer"
+    );
 
 
 function updateTimer() {
-
 
     const minutes =
         Math.floor(
@@ -1290,24 +1377,21 @@ function updateTimer() {
     timerElement.textContent =
 
         minutes +
-
         ":" +
-
         String(seconds)
             .padStart(2, "0");
 
 
     if (timeLeft <= 0) {
 
-        clearInterval(timerInterval);
-
+        clearInterval(
+            timerInterval
+        );
 
         timerElement.textContent =
             "HẾT THỜI GIAN";
 
-
         return;
-
     }
 
 
@@ -1325,32 +1409,7 @@ const timerInterval =
         1000
     );
 
-
 </script>
-<script>
-    const username =
-        localStorage.getItem("username");
 
-    document.getElementById("gameUsername").textContent =
-        username || "Chưa nhập tên tài khoản";
-
-
-    function copyUsername() {
-
-        const text =
-            document.getElementById("gameUsername").textContent;
-
-        navigator.clipboard.writeText(text).then(function () {
-
-            alert("Đã copy: " + text);
-
-        }).catch(function () {
-
-            alert("Không thể copy tự động.");
-
-        });
-    }
-</script>
 </body>
-
 </html>
