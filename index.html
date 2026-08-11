@@ -1,727 +1,970 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-
-    <!-- Tối ưu điện thoại -->
-    <meta name="viewport"
-          content="width=device-width,
-                   initial-scale=1.0,
-                   maximum-scale=1.0,
-                   user-scalable=no">
-
-    <title>Đại Tiệc Chào Mừng 2 Triệu Thành Viên</title><div class="logo-area">
-    <img
-        src="logo.png"
-        class="logo"
-        alt="Đại tiệc chào mừng 2 triệu thành viên"
-    >
-</div>
-    
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            width: 100%;
-            min-height: 100%;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #08766d;
-            color: #ffd94d;
-            overflow-x: hidden;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* =========================
-           KHUNG TRANG
-        ========================= */
+<title>Đại Tiệc Chào Mừng 2 Triệu Thành Viên</title>
 
-        .page {
-            width: 100%;
-            min-height: 100vh;
-            background:
-                linear-gradient(
-                    to bottom,
-                    #03443f 0px,
-                    #075d56 240px,
-                    #117d72 240px,
-                    #117d72 100%
-                );
-        }
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        /* =========================
-           ĐƯỜNG VIỀN
-        ========================= */
+html, body {
+    width: 100%;
+    min-height: 100%;
+}
 
-        .gold-line {
-            width: 100%;
-            height: 3px;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(
+            circle at center,
+            #117d73 0%,
+            #08635c 50%,
+            #033e3a 100%
+        );
+    min-height: 100vh;
+    overflow-x: hidden;
+}
 
-            background: #f2c735;
 
-            box-shadow:
-                0 0 5px rgba(255, 225, 80, 0.5);
-        }
+/* =========================
+   TRANG CHÍNH
+========================= */
 
-        /* =========================
-           LOGO
-        ========================= */
+.page {
+    width: 100%;
+    min-height: 100vh;
 
-        .logo-area {
-            width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    padding: 30px 15px;
+}
 
-            padding: 30px 15px 12px;
-        }
+.container {
+    width: min(1100px, 96vw);
 
-        .logo {
-            display: block;
+    display: grid;
 
-            width: min(760px, 92vw);
+    grid-template-columns:
+        1fr 430px;
 
-            height: auto;
+    gap: 60px;
 
-            object-fit: contain;
+    align-items: center;
+}
 
-            filter:
-                drop-shadow(0 5px 8px rgba(0,0,0,0.3));
-        }
 
-        /* =========================
-           NỘI DUNG CHÍNH
-        ========================= */
+/* =========================
+   BÊN TRÁI
+========================= */
 
-        .main {
-            width: 100%;
+.left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+    min-height: 500px;
+}
 
-            padding-top: 85px;
-            padding-bottom: 60px;
-        }
+.left-content {
+    text-align: center;
+}
 
-        /* =========================
-           TIÊU ĐỀ CHƯƠNG TRÌNH
-        ========================= */
+.left-title {
+    color: #ffd94d;
 
-        .event-title {
-            width: min(620px, 90vw);
+    font-size:
+        clamp(35px, 5vw, 65px);
 
-            min-height: 55px;
+    font-weight: 900;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    line-height: 1.05;
 
-            padding: 8px 20px;
+    text-shadow:
+        0 4px 8px rgba(0,0,0,.45);
+}
 
-            border: 3px solid #f2c735;
+.left-text {
+    margin-top: 20px;
 
-            border-radius: 40px;
+    color: #fff0a5;
 
-            color: #ffd94d;
+    font-size: 18px;
 
-            font-size: 25px;
-            font-weight: 800;
+    font-weight: bold;
+}
 
-            text-align: center;
 
-            text-shadow:
-                0 2px 2px rgba(0,0,0,0.25);
+/* =========================
+   KHUNG FORM
+========================= */
 
-            box-shadow:
-                0 3px 5px rgba(0,0,0,0.2),
-                inset 0 0 5px rgba(255,255,255,0.08);
+.card {
+    width: 100%;
 
-            margin-bottom: 36px;
-        }
+    background:
+        rgba(12,123,112,.9);
 
-        /* =========================
-           LABEL
-        ========================= */
+    border:
+        2px solid #edc63d;
 
-        .label {
-            color: #ffdf5b;
+    border-radius: 20px;
 
-            font-size: 20px;
+    padding:
+        0 28px 28px;
 
-            font-weight: 700;
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,.3);
+}
 
-            margin-bottom: 12px;
-        }
 
-        /* =========================
-           INPUT
-        ========================= */
+/* =========================
+   LOGO
+========================= */
 
-        .input-box {
-            width: min(620px, 90vw);
+.logo-container {
+    width: 100%;
 
-            height: 60px;
+    display: flex;
 
-            border: 3px solid #e8bd34;
+    justify-content: center;
 
-            border-radius: 40px;
+    align-items: center;
 
-            background: white;
+    margin-top: -45px;
 
-            box-shadow:
-                0 3px 6px rgba(0,0,0,0.25);
+    margin-bottom: 10px;
+}
 
-            overflow: hidden;
+.logo {
+    width: 245px;
 
-            margin-bottom: 24px;
-        }
+    max-width: 75vw;
 
-        .input-box input {
-            width: 100%;
-            height: 100%;
+    height: auto;
 
-            border: none;
-            outline: none;
+    display: block;
 
-            background: transparent;
+    filter:
+        drop-shadow(
+            0 5px 8px
+            rgba(0,0,0,.4)
+        );
+}
 
-            text-align: center;
 
-            padding: 0 20px;
+/* =========================
+   TIÊU ĐỀ
+========================= */
 
-            font-size: 18px;
+.event-title {
+    width: 100%;
 
-            color: #555;
-        }
+    min-height: 48px;
 
-        .input-box input::placeholder {
-            color: #999;
-        }
+    display: flex;
 
-        /* =========================
-           KHUNG XÁC NHẬN
-        ========================= */
+    align-items: center;
 
-        .verify-box {
-            width: min(650px, 92vw);
+    justify-content: center;
 
-            min-height: 55px;
+    padding: 6px 12px;
 
-            display: flex;
-            align-items: center;
+    border:
+        2px solid #efc73d;
 
-            background: #ffffff;
+    border-radius: 30px;
 
-            color: #444;
+    color: #ffdc50;
 
-            padding: 10px 18px;
+    font-size: 18px;
 
-            margin-bottom: 30px;
+    font-weight: 900;
 
-            box-shadow:
-                0 3px 7px rgba(0,0,0,0.18);
-        }
+    text-align: center;
 
-        .verify-left {
-            display: flex;
-            align-items: center;
+    margin-bottom: 27px;
+}
 
-            gap: 12px;
-        }
 
-        .verify-check {
-            width: 28px;
-            height: 28px;
+/* =========================
+   LABEL
+========================= */
 
-            border-radius: 50%;
+.label {
+    text-align: center;
 
-            background: #2db45d;
+    color: #ffe16a;
 
-            color: white;
+    font-size: 15px;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    font-weight: bold;
 
-            font-size: 18px;
-            font-weight: bold;
-        }
+    margin-bottom: 8px;
+}
 
-        .verify-text {
-            font-size: 15px;
-        }
 
-        .verify-right {
-            margin-left: auto;
+/* =========================
+   Ô NHẬP
+========================= */
 
-            text-align: right;
-        }
+.input-box {
+    width: 100%;
 
-        .verify-right strong {
-            display: block;
+    height: 46px;
 
-            color: #ef8a32;
+    background: white;
 
-            font-size: 14px;
-        }
+    border:
+        2px solid #e9bd35;
 
-        .verify-right span {
-            display: block;
+    border-radius: 30px;
 
-            color: #777;
+    overflow: hidden;
+}
 
-            font-size: 10px;
-        }
+.input-box input {
+    width: 100%;
 
-        /* =========================
-           NÚT KIỂM TRA
-        ========================= */
+    height: 100%;
 
-        .check-button {
-            min-width: 245px;
+    border: none;
 
-            height: 60px;
+    outline: none;
 
-            padding: 0 30px;
+    background: transparent;
 
-            border-radius: 40px;
+    text-align: center;
 
-            border: 3px solid #dffffa;
+    font-size: 15px;
 
-            background:
-                linear-gradient(
-                    to bottom,
-                    #29c8be,
-                    #0ba69c
-                );
+    color: #333;
 
-            color: white;
+    padding: 0 15px;
+}
 
-            font-size: 21px;
+.input-box input::placeholder {
+    color: #999;
+}
 
-            font-weight: 900;
 
-            cursor: pointer;
+/* =========================
+   THÔNG BÁO
+========================= */
 
-            box-shadow:
-                0 4px 7px rgba(0,0,0,0.3),
-                inset 0 1px 1px rgba(255,255,255,0.5);
+.verify-box {
+    width: 100%;
 
-            transition: 0.15s;
-        }
+    height: 43px;
 
-        .check-button:hover {
-            transform: translateY(-1px);
+    background: white;
 
-            filter: brightness(1.08);
-        }
+    border-radius: 4px;
 
-        .check-button:active {
-            transform: translateY(2px);
-        }
+    margin:
+        18px 0 22px;
 
-        /* =========================
-           THÔNG BÁO
-        ========================= */
+    display: flex;
 
-        .message {
-            min-height: 25px;
+    align-items: center;
 
-            margin-top: 15px;
+    padding: 7px 12px;
 
-            font-size: 15px;
+    color: #333;
+}
 
-            font-weight: bold;
+.verify-left {
+    display: flex;
 
-            text-align: center;
-        }
+    align-items: center;
 
-        .message.success {
-            color: #d8ff8a;
-        }
+    gap: 8px;
 
-        .message.error {
-            color: #ffd09e;
-        }
+    font-size: 13px;
+}
 
-        /* =========================
-           LINK
-        ========================= */
+.check {
+    width: 23px;
 
-        .links {
-            display: flex;
+    height: 23px;
 
-            justify-content: center;
+    border-radius: 50%;
 
-            gap: 45px;
+    background: #2db45b;
 
-            margin-top: 20px;
+    color: white;
 
-            flex-wrap: wrap;
-        }
+    display: flex;
 
-        .links a {
-            color: #ffe05a;
+    align-items: center;
 
-            text-decoration: none;
+    justify-content: center;
 
-            font-size: 16px;
+    font-weight: bold;
+}
 
-            font-weight: 800;
-        }
+.verify-right {
+    margin-left: auto;
 
-        .links a:hover {
-            text-decoration: underline;
-        }
+    text-align: right;
+}
 
-        /* =========================
-           THEO DÕI
-        ========================= */
+.verify-right strong {
+    display: block;
 
-        .follow {
-            display: flex;
+    color: #eb8532;
 
-            align-items: center;
+    font-size: 10px;
+}
 
-            justify-content: center;
+.verify-right span {
+    display: block;
 
-            gap: 12px;
+    color: #777;
 
-            margin-top: 26px;
+    font-size: 8px;
+}
 
-            color: #ffe05a;
 
-            font-size: 16px;
+/* =========================
+   NÚT KIỂM TRA
+========================= */
 
-            font-weight: 800;
-        }
+.check-button {
+    width: 190px;
 
-        .social {
-            width: 34px;
-            height: 34px;
+    height: 50px;
 
-            display: inline-flex;
+    display: block;
 
-            align-items: center;
-            justify-content: center;
+    margin: 0 auto;
 
-            border-radius: 50%;
+    border:
+        2px solid white;
 
-            color: white;
+    border-radius: 30px;
 
-            text-decoration: none;
+    background:
+        linear-gradient(
+            #2ac9bd,
+            #0aa49b
+        );
 
-            font-weight: bold;
+    color: white;
 
-            font-size: 18px;
-        }
+    font-size: 17px;
 
-        .telegram {
-            background: #32aeea;
-        }
+    font-weight: 900;
 
-        .facebook {
-            background: #1877f2;
-        }
+    cursor: pointer;
 
-        /* =========================
-           FOOTER
-        ========================= */
+    box-shadow:
+        0 4px 8px
+        rgba(0,0,0,.3);
 
-        .bottom-area {
-            width: 100%;
+    transition: .2s;
+}
 
-            min-height: 110px;
+.check-button:hover {
+    transform: translateY(-2px);
 
-            background:
-                linear-gradient(
-                    to bottom,
-                    #117d72,
-                    #075b55
-                );
-        }
+    filter: brightness(1.08);
+}
 
-        /* =========================
-           ĐIỆN THOẠI
-        ========================= */
+.check-button:active {
+    transform: translateY(2px);
+}
 
-        @media (max-width: 600px) {
 
-            .logo-area {
-                padding-top: 25px;
-                padding-bottom: 5px;
-            }
+/* =========================
+   LỖI
+========================= */
 
-            .logo {
-                width: 94vw;
-            }
+.message {
+    min-height: 20px;
 
-            .main {
-                padding-top: 40px;
-                padding-bottom: 35px;
-            }
+    text-align: center;
 
-            .event-title {
-                width: 90vw;
+    margin-top: 9px;
 
-                min-height: 58px;
+    color: #ffe79c;
 
-                font-size: 18px;
+    font-size: 12px;
 
-                padding: 8px 12px;
+    font-weight: bold;
+}
 
-                margin-bottom: 38px;
-            }
 
-            .label {
-                font-size: 18px;
-            }
+/* =========================
+   LINK
+========================= */
 
-            .input-box {
-                width: 90vw;
+.links {
+    display: flex;
 
-                height: 61px;
-            }
+    justify-content: center;
 
-            .input-box input {
-                font-size: 17px;
-            }
+    gap: 25px;
 
-            .verify-box {
-                width: 92vw;
+    margin-top: 4px;
 
-                padding: 10px 13px;
-            }
+    flex-wrap: wrap;
+}
 
-            .verify-text {
-                font-size: 14px;
-            }
+.links a {
+    color: #ffe05a;
 
-            .verify-right strong {
-                font-size: 11px;
-            }
+    text-decoration: none;
 
-            .verify-right span {
-                font-size: 8px;
-            }
+    font-size: 12px;
 
-            .check-button {
-                height: 63px;
+    font-weight: bold;
+}
 
-                min-width: 275px;
+.links a:hover {
+    text-decoration: underline;
+}
 
-                font-size: 20px;
-            }
 
-            .links {
-                gap: 25px;
-            }
+/* =========================
+   SOCIAL
+========================= */
 
-            .links a {
-                font-size: 15px;
-            }
+.follow {
+    display: flex;
 
-            .follow {
-                font-size: 15px;
-            }
-        }
+    justify-content: center;
 
-        @media (max-width: 380px) {
+    align-items: center;
 
-            .event-title {
-                font-size: 16px;
-            }
+    gap: 8px;
 
-            .verify-right {
-                display: none;
-            }
+    margin-top: 14px;
 
-            .links {
-                gap: 18px;
-            }
-        }
-    </style>
+    color: #ffe05a;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.social {
+    width: 24px;
+
+    height: 24px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.telegram {
+    background: #2faee9;
+}
+
+.facebook {
+    background: #1877f2;
+}
+
+
+/* =========================
+   TRANG PHÁT CODE
+========================= */
+
+.code-page {
+    display: none;
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px 15px;
+}
+
+.code-card {
+    width: min(560px, 94vw);
+
+    padding: 30px 24px;
+
+    text-align: center;
+
+    background:
+        rgba(12,123,112,.92);
+
+    border:
+        2px solid #edc63d;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,.3);
+}
+
+.code-logo {
+    width: min(300px, 80vw);
+
+    height: auto;
+
+    margin:
+        0 auto 15px;
+
+    display: block;
+}
+
+.code-title {
+    color: #ffe05a;
+
+    font-size: 30px;
+
+    font-weight: 900;
+
+    margin-bottom: 15px;
+}
+
+.account {
+    color: white;
+
+    font-size: 16px;
+
+    margin-bottom: 22px;
+}
+
+.account span {
+    color: #ffe05a;
+
+    font-weight: bold;
+}
+
+.code-box {
+    width: 100%;
+
+    min-height: 100px;
+
+    background: white;
+
+    border:
+        3px solid #e9bd35;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 15px;
+
+    margin-bottom: 22px;
+}
+
+.code {
+    color: #08766d;
+
+    font-size:
+        clamp(25px, 7vw, 40px);
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    word-break: break-all;
+}
+
+.back-button {
+    width: 190px;
+
+    height: 50px;
+
+    line-height: 46px;
+
+    display: block;
+
+    margin: 0 auto;
+
+    border:
+        2px solid white;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            #2ac9bd,
+            #0aa49b
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: 900;
+}
+
+.note {
+    margin-top: 15px;
+
+    color: #ffefac;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 820px) {
+
+    .page {
+        padding: 25px 12px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+
+        width: min(500px, 96vw);
+
+        gap: 15px;
+    }
+
+    .left {
+        display: none;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+
+@media(max-width: 500px) {
+
+    .card {
+        padding:
+            0 18px 23px;
+    }
+
+    .logo-container {
+        margin-top: -35px;
+    }
+
+    .logo {
+        width: 205px;
+    }
+
+    .event-title {
+        font-size: 16px;
+    }
+
+    .code-title {
+        font-size: 25px;
+    }
+}
+
+</style>
 </head>
+
 
 <body>
 
-<div class="page">
 
-    <!-- ĐƯỜNG VIỀN TRÊN -->
-    <div class="gold-line"></div>
+<!-- =========================================
+     TRANG CHÍNH
+========================================= -->
+
+<div
+    class="page"
+    id="homePage"
+>
+
+    <div class="container">
 
 
-    <!-- =========================
-         LOGO
-    ========================== -->
+        <!-- BÊN TRÁI -->
 
-    <div class="logo-area">
+        <div class="left">
 
-        <!--
-            QUAN TRỌNG:
-            Đặt logo.png cùng thư mục với index.html
-        -->
+            <div class="left-content">
 
-        <img
-            src="logo.png"
-            class="logo"
-            alt="Đại tiệc chào mừng 2 triệu thành viên"
-        >
+                <div class="left-title">
+
+                    ĐẠI TIỆC<br>
+                    CHÀO MỪNG
+
+                </div>
+
+                <div class="left-text">
+
+                    Chương trình đặc biệt
+                    dành cho thành viên
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FORM BÊN PHẢI -->
+
+        <div class="card">
+
+
+            <!-- LOGO -->
+
+            <div class="logo-container">
+
+                <img
+                    class="logo"
+                    alt="Đại tiệc chào mừng 2 triệu thành viên"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABfAAAAJkCAYAAAB3a2N4AAAAAXNSR0IArs4c6QAA..."
+                >
+
+            </div>
+
+
+            <!-- TIÊU ĐỀ -->
+
+            <div class="event-title">
+
+                ĐẠI TIỆC THÁNG 8 KM 20% GIÁ TRỊ!
+
+            </div>
+
+
+            <!-- TÊN TÀI KHOẢN -->
+
+            <div class="label">
+
+                Tên tài khoản:
+
+            </div>
+
+
+            <!-- INPUT -->
+
+            <div class="input-box">
+
+                <input
+                    id="username"
+                    type="text"
+                    placeholder="Nhập tên người dùng"
+                    maxlength="50"
+                    onkeydown="
+                        if(event.key === 'Enter')
+                        kiemTra()
+                    "
+                >
+
+            </div>
+
+
+            <!-- THÔNG BÁO -->
+
+            <div class="verify-box">
+
+                <div class="verify-left">
+
+                    <div class="check">
+                        ✓
+                    </div>
+
+                    <span>
+                        Thành công!
+                    </span>
+
+                </div>
+
+
+                <div class="verify-right">
+
+                    <strong>
+                        THÔNG BÁO
+                    </strong>
+
+                    <span>
+                        Privacy - Terms
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- NÚT -->
+
+            <button
+                class="check-button"
+                onclick="kiemTra()"
+            >
+
+                KIỂM TRA NGAY
+
+            </button>
+
+
+            <div
+                class="message"
+                id="message"
+            ></div>
+
+
+            <!-- LINK -->
+
+            <div class="links">
+
+                <a
+                    href="#"
+                    onclick="return false"
+                >
+                    Thông tin chương trình &gt;
+                </a>
+
+                <a
+                    href="#"
+                    onclick="
+                        phatCode();
+                        return false;
+                    "
+                >
+                    Trang phát code &gt;
+                </a>
+
+            </div>
+
+
+            <!-- SOCIAL -->
+
+            <div class="follow">
+
+                <span>
+                    Theo dõi thêm:
+                </span>
+
+                <a
+                    href="#"
+                    class="social telegram"
+                    onclick="return false"
+                >
+                    ➤
+                </a>
+
+                <a
+                    href="#"
+                    class="social facebook"
+                    onclick="return false"
+                >
+                    f
+                </a>
+
+            </div>
+
+        </div>
 
     </div>
 
-
-    <!-- ĐƯỜNG VIỀN -->
-    <div class="gold-line"></div>
+</div>
 
 
-    <!-- =========================
-         NỘI DUNG
-    ========================== -->
 
-    <main class="main">
+<!-- =========================================
+     TRANG PHÁT CODE
+========================================= -->
 
-        <!-- TIÊU ĐỀ -->
+<div
+    class="code-page"
+    id="codePage"
+>
 
-        <div class="event-title">
-            ĐẠI TIỆC THÁNG 8 KM 20% GIÁ TRỊ!
-        </div>
-
-
-        <!-- LABEL -->
-
-        <div class="label">
-            Tên tài khoản:
-        </div>
+    <div class="code-card">
 
 
-        <!-- INPUT -->
-
-        <div class="input-box">
-
-            <input
-                type="text"
-                id="username"
-                placeholder="Nhập tên người dùng"
-                autocomplete="off"
-            >
-
-        </div>
-
-
-        <!-- XÁC NHẬN -->
-
-        <div class="verify-box">
-
-            <div class="verify-left">
-
-                <div class="verify-check">
-                    ✓
-                </div>
-
-                <div class="verify-text">
-                    Đã sẵn sàng
-                </div>
-
-            </div>
-
-
-            <div class="verify-right">
-
-                <strong>
-                    THÔNG BÁO
-                </strong>
-
-                <span>
-                    Privacy - Terms
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <!-- NÚT -->
-
-        <button
-            class="check-button"
-            onclick="kiemTra()"
+        <img
+            class="code-logo"
+            alt="Logo"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABfAAAAJkCAYAAAB3a2N4AAAAAXNSR0IArs4c6QAA..."
         >
-            KIỂM TRA NGAY
-        </button>
 
 
-        <!-- MESSAGE -->
+        <div class="code-title">
 
-        <div
-            id="message"
-            class="message"
-        ></div>
-
-
-        <!-- LINK -->
-
-        <div class="links">
-
-            <a href="#">
-                Thông tin chương trình &gt;
-            </a>
-
-            <a href="#">
-                Trang phát code &gt;
-            </a>
+            🎉 TRANG PHÁT CODE
 
         </div>
 
 
-        <!-- THEO DÕI -->
+        <div class="account">
 
-        <div class="follow">
+            Tài khoản:
 
-            <span>
-                Theo dõi thêm:
+            <span id="showUsername">
+                Người dùng
             </span>
 
-            <!-- Đổi # thành link Telegram thật -->
-
-            <a
-                href="#"
-                class="social telegram"
-            >
-                ➤
-            </a>
+        </div>
 
 
-            <!-- Đổi # thành link Facebook thật -->
+        <div class="code-box">
 
-            <a
-                href="#"
-                class="social facebook"
-            >
-                f
-            </a>
+            <div class="code">
+
+                KM20-8-2026
+
+            </div>
 
         </div>
 
-    </main>
+
+        <a
+            href="#"
+            class="back-button"
+            onclick="
+                quayLai();
+                return false;
+            "
+        >
+
+            QUAY LẠI
+
+        </a>
 
 
-    <!-- FOOTER -->
+        <div class="note">
 
-    <div class="bottom-area"></div>
+            Vui lòng lưu lại mã code của bạn.
 
-    <div class="gold-line"></div>
+        </div>
+
+    </div>
 
 </div>
+
 
 
 <script>
@@ -739,38 +982,72 @@ function kiemTra() {
         .getElementById("message");
 
 
-    /* Chưa nhập tài khoản */
-
     if (username === "") {
 
-        message.className =
-            "message error";
-
-        message.innerHTML =
+        message.innerText =
             "Vui lòng nhập tên người dùng!";
 
+        document
+        .getElementById("username")
+        .focus();
+
         return;
+
     }
 
 
-    /* Thành công */
-
-    message.className =
-        "message success";
-
-    message.innerHTML =
-        "Đã tiếp nhận tài khoản: " +
-        username;
+    sessionStorage.setItem(
+        "username",
+        username
+    );
 
 
-    /*
-        NẾU MUỐN CHUYỂN SANG TRANG PHÁT CODE
+    phatCode();
 
-        Bỏ dấu // ở dòng dưới:
+}
 
-        window.location.href =
-            "phat-code.html";
-    */
+
+function phatCode() {
+
+    const username =
+        sessionStorage.getItem(
+            "username"
+        ) || "Người dùng";
+
+
+    document
+    .getElementById("showUsername")
+    .innerText = username;
+
+
+    document
+    .getElementById("homePage")
+    .style.display = "none";
+
+
+    document
+    .getElementById("codePage")
+    .style.display = "flex";
+
+
+    window.scrollTo(0, 0);
+
+}
+
+
+function quayLai() {
+
+    document
+    .getElementById("codePage")
+    .style.display = "none";
+
+
+    document
+    .getElementById("homePage")
+    .style.display = "flex";
+
+
+    window.scrollTo(0, 0);
 
 }
 
@@ -778,4 +1055,3 @@ function kiemTra() {
 
 </body>
 </html>
-
