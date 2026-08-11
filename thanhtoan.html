@@ -1,719 +1,1333 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
 <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-<title>Đại Tiệc Chào Mừng 2 Triệu Thành Viên</title>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Thanh toán</title>
 
 <style>
+
+/* =========================
+   CÀI ĐẶT CHUNG
+========================= */
+
 * {
     box-sizing: border-box;
+}
+
+body {
     margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f5f5;
+    color: #222;
 }
 
-html,
-body {
-    width: 100%;
-    min-height: 100%;
+.container {
+    width: min(950px, 94%);
+    margin: auto;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(
-        to bottom,
-        #033d3b 0px,
-        #08786f 380px,
-        #08786f 100%
-    );
-    color: white;
-    overflow-x: hidden;
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
 }
+
+.logo {
+    font-size: 36px;
+    font-weight: 800;
+    color: #16b8b2;
+}
+
+.user {
+    color: #ff3030;
+    font-weight: bold;
+}
+
 
 /* =========================
    KHUNG CHÍNH
 ========================= */
 
-.page {
-    width: 100%;
-    min-height: 100vh;
-    padding: 35px 20px 60px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.container {
-    width: 100%;
-    max-width: 1050px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 55px;
-}
-
-/* =========================
-   KHU VỰC LOGO
-========================= */
-
-.left {
-    width: 45%;
-    min-height: 600px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo-box {
-    width: 100%;
-    max-width: 560px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo {
-    display: block;
-
-    width: 100%;
-    max-width: 560px;
-    height: auto;
-
-    object-fit: contain;
-
-    /* Không để nền trắng của ảnh che background */
-    mix-blend-mode: normal;
-}
-
-/* =========================
-   FORM
-========================= */
-
-.right {
-    width: 480px;
-    flex-shrink: 0;
-}
-
 .card {
-    width: 100%;
-
-    border: 2px solid #f7bd00;
-    border-radius: 18px;
-
-    padding: 35px 45px 32px;
-
-    background: rgba(8, 120, 111, 0.55);
-}
-
-/* =========================
-   TIÊU ĐỀ
-========================= */
-
-.event {
-    width: 100%;
-    min-height: 62px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    border: 2px solid #f7bd00;
-    border-radius: 40px;
-
-    padding: 10px 20px;
-
-    color: #ffd21a;
-
-    font-size: 22px;
-    line-height: 1.25;
-    font-weight: bold;
-
-    margin-bottom: 35px;
-}
-
-/* =========================
-   LABEL
-========================= */
-
-.label {
-    display: block;
-
-    text-align: center;
-
-    color: #ffd21a;
-
-    font-size: 18px;
-    font-weight: bold;
-
-    margin-bottom: 10px;
-}
-
-/* =========================
-   INPUT
-========================= */
-
-.username {
-    width: 100%;
-    height: 62px;
-
-    border: 2px solid #f7bd00;
-    border-radius: 40px;
-
     background: white;
-    color: #222;
-
-    font-size: 18px;
-
-    text-align: center;
-
-    padding: 0 20px;
-
-    outline: none;
-
-    margin-bottom: 18px;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.12);
 }
 
-.username::placeholder {
-    color: #999;
-}
-
-.username:focus {
-    border-color: #ffd21a;
-}
 
 /* =========================
    THÔNG BÁO
 ========================= */
 
-.message {
-    width: 100%;
-    min-height: 60px;
+.notice {
+    background: linear-gradient(
+        90deg,
+        #ff3535,
+        #ff7048
+    );
 
-    display: flex;
-    align-items: center;
-
-    background: white;
-    color: #333;
-
-    border-radius: 5px;
-
-    padding: 12px 16px;
-
-    margin-bottom: 28px;
-
-    font-size: 18px;
-}
-
-.message-icon {
-    width: 38px;
-    height: 38px;
-
-    flex-shrink: 0;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 50%;
-
-    background: #2fb65d;
     color: white;
 
-    font-size: 25px;
     font-weight: bold;
+
+    padding: 13px 16px;
+
+    border-radius: 8px;
+
+    margin-bottom: 15px;
 }
 
-.message-text {
-    margin-left: 12px;
-}
 
 /* =========================
-   BUTTON
+   ĐẾM NGƯỢC
 ========================= */
 
-.check {
+.countdown {
+    text-align: center;
+
+    background: #fff4d4;
+
+    border: 1px solid #ffbd00;
+
+    color: #d40000;
+
+    border-radius: 8px;
+
+    padding: 12px;
+
+    margin-bottom: 15px;
+
+    font-weight: bold;
+}
+
+#timer {
+    font-size: 24px;
+    margin-left: 8px;
+}
+
+
+/* =========================
+   THÔNG TIN TRÊN ĐẦU
+========================= */
+
+.top-info {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+}
+
+.account-info,
+.transaction-info {
+
+    background: #f5f5f5;
+
+    padding: 11px 15px;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+}
+
+.transaction-info strong {
+
+    color: #e00000;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+
+/* =========================
+   BOX
+========================= */
+
+.box {
+
+    border: 1px dashed #ccc;
+
+    border-radius: 9px;
+
+    padding: 18px;
+
+}
+
+.box h2 {
+
+    font-size: 18px;
+
+    margin-top: 0;
+
+}
+
+.sub {
+
+    color: #888;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* =========================
+   QR
+========================= */
+
+.qr {
+
+    width: 290px;
+
+    max-width: 100%;
+
     display: block;
 
-    min-width: 275px;
-    height: 65px;
+    margin: 15px auto;
 
-    margin: 0 auto 25px;
+}
 
-    padding: 0 30px;
 
-    border: 2px solid white;
-    border-radius: 40px;
+/* =========================
+   TIỀN
+========================= */
 
-    background: #1eb7c5;
+.money {
+
+    text-align: center;
+
+    font-weight: bold;
+
+}
+
+.amount {
+
+    color: #ff2020;
+
+    font-size: 20px;
+
+}
+
+.bonus {
+
+    color: #00a651;
+
+    margin-top: 7px;
+
+}
+
+.receive {
+
+    color: #00a651;
+
+    margin-top: 5px;
+
+    font-size: 18px;
+
+}
+
+
+/* =========================
+   BẢNG THÔNG TIN
+========================= */
+
+.info {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+.info tr {
+
+    border-bottom: 1px solid #eee;
+
+}
+
+.info td {
+
+    padding: 13px 5px;
+
+    vertical-align: middle;
+
+}
+
+.info td:first-child {
+
+    width: 40%;
+
+}
+
+.value {
+
+    font-weight: bold;
+
+}
+
+.red {
+
+    color: #ff2020;
+
+}
+
+.orange {
+
+    color: #ff8500;
+
+}
+
+
+/* =========================
+   NÚT COPY
+========================= */
+
+.copy-btn {
+
+    float: right;
+
+    border: 0;
+
+    background: #12b76a;
+
     color: white;
 
-    font-size: 21px;
-    font-weight: bold;
+    padding: 7px 12px;
+
+    border-radius: 6px;
 
     cursor: pointer;
 
-    box-shadow: 0 4px 10px rgba(0,0,0,.25);
-
-    transition:
-        transform .15s ease,
-        opacity .15s ease;
-}
-
-.check:hover {
-    transform: translateY(-2px);
-}
-
-.check:active {
-    transform: translateY(1px);
-}
-
-/* =========================
-   LINKS
-========================= */
-
-.links {
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    gap: 25px;
-
-    margin-top: 5px;
-}
-
-.links a {
-    color: #ffd21a;
-
-    font-size: 15px;
     font-weight: bold;
 
-    text-decoration: none;
+    margin-left: 7px;
 
-    white-space: nowrap;
 }
 
-.links a:hover {
-    text-decoration: underline;
+.copy-btn:hover {
+
+    background: #0d9958;
+
 }
+
 
 /* =========================
-   SOCIAL
+   MÃ GIAO DỊCH
 ========================= */
 
-.follow {
-    margin-top: 22px;
+.code-box {
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 18px;
 
-    gap: 10px;
+    padding: 13px;
+
+    text-align: center;
+
+    background: #f5f5f5;
+
+    border-radius: 8px;
+
+}
+
+.code-box strong {
+
+    color: #e00000;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================
+   LƯU Ý
+========================= */
+
+.note {
+
+    margin-top: 18px;
+
+    padding: 18px;
+
+    border: 1px dashed #ccc;
+
+    border-radius: 8px;
+
+}
+
+.note h3 {
+
+    margin-top: 0;
+
+    color: #ff2020;
+
+}
+
+.note p {
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================
+   NÚT QUAY LẠI
+========================= */
+
+.back {
+
+    display: block;
+
+    width: fit-content;
+
+    margin: 20px auto 5px;
+
+    padding: 11px 24px;
+
+    background: #15b8b2;
 
     color: white;
 
-    font-size: 15px;
-    font-weight: bold;
-}
-
-.social {
-    width: 34px;
-    height: 34px;
-
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 50%;
-
-    background: #159ee0;
-
-    color: white;
-
     text-decoration: none;
 
-    font-size: 16px;
+    border-radius: 25px;
+
     font-weight: bold;
+
 }
 
+
 /* =========================
-   TABLET
+   MOBILE
 ========================= */
 
-@media (max-width: 850px) {
+@media (max-width: 700px) {
 
-    .page {
-        padding: 20px 15px 50px;
-    }
+    .header {
 
-    .container {
         flex-direction: column;
-        align-items: center;
-        gap: 20px;
+
+        gap: 10px;
+
+        text-align: center;
+
     }
 
-    .left {
-        width: 100%;
-        min-height: auto;
+    .top-info {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
     }
 
-    .logo-box {
-        max-width: 500px;
-    }
+    .grid {
 
-    .logo {
-        max-width: 500px;
-    }
+        grid-template-columns: 1fr;
 
-    .right {
-        width: 100%;
-        max-width: 500px;
-    }
-
-    .card {
-        padding: 30px 28px;
-    }
-}
-
-/* =========================
-   ĐIỆN THOẠI
-========================= */
-
-@media (max-width: 500px) {
-
-    body {
-        background: linear-gradient(
-            to bottom,
-            #033d3b 0px,
-            #08786f 180px,
-            #08786f 100%
-        );
-    }
-
-    .page {
-        padding: 15px 12px 45px;
-    }
-
-    .container {
-        gap: 8px;
-    }
-
-    /* Logo trên điện thoại */
-    .left {
-        width: 100%;
-        min-height: auto;
-
-        padding: 0 5px;
-    }
-
-    .logo-box {
-        width: 100%;
-        max-width: 390px;
     }
 
     .logo {
-        width: 100%;
-        max-width: 390px;
-        height: auto;
+
+        font-size: 30px;
+
     }
 
-    .right {
-        width: 100%;
-    }
-
-    .card {
-        width: 100%;
-
-        padding: 30px 20px 28px;
-
-        border-radius: 0;
-
-        border-left: 2px solid #f7bd00;
-        border-right: 2px solid #f7bd00;
-    }
-
-    .event {
-        min-height: 62px;
-
-        font-size: 21px;
-
-        padding: 10px 18px;
-
-        margin-bottom: 42px;
-    }
-
-    .label {
-        font-size: 19px;
-
-        margin-bottom: 15px;
-    }
-
-    .username {
-        height: 62px;
-
-        font-size: 18px;
-
-        margin-bottom: 22px;
-    }
-
-    .message {
-        min-height: 60px;
-
-        padding: 12px 16px;
-
-        margin-bottom: 28px;
-
-        font-size: 18px;
-    }
-
-    .message-icon {
-        width: 42px;
-        height: 42px;
-    }
-
-    .check {
-        width: 90%;
-        min-width: 0;
-
-        height: 65px;
-
-        font-size: 21px;
-
-        margin-bottom: 30px;
-    }
-
-    .links {
-        gap: 22px;
-    }
-
-    .links a {
-        font-size: 15px;
-    }
-
-    .follow {
-        margin-top: 25px;
-        padding-bottom: 5px;
-    }
 }
 
-/* =========================
-   ĐIỆN THOẠI RẤT NHỎ
-========================= */
-
-@media (max-width: 360px) {
-
-    .card {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .event {
-        font-size: 18px;
-    }
-
-    .username {
-        font-size: 16px;
-    }
-
-    .check {
-        font-size: 18px;
-    }
-
-    .links {
-        gap: 12px;
-    }
-
-    .links a {
-        font-size: 13px;
-    }
-}
 </style>
+
 </head>
+
 
 <body>
 
-<div class="page">
 
-    <div class="container">
+<div class="container">
 
-        <!-- =====================
-             LOGO
-        ====================== -->
 
-        <div class="left">
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-            <div class="logo-box">
+    <div class="header">
 
-                <img
-                    class="logo"
-                    src="4387413a-ea82-4d2e-8f1b-b04ddb2ec70b1.png"
-                    alt="Đại tiệc chào mừng 2 triệu thành viên"
-                >
+        <div class="logo">
+            GG88
+        </div>
 
-            </div>
+        <div class="user">
+
+            Tên tài khoản:
+
+            <span id="topUsername">
+                ---
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+
+        <!-- =========================
+             KHUYẾN MÃI
+        ========================== -->
+
+        <div class="notice">
+
+            🎁 Khuyến mãi tháng 8:
+            Nạp tiền +20% giá trị nạp ngay hôm nay!
 
         </div>
 
 
-        <!-- =====================
-             FORM
-        ====================== -->
+        <!-- =========================
+             ĐẾM NGƯỢC
+        ========================== -->
 
-        <div class="right">
+        <div class="countdown">
 
-            <div class="card">
+            ⏳ Thời gian thanh toán còn lại:
 
-                <!-- TIÊU ĐỀ -->
+            <span id="timer">
+                10:00
+            </span>
 
-                <div class="event">
-                    ĐẠI TIỆC THÁNG 8 KM 20% GIÁ TRỊ!
-                </div>
-
-
-                <!-- LABEL -->
-
-                <label
-                    class="label"
-                    for="username"
-                >
-                    Tên tài khoản:
-                </label>
+        </div>
 
 
-                <!-- INPUT -->
+        <!-- =========================
+             TÀI KHOẢN + MÃ GIAO DỊCH
+        ========================== -->
 
-                <input
-                    type="text"
-                    id="username"
-                    class="username"
-                    placeholder="Nhập tên người dùng"
-                    autocomplete="off"
-                >
+        <div class="top-info">
 
 
-                <!-- THÔNG BÁO -->
+            <div class="account-info">
 
-                <div class="message">
+                👤 Tài khoản:
 
-                    <span class="message-icon">
-                        ✓
-                    </span>
+                <strong id="accountTop">
+                    ---
+                </strong>
 
-                    <span class="message-text">
-                        Đã xác thực
-                    </span>
-
-                </div>
+            </div>
 
 
-                <!-- BUTTON -->
+            <div class="transaction-info">
+
+                🔑 Mã giao dịch:
+
+                <strong id="transactionCode">
+                    ------------
+                </strong>
 
                 <button
-                    type="button"
-                    class="check"
-                    onclick="kiemTra()"
-                >
-                    KIỂM TRA NGAY
+                    class="copy-btn"
+                    onclick="copyText('transactionCode')">
+
+                    Copy
+
                 </button>
 
+            </div>
 
-                <!-- LINK -->
 
-                <div class="links">
+        </div>
 
-                    <a href="#">
-                        Thông tin chương trình &gt;
-                    </a>
 
-                    <a href="#">
-                        Trang phát code &gt;
-                    </a>
+        <!-- =========================
+             2 CỘT
+        ========================== -->
+
+        <div class="grid">
+
+
+            <!-- =========================
+                 CỘT QR
+            ========================== -->
+
+            <div class="box">
+
+
+                <h2>
+
+                    Cách 1:
+                    Chuyển khoản bằng mã QR
+
+                </h2>
+
+
+                <div class="sub">
+
+                    Mở ứng dụng ngân hàng
+                    và quét QRCode
 
                 </div>
 
 
-                <!-- SOCIAL -->
+                <img
+                    id="qr"
+                    class="qr"
+                    alt="QR chuyển khoản"
+                >
 
-                <div class="follow">
 
-                    <span>
-                        Theo dõi thêm:
+                <div class="money">
+
+
+                    <div
+                        id="qrAmount"
+                        class="amount">
+
+                    </div>
+
+
+                    <div
+                        id="qrBonus"
+                        class="bonus">
+
+                    </div>
+
+
+                    <div
+                        id="qrReceive"
+                        class="receive">
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =========================
+                 CỘT CHUYỂN KHOẢN
+            ========================== -->
+
+            <div class="box">
+
+
+                <h2>
+
+                    Cách 2:
+                    Chuyển khoản
+
+                    <span class="red">
+                        thủ công
                     </span>
 
-                    <a
-                        class="social"
-                        href="#"
-                        title="Telegram"
-                    >
-                        ➤
-                    </a>
+                </h2>
 
-                    <a
-                        class="social"
-                        href="#"
-                        title="Facebook"
-                    >
-                        f
-                    </a>
+
+                <table class="info">
+
+
+                    <!-- NGÂN HÀNG -->
+
+                    <tr>
+
+                        <td>
+                            Ngân hàng
+                        </td>
+
+                        <td class="value">
+
+                            <span id="bankName">
+                                Sacombank
+                            </span>
+
+                            <button
+                                class="copy-btn"
+                                onclick="copyText('bankName')">
+
+                                Copy
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- TÀI KHOẢN GAME -->
+
+                    <tr>
+
+                        <td>
+                            Tài khoản Game
+                        </td>
+
+                        <td class="value orange">
+
+                            <span id="gameAccount">
+                                ---
+                            </span>
+
+                            <button
+                                class="copy-btn"
+                                onclick="copyText('gameAccount')">
+
+                                Copy
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- SỐ TÀI KHOẢN -->
+
+                    <tr>
+
+                        <td>
+                            Số TK
+                        </td>
+
+                        <td class="value">
+
+                            <span id="accountNumber">
+                                070137130244
+                            </span>
+
+                            <button
+                                class="copy-btn"
+                                onclick="copyText('accountNumber')">
+
+                                Copy
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- CHỦ TÀI KHOẢN -->
+
+                    <tr>
+
+                        <td>
+                            Chủ TK
+                        </td>
+
+                        <td class="value red">
+
+                            <span id="accountName">
+                                LE GIA KIET
+                            </span>
+
+                            <button
+                                class="copy-btn"
+                                onclick="copyText('accountName')">
+
+                                Copy
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- SỐ TIỀN -->
+
+                    <tr>
+
+                        <td>
+                            Số tiền
+                        </td>
+
+                        <td class="value red">
+
+                            <span id="amountText">
+                                ---
+                            </span>
+
+                            <button
+                                class="copy-btn"
+                                onclick="copyAmount()">
+
+                                Copy
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- NỘI DUNG -->
+
+                    <tr>
+
+                        <td>
+                            Nội dung
+                        </td>
+
+                        <td class="value red">
+
+                            <span id="transferContent">
+                                ---
+                            </span>
+
+                            <button
+                                class="copy-btn"
+                                onclick="copyText('transferContent')">
+
+                                Copy
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                </table>
+
+
+                <!-- =========================
+                     KHUYẾN MÃI
+                ========================== -->
+
+                <div class="money">
+
+                    🎁 Khuyến mãi +20%:
+
+                    <span
+                        id="bonusText"
+                        class="red">
+
+                    </span>
+
+                    <br>
+
+                    Tổng tiền nhận:
+
+                    <span
+                        id="receiveText"
+                        class="receive">
+
+                    </span>
 
                 </div>
+
+
+                <!-- =========================
+                     MÃ GIAO DỊCH
+                ========================== -->
+
+                <div class="code-box">
+
+                    🔑 Mã giao dịch:
+
+                    <strong id="codeDisplay">
+                        ------------
+                    </strong>
+
+                    <button
+                        class="copy-btn"
+                        onclick="copyText('codeDisplay')">
+
+                        Copy
+
+                    </button>
+
+                </div>
+
 
             </div>
 
         </div>
+
+
+        <!-- =========================
+             LƯU Ý
+        ========================== -->
+
+        <div class="note">
+
+            <h3>
+                Lưu ý quan trọng:
+            </h3>
+
+
+            <p>
+                1. Chuyển khoản cần nhập chính xác
+                số tiền và nội dung hiển thị.
+            </p>
+
+
+            <p>
+                2. Kiểm tra kỹ thông tin ngân hàng
+                trước khi chuyển khoản.
+            </p>
+
+
+            <p>
+                3. Không cung cấp OTP hoặc mật khẩu
+                ngân hàng cho bất kỳ ai.
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             QUAY LẠI
+        ========================== -->
+
+        <a
+            href="index.html"
+            class="back">
+
+            ← Quay lại
+
+        </a>
+
 
     </div>
 
 </div>
 
 
+
 <script>
 
-function kiemTra() {
+/* =====================================================
+   CẤU HÌNH WEBSITE
+===================================================== */
 
-    const username =
-        document
-        .getElementById("username")
-        .value
-        .trim();
 
-    if (username === "") {
+/*
+    CHỈ ĐỔI MỆNH GIÁ Ở DÒNG NÀY
 
-        alert("Vui lòng nhập tên người dùng!");
+    Ví dụ:
 
-        document
-        .getElementById("username")
-        .focus();
+    300000
+    500000
+    1000000
+    2000000
 
-        return;
+*/
+
+const AMOUNT = 300000;
+
+
+/*
+    KHUYẾN MÃI
+*/
+
+const BONUS_PERCENT = 20;
+
+
+/*
+    THỜI GIAN ĐẾM NGƯỢC
+
+    10 = 10 phút
+*/
+
+const COUNTDOWN_MINUTES = 10;
+
+
+/*
+    THÔNG TIN NGÂN HÀNG
+*/
+
+const BANK_NAME = "Sacombank";
+
+const ACCOUNT_NUMBER = "070137130244";
+
+const ACCOUNT_NAME = "LE GIA KIET";
+
+
+/* =====================================================
+   LẤY TÊN NGƯỜI DÙNG
+===================================================== */
+
+const username =
+    localStorage.getItem("username") || "THANHVIEN";
+
+
+document.getElementById(
+    "topUsername"
+).textContent = username;
+
+
+document.getElementById(
+    "accountTop"
+).textContent = username;
+
+
+document.getElementById(
+    "gameAccount"
+).textContent = username;
+
+
+/* =====================================================
+   TẠO MÃ GIAO DỊCH 12 SỐ NGẪU NHIÊN
+===================================================== */
+
+function taoMaGiaoDich() {
+
+    let ma = "";
+
+    for (
+        let i = 0;
+        i < 12;
+        i++
+    ) {
+
+        ma += Math.floor(
+            Math.random() * 10
+        );
+
     }
 
+    return ma;
+}
+
+
+const maGiaoDich =
+    taoMaGiaoDich();
+
+
+/* =====================================================
+   HIỂN THỊ MÃ GIAO DỊCH
+===================================================== */
+
+document.getElementById(
+    "transactionCode"
+).textContent = maGiaoDich;
+
+
+document.getElementById(
+    "codeDisplay"
+).textContent = maGiaoDich;
+
+
+/* =====================================================
+   TẠO NỘI DUNG CHUYỂN KHOẢN
+=====================================================
+
+   Dạng:
+
+   taxikjv783u
+   taxikab291x
+   taxikm4p82q
+
+   Luôn bắt đầu bằng:
+
+   taxik
+
+===================================================== */
+
+function taoNoiDungCK() {
+
+    const kyTu =
+        "abcdefghijklmnopqrstuvwxyz0123456789";
+
+    let phanSau = "";
+
+
     /*
-       Lưu tên tài khoản nếu trang thanhtoan.html
-       cần sử dụng lại.
+        Tạo 6 ký tự ngẫu nhiên
     */
 
-    localStorage.setItem(
-        "username",
-        username
+    for (
+        let i = 0;
+        i < 6;
+        i++
+    ) {
+
+        const viTri =
+            Math.floor(
+                Math.random() *
+                kyTu.length
+            );
+
+
+        phanSau +=
+            kyTu[viTri];
+
+    }
+
+
+    return "taxik" + phanSau;
+
+}
+
+
+const noiDungCK =
+    taoNoiDungCK();
+
+
+/* =====================================================
+   HIỂN THỊ NỘI DUNG
+===================================================== */
+
+document.getElementById(
+    "transferContent"
+).textContent = noiDungCK;
+
+
+/* =====================================================
+   TÍNH KHUYẾN MÃI
+===================================================== */
+
+const bonus =
+    AMOUNT *
+    BONUS_PERCENT /
+    100;
+
+
+const total =
+    AMOUNT +
+    bonus;
+
+
+/* =====================================================
+   FORMAT TIỀN
+===================================================== */
+
+function formatMoney(number) {
+
+    return number.toLocaleString("vi-VN")
+        + " VND";
+
+}
+
+
+/* =====================================================
+   HIỂN THỊ TIỀN
+===================================================== */
+
+document.getElementById(
+    "qrAmount"
+).textContent =
+    formatMoney(AMOUNT);
+
+
+document.getElementById(
+    "amountText"
+).textContent =
+    formatMoney(AMOUNT);
+
+
+document.getElementById(
+    "qrBonus"
+).textContent =
+    "+" +
+    BONUS_PERCENT +
+    "% KM = " +
+    formatMoney(bonus);
+
+
+document.getElementById(
+    "bonusText"
+).textContent =
+    formatMoney(bonus);
+
+
+document.getElementById(
+    "qrReceive"
+).textContent =
+    "Thực nhận: " +
+    formatMoney(total);
+
+
+document.getElementById(
+    "receiveText"
+).textContent =
+    formatMoney(total);
+
+
+/* =====================================================
+   TẠO QR VIETQR
+===================================================== */
+
+const qrURL =
+    "https://vietqr.app/img?" +
+
+    "bank=" +
+    encodeURIComponent(BANK_NAME) +
+
+    "&acc=" +
+    encodeURIComponent(ACCOUNT_NUMBER) +
+
+    "&template=standard" +
+
+    "&amount=" +
+    AMOUNT +
+
+    "&holder=" +
+    encodeURIComponent(ACCOUNT_NAME) +
+
+    "&addInfo=" +
+    encodeURIComponent(noiDungCK);
+
+
+document.getElementById(
+    "qr"
+).src = qrURL;
+
+
+/* =====================================================
+   COPY
+===================================================== */
+
+function copyText(id) {
+
+    const element =
+        document.getElementById(id);
+
+
+    const text =
+        element.textContent.trim();
+
+
+    navigator.clipboard.writeText(text)
+
+        .then(function() {
+
+            alert(
+                "Đã copy: " + text
+            );
+
+        })
+
+        .catch(function() {
+
+            alert(
+                "Không thể copy tự động."
+            );
+
+        });
+
+}
+
+
+/* =====================================================
+   COPY SỐ TIỀN
+===================================================== */
+
+function copyAmount() {
+
+    navigator.clipboard.writeText(
+        String(AMOUNT)
+    )
+
+    .then(function() {
+
+        alert(
+            "Đã copy số tiền: " +
+            AMOUNT
+        );
+
+    });
+
+}
+
+
+/* =====================================================
+   ĐẾM NGƯỢC
+===================================================== */
+
+let timeLeft =
+    COUNTDOWN_MINUTES * 60;
+
+
+const timerElement =
+    document.getElementById("timer");
+
+
+function updateTimer() {
+
+
+    const minutes =
+        Math.floor(
+            timeLeft / 60
+        );
+
+
+    const seconds =
+        timeLeft % 60;
+
+
+    timerElement.textContent =
+
+        minutes +
+
+        ":" +
+
+        String(seconds)
+            .padStart(2, "0");
+
+
+    if (timeLeft <= 0) {
+
+        clearInterval(timerInterval);
+
+
+        timerElement.textContent =
+            "HẾT THỜI GIAN";
+
+
+        return;
+
+    }
+
+
+    timeLeft--;
+
+}
+
+
+updateTimer();
+
+
+const timerInterval =
+    setInterval(
+        updateTimer,
+        1000
     );
 
-    /*
-       Chuyển sang thanhtoan.html
-       Hai file phải nằm cùng thư mục.
-    */
-
-    window.location.href = "thanhtoan.html";
-}
 
 </script>
 
 </body>
+
 </html>
