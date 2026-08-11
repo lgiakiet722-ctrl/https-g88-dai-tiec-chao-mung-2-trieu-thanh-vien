@@ -1327,7 +1327,30 @@ const timerInterval =
 
 
 </script>
+<script>
+    const username =
+        localStorage.getItem("username");
 
+    document.getElementById("gameUsername").textContent =
+        username || "Chưa nhập tên tài khoản";
+
+
+    function copyUsername() {
+
+        const text =
+            document.getElementById("gameUsername").textContent;
+
+        navigator.clipboard.writeText(text).then(function () {
+
+            alert("Đã copy: " + text);
+
+        }).catch(function () {
+
+            alert("Không thể copy tự động.");
+
+        });
+    }
+</script>
 </body>
 
 </html>
