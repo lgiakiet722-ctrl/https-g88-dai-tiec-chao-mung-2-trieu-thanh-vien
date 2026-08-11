@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Thanh toán - GG88</title>
+<title>Thanh toán</title>
 
 <style>
 * {
@@ -18,84 +18,60 @@ body {
     color: #222;
 }
 
-.header {
+.container {
     width: min(950px, 94%);
     margin: auto;
-    padding: 25px 0 15px;
+}
+
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 25px 0;
 }
 
-.logo-text {
-    font-size: 38px;
-    font-weight: bold;
-    color: #12b9b3;
+.logo {
+    font-size: 36px;
+    font-weight: 800;
+    color: #16b8b2;
 }
 
-.username-top {
+.user {
     color: #ff3030;
     font-weight: bold;
 }
 
 .card {
-    width: min(950px, 94%);
-    margin: auto;
-    background: white;
-    border-radius: 14px;
+    background: #fff;
+    border-radius: 12px;
     padding: 18px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    box-shadow: 0 4px 18px rgba(0,0,0,.12);
 }
 
 .notice {
-    background: linear-gradient(90deg, #ff3030, #ff6848);
-    color: white;
+    background: linear-gradient(90deg,#ff3535,#ff7048);
+    color: #fff;
+    font-weight: bold;
     padding: 13px 16px;
-    border-radius: 7px;
-    font-weight: bold;
-    margin-bottom: 16px;
-}
-
-/* COUNTDOWN */
-
-.countdown-box {
-    text-align: center;
-    background: #fff4d6;
-    border: 1px solid #ffc107;
     border-radius: 8px;
-    padding: 12px;
-    margin-bottom: 16px;
-    font-weight: bold;
-    color: #d60000;
-}
-
-#countdown {
-    font-size: 25px;
-    margin-left: 8px;
-}
-
-/* THÔNG TIN */
-
-.info-bar {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    flex-wrap: wrap;
     margin-bottom: 15px;
 }
 
-.info-item {
-    background: #f7f7f7;
-    padding: 9px 13px;
-    border-radius: 6px;
-    font-size: 14px;
+.countdown {
+    text-align: center;
+    background: #fff4d4;
+    border: 1px solid #ffc107;
+    color: #d40000;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 15px;
+    font-weight: bold;
 }
 
-.info-item strong {
-    color: #e60000;
+#timer {
+    font-size: 24px;
+    margin-left: 8px;
 }
-
-/* GRID */
 
 .grid {
     display: grid;
@@ -107,12 +83,11 @@ body {
     border: 1px dashed #ccc;
     border-radius: 9px;
     padding: 18px;
-    min-height: 400px;
 }
 
 .box h2 {
-    margin-top: 0;
     font-size: 18px;
+    margin-top: 0;
 }
 
 .sub {
@@ -120,10 +95,8 @@ body {
     margin-bottom: 15px;
 }
 
-/* QR */
-
 .qr {
-    width: 300px;
+    width: 290px;
     max-width: 100%;
     display: block;
     margin: 15px auto;
@@ -135,39 +108,37 @@ body {
 }
 
 .amount {
-    color: red;
+    color: #ff2020;
     font-size: 20px;
 }
 
 .bonus {
-    color: #00a84f;
-    font-size: 17px;
+    color: #00a651;
     margin-top: 7px;
 }
 
 .receive {
-    color: #00a84f;
-    font-size: 18px;
+    color: #00a651;
     margin-top: 5px;
+    font-size: 18px;
 }
 
-/* TABLE */
-
-.info-table {
+.info {
     width: 100%;
     border-collapse: collapse;
 }
 
-.info-table tr {
+.info tr {
     border-bottom: 1px solid #eee;
 }
 
-.info-table td {
-    padding: 12px 5px;
+.info td {
+    padding: 13px 5px;
+    vertical-align: middle;
 }
 
-.info-table td:first-child {
-    width: 42%;
+.info td:first-child {
+    width: 40%;
 }
 
 .value {
@@ -175,82 +146,68 @@ body {
 }
 
 .red {
-    color: red;
+    color: #ff2020;
 }
 
 .orange {
-    color: #ff8c00;
+    color: #ff8500;
 }
 
 .copy-btn {
-    background: #12b86b;
-    border: none;
+    float: right;
+    border: 0;
+    background: #12b76a;
     color: white;
-    padding: 6px 10px;
-    border-radius: 5px;
+    padding: 7px 12px;
+    border-radius: 6px;
     cursor: pointer;
-    margin-left: 7px;
     font-weight: bold;
 }
 
 .copy-btn:hover {
-    opacity: 0.85;
+    background: #0d9958;
 }
 
-/* MÃ GIAO DỊCH */
-
-.transaction {
+.code-box {
     margin-top: 18px;
-    padding: 12px;
-    background: #f5f5f5;
-    border-radius: 7px;
+    padding: 13px;
     text-align: center;
+    background: #f5f5f5;
+    border-radius: 8px;
 }
 
-.transaction span {
-    color: #e60000;
-    font-weight: bold;
+.code-box strong {
+    color: #e00000;
     letter-spacing: 1px;
 }
 
-/* LƯU Ý */
-
-.warning {
-    margin-top: 15px;
-    border: 1px dashed #ccc;
-    border-radius: 9px;
+.note {
+    margin-top: 18px;
     padding: 18px;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
 }
 
-.warning h2 {
-    color: red;
-    font-size: 18px;
+.note h3 {
+    margin-top: 0;
+    color: #ff2020;
 }
 
-.warning li {
-    margin: 12px 0;
+.note p {
+    line-height: 1.6;
 }
-
-/* NÚT */
 
 .back {
     display: block;
     width: fit-content;
     margin: 20px auto 5px;
-    padding: 11px 22px;
-    border: none;
-    border-radius: 25px;
-    background: #13b8b3;
+    padding: 11px 24px;
+    background: #15b8b2;
     color: white;
     text-decoration: none;
+    border-radius: 25px;
     font-weight: bold;
 }
-
-.back:hover {
-    opacity: 0.85;
-}
-
-/* RESPONSIVE */
 
 @media (max-width: 700px) {
 
@@ -264,11 +221,7 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .box {
-        min-height: auto;
-    }
-
-    .logo-text {
+    .logo {
         font-size: 30px;
     }
 }
@@ -277,527 +230,648 @@ body {
 
 <body>
 
-<!-- =========================
-     CẤU HÌNH
-========================= -->
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+
+        <div class="logo">
+            GG88
+        </div>
+
+        <div class="user">
+            Tài khoản:
+            <span id="topUsername">---</span>
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <!-- KHUYẾN MÃI -->
+        <div class="notice">
+            🎁 Khuyến mãi: Nạp tiền +20% giá trị nạp
+        </div>
+
+
+        <!-- ĐẾM NGƯỢC -->
+        <div class="countdown">
+
+            ⏳ Thời gian còn lại:
+
+            <span id="timer">
+                10:00
+            </span>
+
+        </div>
+
+
+        <div class="grid">
+
+            <!-- ======================
+                 QR
+            ======================= -->
+
+            <div class="box">
+
+                <h2>
+                    Cách 1: Chuyển khoản bằng mã QR
+                </h2>
+
+                <div class="sub">
+                    Mở ứng dụng ngân hàng và quét QRCode
+                </div>
+
+                <img
+                    id="qr"
+                    class="qr"
+                    alt="QR chuyển khoản"
+                >
+
+                <div class="money">
+
+                    <div
+                        id="qrAmount"
+                        class="amount">
+                    </div>
+
+                    <div
+                        id="qrBonus"
+                        class="bonus">
+                    </div>
+
+                    <div
+                        id="qrReceive"
+                        class="receive">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ======================
+                 THÔNG TIN CHUYỂN KHOẢN
+            ======================= -->
+
+            <div class="box">
+
+                <h2>
+                    Cách 2:
+                    Chuyển khoản
+                    <span class="red">thủ công</span>
+                </h2>
+
+
+                <table class="info">
+
+                    <!-- NGÂN HÀNG -->
+                    <tr>
+
+                        <td>
+                            Ngân hàng
+                        </td>
+
+                        <td class="value">
+
+                            <span id="bankName">
+                                SACOMBANK
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- TÀI KHOẢN GAME -->
+                    <tr>
+
+                        <td>
+                            Tài khoản Game
+                        </td>
+
+                        <td class="value orange">
+
+                            <span id="gameAccount">
+                                ---
+                            </span>
+
+                            <button
+                                class="copy-btn"
+                                onclick="copyValue('gameAccount')">
+                                Copy
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- SỐ TK -->
+                    <tr>
+
+                        <td>
+                            Số TK
+                        </td>
+
+                        <td class="value">
+
+                            <span id="accountNumber">
+                                070137130244
+                            </span>
+
+                            <button
+                                class="copy-btn"
+                                onclick="copyValue('accountNumber')">
+                                Copy
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- CHỦ TK -->
+                    <tr>
+
+                        <td>
+                            Chủ TK
+                        </td>
+
+                        <td class="value red">
+
+                            <span id="accountName">
+                                LE GIA KIET
+                            </span>
+
+                            <button
+                                class="copy-btn"
+                                onclick="copyValue('accountName')">
+                                Copy
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- SỐ TIỀN -->
+                    <tr>
+
+                        <td>
+                            Số tiền
+                        </td>
+
+                        <td class="value red">
+
+                            <span id="amountText">
+                                ---
+                            </span>
+
+                            <button
+                                class="copy-btn"
+                                onclick="copyAmount()">
+                                Copy
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- NỘI DUNG -->
+                    <tr>
+
+                        <td>
+                            Nội dung
+                        </td>
+
+                        <td class="value red">
+
+                            <span id="transferContent">
+                                ---
+                            </span>
+
+                            <button
+                                class="copy-btn"
+                                onclick="copyValue('transferContent')">
+                                Copy
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+
+                <!-- KHUYẾN MÃI -->
+
+                <div class="money">
+
+                    🎁 Khuyến mãi +20%:
+
+                    <span
+                        id="bonusText"
+                        class="red">
+                    </span>
+
+                    <br>
+
+                    Tổng tiền nhận:
+
+                    <span
+                        id="receiveText"
+                        class="receive">
+                    </span>
+
+                </div>
+
+
+                <!-- MÃ NỘI DUNG -->
+
+                <div class="code-box">
+
+                    Nội dung chuyển khoản:
+
+                    <strong id="codeDisplay">
+                    </strong>
+
+                    <button
+                        class="copy-btn"
+                        onclick="copyCode()">
+                        Copy
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- LƯU Ý -->
+
+        <div class="note">
+
+            <h3>
+                Lưu ý quan trọng:
+            </h3>
+
+            <p>
+                1. Chuyển khoản chính xác số tiền và nội dung hiển thị.
+            </p>
+
+            <p>
+                2. Kiểm tra kỹ thông tin ngân hàng trước khi chuyển.
+            </p>
+
+            <p>
+                3. Không cung cấp OTP hoặc mật khẩu ngân hàng.
+            </p>
+
+        </div>
+
+
+        <a
+            href="index.html"
+            class="back">
+            ← Quay lại
+        </a>
+
+    </div>
+
+</div>
+
 
 <script>
-/* CHỈ CẦN ĐỔI SỐ TIỀN Ở ĐÂY */
+
+/* =================================================
+   CẤU HÌNH
+   ================================================= */
+
+/*
+   CHỈ CẦN ĐỔI SỐ TIỀN Ở ĐÂY
+*/
 
 const AMOUNT = 300000;
 
-/* Khuyến mãi */
+
+/*
+   PHẦN TRĂM KHUYẾN MÃI
+*/
 
 const BONUS_PERCENT = 20;
 
-/* Thời gian đếm ngược: 10 phút */
+
+/*
+   THỜI GIAN ĐẾM NGƯỢC
+*/
 
 const COUNTDOWN_MINUTES = 10;
 
-/* Thông tin ngân hàng */
 
-const BANK = "Sacombank";
+/*
+   THÔNG TIN NGÂN HÀNG
+*/
+
+const BANK_NAME = "SACOMBANK";
+
 const ACCOUNT_NUMBER = "070137130244";
+
 const ACCOUNT_NAME = "LE GIA KIET";
 
-/* =========================
-   KHÔNG CẦN SỬA PHẦN DƯỚI
-========================= */
 
-const bonus = AMOUNT * BONUS_PERCENT / 100;
-const totalReceive = AMOUNT + bonus;
+/* =================================================
+   LẤY TÊN GAME TỪ INDEX
+   ================================================= */
 
-/* Lấy tên game */
+const username =
+    localStorage.getItem("username") || "THANHVIEN";
 
-const username = localStorage.getItem("username") || "Đang tải...";
 
-/* Tạo mã giao dịch */
+/* =================================================
+   TẠO NỘI DUNG CHUYỂN KHOẢN
+   ================================================= */
 
-function generateTransactionCode() {
+/*
+   Lần đầu:
+   taxik83h39
 
-    const chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+   Lần tiếp:
+   taxik83h40
 
-    let code = "taxik";
+   Lần tiếp:
+   taxik83h41
+*/
 
-    for (let i = 0; i < 6; i++) {
-        code += chars.charAt(
-            Math.floor(Math.random() * chars.length)
-        );
-    }
+let counter =
+    Number(
+        localStorage.getItem("taxikCounter")
+    );
 
-    return code;
+
+if (!counter) {
+
+    counter = 39;
+
 }
 
-const transactionCode = generateTransactionCode();
 
-/* Lượt truy cập trên thiết bị */
+/*
+   Tạo mã
+*/
 
-let visitorCount =
-    Number(localStorage.getItem("visitorCount") || 0);
+const transferContent =
+    "taxik83h" + counter;
 
-visitorCount++;
 
-localStorage.setItem("visitorCount", visitorCount);
-</script>
+/*
+   Tăng số cho lần mở tiếp theo
+*/
 
+localStorage.setItem(
+    "taxikCounter",
+    counter + 1
+);
 
-<!-- HEADER -->
 
-<div class="header">
+/* =================================================
+   TÍNH KHUYẾN MÃI
+   ================================================= */
 
-    <div class="logo-text">
-        GG88
-    </div>
+const bonus =
+    AMOUNT * BONUS_PERCENT / 100;
 
-    <div class="username-top">
-        Tên tài khoản:
-        <span id="usernameTop"></span>
-    </div>
+const total =
+    AMOUNT + bonus;
 
-</div>
 
-
-<!-- MAIN -->
-
-<div class="card">
-
-    <div class="notice">
-        🎁 Khuyến mãi tháng 8:
-        Nạp tiền +20% giá trị nạp ngay hôm nay!
-    </div>
-
-
-    <!-- ĐẾM NGƯỢC -->
-
-    <div class="countdown-box">
-
-        ⏳ Thời gian thanh toán còn lại:
-
-        <span id="countdown">
-            10:00
-        </span>
-
-    </div>
-
-
-    <!-- THÔNG TIN -->
-
-    <div class="info-bar">
-
-        <div class="info-item">
-            👤 Tài khoản:
-            <strong id="usernameInfo"></strong>
-        </div>
-
-        <div class="info-item">
-            👁️ Lượt truy cập:
-            <strong id="visitorCount"></strong>
-        </div>
-
-        <div class="info-item">
-            🔑 Mã giao dịch:
-            <strong id="transactionCode"></strong>
-        </div>
-
-    </div>
-
-
-    <div class="grid">
-
-
-        <!-- ======================
-             QR
-        ======================= -->
-
-        <div class="box">
-
-            <h2>
-                Cách 1: Chuyển khoản bằng mã QR
-            </h2>
-
-            <div class="sub">
-                Mở ứng dụng ngân hàng và quét QRCode
-            </div>
-
-            <img
-                id="qr"
-                class="qr"
-                alt="QR chuyển khoản"
-            >
-
-            <div class="money">
-
-                <div class="amount" id="amountQR"></div>
-
-                <div class="bonus" id="bonusQR"></div>
-
-                <div class="receive" id="receiveQR"></div>
-
-            </div>
-
-        </div>
-
-
-        <!-- ======================
-             CHUYỂN KHOẢN THỦ CÔNG
-        ======================= -->
-
-        <div class="box">
-
-            <h2>
-                Cách 2:
-                Chuyển khoản
-                <span class="red">thủ công</span>
-            </h2>
-
-
-            <table class="info-table">
-
-                <tr>
-
-                    <td>Ngân hàng</td>
-
-                    <td class="value">
-                        <span id="bank"></span>
-
-                        <button
-                            class="copy-btn"
-                            onclick="copyText(BANK)"
-                        >
-                            Copy
-                        </button>
-
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>Tài khoản Game</td>
-
-                    <td class="value orange">
-
-                        <span id="usernameGame"></span>
-
-                        <button
-                            class="copy-btn"
-                            onclick="copyText(username)"
-                        >
-                            Copy
-                        </button>
-
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>Số TK</td>
-
-                    <td class="value">
-
-                        <span id="accountNumber"></span>
-
-                        <button
-                            class="copy-btn"
-                            onclick="copyText(ACCOUNT_NUMBER)"
-                        >
-                            Copy
-                        </button>
-
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>Chủ TK</td>
-
-                    <td class="value red">
-
-                        <span id="accountName"></span>
-
-                        <button
-                            class="copy-btn"
-                            onclick="copyText(ACCOUNT_NAME)"
-                        >
-                            Copy
-                        </button>
-
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>Số tiền</td>
-
-                    <td class="value red">
-
-                        <span id="amountManual"></span>
-
-                        <button
-                            class="copy-btn"
-                            onclick="copyText(AMOUNT.toString())"
-                        >
-                            Copy
-                        </button>
-
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>Nội dung</td>
-
-                    <td class="value red">
-
-                        <span id="content"></span>
-
-                        <button
-                            class="copy-btn"
-                            onclick="copyText(username)"
-                        >
-                            Copy
-                        </button>
-
-                    </td>
-
-                </tr>
-
-            </table>
-
-
-            <div class="money">
-
-                🎁 Khuyến mãi +20%:
-                <span class="red" id="bonusManual"></span>
-
-                <br>
-
-                Tổng tiền nhận:
-                <span class="receive" id="receiveManual"></span>
-
-            </div>
-
-
-            <!-- MÃ GIAO DỊCH -->
-
-            <div class="transaction">
-
-                Mã giao dịch:
-
-                <span id="transactionDisplay"></span>
-
-                <button
-                    class="copy-btn"
-                    onclick="copyText(transactionCode)"
-                >
-                    Copy
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- LƯU Ý -->
-
-    <div class="warning">
-
-        <h2>
-            Lưu ý quan trọng:
-        </h2>
-
-        <ol>
-
-            <li>
-                Chuyển khoản cần nhập chính xác
-                số tiền và nội dung hiển thị.
-            </li>
-
-            <li>
-                Kiểm tra kỹ thông tin ngân hàng
-                trước khi chuyển khoản.
-            </li>
-
-            <li>
-                Không cung cấp OTP hoặc mật khẩu
-                ngân hàng cho bất kỳ ai.
-            </li>
-
-        </ol>
-
-    </div>
-
-
-    <a
-        href="index.html"
-        class="back"
-    >
-        ← Quay lại
-    </a>
-
-</div>
-
-
-<script>
-
-/* =========================
-   HIỂN THỊ THÔNG TIN
-========================= */
-
-document.getElementById("usernameTop").textContent =
-    username;
-
-document.getElementById("usernameInfo").textContent =
-    username;
-
-document.getElementById("usernameGame").textContent =
-    username;
-
-document.getElementById("visitorCount").textContent =
-    visitorCount;
-
-document.getElementById("transactionCode").textContent =
-    transactionCode;
-
-document.getElementById("transactionDisplay").textContent =
-    transactionCode;
-
-document.getElementById("bank").textContent =
-    BANK;
-
-document.getElementById("accountNumber").textContent =
-    ACCOUNT_NUMBER;
-
-document.getElementById("accountName").textContent =
-    ACCOUNT_NAME;
-
-document.getElementById("content").textContent =
-    username;
-
-
-/* =========================
-   ĐỊNH DẠNG TIỀN
-========================= */
+/* =================================================
+   FORMAT TIỀN
+   ================================================= */
 
 function formatMoney(number) {
 
-    return number.toLocaleString("vi-VN") + " VND";
+    return number.toLocaleString("vi-VN")
+        + " VND";
 
 }
 
-document.getElementById("amountQR").textContent =
+
+/* =================================================
+   HIỂN THỊ TÊN
+   ================================================= */
+
+document.getElementById(
+    "topUsername"
+).textContent = username;
+
+document.getElementById(
+    "gameAccount"
+).textContent = username;
+
+
+/* =================================================
+   HIỂN THỊ NỘI DUNG CK
+   ================================================= */
+
+document.getElementById(
+    "transferContent"
+).textContent =
+    transferContent;
+
+document.getElementById(
+    "codeDisplay"
+).textContent =
+    transferContent;
+
+
+/* =================================================
+   HIỂN THỊ TIỀN
+   ================================================= */
+
+document.getElementById(
+    "qrAmount"
+).textContent =
     formatMoney(AMOUNT);
 
-document.getElementById("amountManual").textContent =
+document.getElementById(
+    "amountText"
+).textContent =
     formatMoney(AMOUNT);
 
-document.getElementById("bonusQR").textContent =
-    "+" + BONUS_PERCENT + "% KM = " +
+document.getElementById(
+    "qrBonus"
+).textContent =
+    "+" +
+    BONUS_PERCENT +
+    "% KM = " +
     formatMoney(bonus);
 
-document.getElementById("bonusManual").textContent =
+document.getElementById(
+    "bonusText"
+).textContent =
     formatMoney(bonus);
 
-document.getElementById("receiveQR").textContent =
-    "Thực nhận: " + formatMoney(totalReceive);
+document.getElementById(
+    "qrReceive"
+).textContent =
+    "Thực nhận: " +
+    formatMoney(total);
 
-document.getElementById("receiveManual").textContent =
-    formatMoney(totalReceive);
+document.getElementById(
+    "receiveText"
+).textContent =
+    formatMoney(total);
 
 
-/* =========================
-   TẠO QR VIETQR
-========================= */
+/* =================================================
+   TẠO QR
+   ================================================= */
 
 const qrURL =
     "https://vietqr.app/img?" +
-    "bank=" + encodeURIComponent(BANK) +
-    "&acc=" + encodeURIComponent(ACCOUNT_NUMBER) +
+    "bank=Sacombank" +
+    "&acc=" +
+    encodeURIComponent(ACCOUNT_NUMBER) +
     "&template=standard" +
-    "&amount=" + AMOUNT +
-    "&holder=" + encodeURIComponent(ACCOUNT_NAME);
+    "&amount=" +
+    AMOUNT +
+    "&holder=" +
+    encodeURIComponent(ACCOUNT_NAME) +
+    "&addInfo=" +
+    encodeURIComponent(transferContent);
 
-document.getElementById("qr").src = qrURL;
+
+document.getElementById(
+    "qr"
+).src = qrURL;
 
 
-/* =========================
+/* =================================================
    COPY
-========================= */
+   ================================================= */
 
-function copyText(text) {
+function copyValue(id) {
+
+    const element =
+        document.getElementById(id);
+
+    const text =
+        element.textContent.trim();
 
     navigator.clipboard.writeText(text)
         .then(function() {
 
-            alert("Đã copy: " + text);
+            alert(
+                "Đã copy: " + text
+            );
 
         })
         .catch(function() {
 
-            alert("Không thể copy tự động.");
+            alert(
+                "Không thể copy tự động."
+            );
 
         });
 
 }
 
 
-/* =========================
+/* =================================================
+   COPY SỐ TIỀN
+   ================================================= */
+
+function copyAmount() {
+
+    navigator.clipboard.writeText(
+        String(AMOUNT)
+    )
+    .then(function() {
+
+        alert(
+            "Đã copy số tiền: " +
+            AMOUNT
+        );
+
+    });
+
+}
+
+
+/* =================================================
+   COPY NỘI DUNG CK
+   ================================================= */
+
+function copyCode() {
+
+    navigator.clipboard.writeText(
+        transferContent
+    )
+    .then(function() {
+
+        alert(
+            "Đã copy: " +
+            transferContent
+        );
+
+    });
+
+}
+
+
+/* =================================================
    ĐẾM NGƯỢC
-========================= */
+   ================================================= */
 
 let timeLeft =
     COUNTDOWN_MINUTES * 60;
 
-const countdownElement =
-    document.getElementById("countdown");
+const timerElement =
+    document.getElementById("timer");
 
 
-function updateCountdown() {
+function updateTimer() {
 
-    let minutes =
+    const minutes =
         Math.floor(timeLeft / 60);
 
-    let seconds =
+    const seconds =
         timeLeft % 60;
 
-    seconds =
-        seconds < 10
-        ? "0" + seconds
-        : seconds;
-
-    countdownElement.textContent =
-        minutes + ":" + seconds;
+    timerElement.textContent =
+        minutes +
+        ":" +
+        String(seconds).padStart(2, "0");
 
 
     if (timeLeft <= 0) {
 
         clearInterval(timer);
 
-        countdownElement.textContent =
+        timerElement.textContent =
             "HẾT THỜI GIAN";
 
+        return;
+
     }
+
 
     timeLeft--;
 
 }
 
 
-updateCountdown();
+updateTimer();
 
 const timer =
-    setInterval(updateCountdown, 1000);
+    setInterval(
+        updateTimer,
+        1000
+    );
 
 </script>
 
