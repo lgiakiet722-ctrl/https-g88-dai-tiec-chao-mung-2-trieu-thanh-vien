@@ -662,6 +662,24 @@ setInterval(
 );
 
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+    const username = localStorage.getItem("gameUsername");
+
+    const gameAccount = document.getElementById("gameAccount");
+
+    if (!username) {
+        alert("Không tìm thấy tên tài khoản!");
+        window.location.href = "./index.html";
+        return;
+    }
+
+    if (gameAccount) {
+        gameAccount.textContent = username;
+    }
+
+});
+</script>
 </body>
 </html>
