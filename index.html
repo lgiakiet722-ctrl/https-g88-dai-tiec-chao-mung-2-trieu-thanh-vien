@@ -6,13 +6,11 @@
     <meta name="viewport"
           content="width=device-width,
                    initial-scale=1.0,
-                   maximum-scale=1.0,
-                   user-scalable=no">
+                   maximum-scale=1.0">
 
     <title>Đại Tiệc Chào Mừng</title>
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -26,199 +24,149 @@
         }
 
         body {
-            background: #063f3b;
             font-family: Arial, Helvetica, sans-serif;
+            background: #063f3b;
+            color: white;
             overflow-x: hidden;
         }
 
-
-        /* =========================================
+        /* =========================
            KHUNG TRANG
-        ========================================= */
+        ========================= */
 
         .page {
-            width: 100%;
             min-height: 100vh;
 
             background:
                 linear-gradient(
-                    to bottom,
-                    #073f3b 0%,
-                    #0c5d56 18%,
-                    #11786f 50%,
-                    #11786f 75%,
-                    #073f3b 100%
+                    180deg,
+                    #063f3b 0px,
+                    #063f3b 195px,
+                    #11786f 195px,
+                    #11786f 1018px,
+                    #063f3b 1018px
                 );
-
-            position: relative;
-            overflow: hidden;
         }
 
+        /* =========================
+           HEADER / LOGO
+        ========================= */
 
-        /* =========================================
-           KHU VỰC ẢNH
-        ========================================= */
+        .header {
+            height: 195px;
 
-        .banner {
-            width: 100%;
-            max-width: 900px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
 
-            height: 470px;
+            border-bottom: 3px solid #e5c447;
 
-            margin: 0 auto;
-
-            position: relative;
+            padding-bottom: 25px;
         }
 
+        .logo {
+            width: 285px;
+            max-width: 75vw;
 
-        /* =========================================
-           ẢNH BÊN TRÁI
-           NẰM DƯỚI
-        ========================================= */
-
-        .image-left {
-            position: absolute;
-
-            left: 0;
-            top: 50px;
-
-            width: 70%;
-
-            height: auto;
-
-            z-index: 1;
-
-            pointer-events: none;
-
-            user-select: none;
+            display: block;
         }
 
-
-        /* =========================================
-           ẢNH BÊN PHẢI
-           NẰM TRÊN
-        ========================================= */
-
-        .image-right {
-            position: absolute;
-
-            right: 0;
-            top: 0;
-
-            width: 65%;
-
-            height: auto;
-
-            z-index: 10;
-
-            pointer-events: none;
-
-            user-select: none;
+        /*
+        Nếu bạn có file logo PNG:
+        
+        .logo {
+            width: 285px;
         }
+        */
 
-
-        /* =========================================
-           ĐƯỜNG KẺ
-        ========================================= */
-
-        .gold-line {
-            width: 100%;
-            height: 3px;
-
-            background: #e8c74b;
-
-            box-shadow:
-                0 0 5px rgba(255, 220, 60, 0.5);
-        }
-
-
-        /* =========================================
-           NỘI DUNG
-        ========================================= */
+        /* =========================
+           KHU VỰC NỘI DUNG
+        ========================= */
 
         .content {
             width: 100%;
-            max-width: 650px;
+            max-width: 620px;
 
-            margin: 0 auto;
+            margin: auto;
 
-            padding: 35px 22px 50px;
+            padding:
+                108px 22px 38px;
 
             text-align: center;
         }
 
-
-        /* =========================================
+        /* =========================
            TIÊU ĐỀ
-        ========================================= */
+        ========================= */
 
         .event-title {
             width: 100%;
 
-            border: 3px solid #efd05b;
+            min-height: 61px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 3px solid #e8c94f;
 
             border-radius: 40px;
 
-            padding: 12px 15px;
-
-            color: #ffe16a;
+            color: #ffe06a;
 
             font-size: 24px;
+            font-weight: 800;
 
-            font-weight: 900;
+            padding: 8px 18px;
 
             text-shadow:
-                1px 2px 2px #675500;
+                1px 2px 2px #655000;
 
             box-shadow:
-                0 4px 8px rgba(0,0,0,.25);
+                0 3px 7px rgba(0,0,0,.25);
 
-            margin-bottom: 40px;
+            white-space: nowrap;
         }
 
-
-        /* =========================================
+        /* =========================
            LABEL
-        ========================================= */
+        ========================= */
 
         .label {
-            color: #ffe16a;
+            margin-top: 41px;
+            margin-bottom: 13px;
+
+            color: #ffe06a;
 
             font-size: 20px;
-
-            font-weight: bold;
-
-            margin-bottom: 12px;
+            font-weight: 700;
         }
 
-
-        /* =========================================
-           Ô NHẬP TÊN
-        ========================================= */
+        /* =========================
+           INPUT
+        ========================= */
 
         .username {
             width: 100%;
-
             height: 62px;
 
+            border: 3px solid #e4bd39;
             border-radius: 40px;
 
-            border: 3px solid #e4bd37;
-
-            background: white;
+            background: #fff;
 
             outline: none;
 
             text-align: center;
 
+            padding: 0 20px;
+
             font-size: 19px;
 
             color: #333;
 
-            padding: 0 20px;
-
             box-shadow:
-                0 3px 8px rgba(0,0,0,.25);
+                0 2px 6px rgba(0,0,0,.25);
         }
 
         .username::placeholder {
@@ -226,25 +174,28 @@
         }
 
         .username:focus {
-            border-color: #fff000;
+            border-color: #ffe14d;
 
             box-shadow:
-                0 0 12px rgba(255,230,0,.5);
+                0 0 12px rgba(255,225,77,.45);
         }
 
-
-        /* =========================================
+        /* =========================
            THÔNG BÁO
-        ========================================= */
+        ========================= */
 
         .notice {
-            width: 100%;
+            width: calc(100% + 44px);
+
+            margin-left: -22px;
+
+            margin-top: 27px;
 
             min-height: 60px;
 
-            margin-top: 25px;
-
             background: white;
+
+            color: #444;
 
             display: flex;
 
@@ -252,18 +203,11 @@
 
             text-align: left;
 
-            padding: 10px 18px;
-
-            color: #444;
-
-            border-radius: 3px;
-
-            box-shadow:
-                0 2px 5px rgba(0,0,0,.2);
+            padding:
+                9px 21px;
         }
 
-
-        .success-icon {
+        .notice-icon {
             width: 31px;
             height: 31px;
 
@@ -271,61 +215,58 @@
 
             border-radius: 50%;
 
-            background: #2db65d;
+            background: #2eb85c;
 
             color: white;
 
             display: flex;
-
             align-items: center;
-
             justify-content: center;
 
             font-size: 20px;
-
             font-weight: bold;
 
             margin-right: 14px;
         }
 
-
-        .success-text {
+        .notice-text {
             font-size: 17px;
         }
 
+        /*
+        Phần thông tin phụ.
+        Đây chỉ là nội dung giao diện,
+        không giả lập dịch vụ xác minh.
+        */
 
-        .cloudflare {
+        .notice-right {
             margin-left: auto;
 
             text-align: right;
 
-            color: #888;
-
             font-size: 11px;
 
-            line-height: 15px;
+            color: #888;
+
+            line-height: 14px;
         }
 
+        .notice-right strong {
+            color: #e9944b;
 
-        .cloudflare strong {
-            color: #e99b4d;
-
-            font-size: 14px;
+            font-size: 13px;
         }
 
-
-        /* =========================================
+        /* =========================
            NÚT KIỂM TRA
-        ========================================= */
+        ========================= */
 
         .check-button {
-            display: flex;
-
             width: 275px;
-
             height: 65px;
 
-            margin: 35px auto 0;
+            margin:
+                35px auto 0;
 
             border-radius: 40px;
 
@@ -333,99 +274,90 @@
 
             background:
                 linear-gradient(
-                    to bottom,
-                    #39c9c1,
-                    #079b92
+                    180deg,
+                    #36c8c0,
+                    #079a91
                 );
 
             color: white;
 
             font-size: 22px;
-
             font-weight: 900;
 
-            align-items: center;
-
-            justify-content: center;
-
             cursor: pointer;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             box-shadow:
                 0 4px 8px rgba(0,0,0,.35);
 
-            transition: .2s;
+            transition:
+                transform .15s ease,
+                filter .15s ease;
         }
-
 
         .check-button:hover {
-            transform: translateY(-2px);
-
             filter: brightness(1.08);
-        }
 
+            transform:
+                translateY(-2px);
+        }
 
         .check-button:active {
-            transform: scale(.97);
+            transform:
+                scale(.97);
         }
 
-
-        /* =========================================
+        /* =========================
            LINK
-        ========================================= */
+        ========================= */
 
         .links {
+            margin-top: 27px;
+
             display: flex;
 
             justify-content: center;
 
-            align-items: center;
-
-            flex-wrap: wrap;
-
             gap: 30px;
-
-            margin-top: 28px;
         }
-
 
         .links a {
             color: #ffe16a;
 
-            text-decoration: none;
-
-            font-size: 17px;
+            font-size: 16px;
 
             font-weight: 800;
-        }
 
+            text-decoration: none;
+        }
 
         .links a:hover {
             text-decoration: underline;
         }
 
-
-        /* =========================================
+        /* =========================
            SOCIAL
-        ========================================= */
+        ========================= */
 
         .social {
+            margin-top: 27px;
+
             display: flex;
 
+            align-items: center;
             justify-content: center;
 
-            align-items: center;
-
-            gap: 12px;
-
-            margin-top: 28px;
+            gap: 13px;
 
             color: #ffe16a;
 
             font-size: 17px;
 
-            font-weight: bold;
+            font-weight: 700;
         }
-
 
         .social-icon {
             width: 35px;
@@ -435,202 +367,116 @@
 
             display: flex;
 
-            justify-content: center;
-
             align-items: center;
-
-            color: white;
+            justify-content: center;
 
             text-decoration: none;
 
-            font-size: 18px;
+            color: white;
 
             font-weight: bold;
-        }
 
+            font-size: 18px;
+        }
 
         .telegram {
-            background: #2caee9;
+            background: #39aee5;
         }
-
 
         .facebook {
             background: #1877f2;
         }
 
+        /* =========================
+           FOOTER LINE
+        ========================= */
 
-        /* =========================================
-           ĐIỆN THOẠI
-        ========================================= */
+        .bottom-line {
+            width: 100%;
+            height: 3px;
 
-        @media screen and (max-width: 600px) {
+            background: #e5c447;
 
-            .banner {
+            margin-top: 18px;
+        }
 
-                height: 300px;
+        /* =========================
+           MOBILE
+        ========================= */
 
-                width: 100%;
+        @media (max-width: 600px) {
 
+            .header {
+                height: 195px;
+
+                padding-bottom: 25px;
             }
 
-
-            /*
-             * ẢNH TRÁI:
-             * nằm dưới
-             */
-
-            .image-left {
-
-                width: 82%;
-
-                left: -4%;
-
-                top: 45px;
-
-                z-index: 1;
-
+            .logo {
+                width: 285px;
             }
-
-
-            /*
-             * ẢNH PHẢI:
-             * nằm trên
-             */
-
-            .image-right {
-
-                width: 75%;
-
-                right: -3%;
-
-                top: 0;
-
-                z-index: 10;
-
-            }
-
 
             .content {
-
                 padding:
-                    28px 22px 45px;
-
+                    108px 22px 38px;
             }
-
 
             .event-title {
-
-                font-size: 21px;
-
-                padding:
-                    11px 10px;
-
+                font-size: 23px;
             }
-
 
             .label {
-
-                font-size: 18px;
-
+                font-size: 19px;
             }
-
 
             .username {
-
-                height: 60px;
+                height: 61px;
 
                 font-size: 18px;
-
             }
-
 
             .notice {
+                width: calc(100% + 44px);
 
-                padding: 10px;
-
+                margin-left: -22px;
             }
-
-
-            .cloudflare {
-
-                font-size: 9px;
-
-            }
-
-
-            .cloudflare strong {
-
-                font-size: 12px;
-
-            }
-
 
             .check-button {
-
                 width: 275px;
 
-                height: 63px;
+                height: 64px;
 
                 font-size: 21px;
-
             }
-
-
-            .links {
-
-                gap: 18px;
-
-            }
-
-
-            .links a {
-
-                font-size: 15px;
-
-            }
-
         }
 
+        /* =========================
+           ĐIỆN THOẠI NHỎ
+        ========================= */
 
-        /* =========================================
-           ĐIỆN THOẠI RẤT NHỎ
-        ========================================= */
+        @media (max-width: 400px) {
 
-        @media screen and (max-width: 380px) {
-
-            .banner {
-
-                height: 270px;
-
+            .content {
+                padding-left: 22px;
+                padding-right: 22px;
             }
-
-
-            .image-left {
-
-                width: 85%;
-
-                left: -8%;
-
-            }
-
-
-            .image-right {
-
-                width: 78%;
-
-                right: -7%;
-
-            }
-
 
             .event-title {
+                font-size: 20px;
 
-                font-size: 18px;
+                white-space: normal;
 
+                line-height: 28px;
             }
 
-        }
+            .links {
+                gap: 18px;
+            }
 
+            .links a {
+                font-size: 15px;
+            }
+        }
     </style>
 </head>
 
@@ -639,43 +485,31 @@
 
 <div class="page">
 
+    <!-- =========================
+         LOGO
+    ========================== -->
 
-    <!-- =====================================
-         BANNER
-         ẢNH TRÁI DƯỚI
-         ẢNH PHẢI TRÊN
-    ====================================== -->
+    <header class="header">
 
-    <section class="banner">
+        <!--
+        Đặt logo của bạn vào cùng thư mục
+        và đổi tên thành logo.png
+        -->
 
-        <!-- ẢNH TRÁI - Z-INDEX 1 -->
         <img
-            src="anh-trai.png"
-            class="image-left"
-            alt="Banner Juventus KJC"
+            src="logo.png"
+            class="logo"
+            alt="Logo sự kiện"
         >
 
-
-        <!-- ẢNH PHẢI - Z-INDEX 10 -->
-        <img
-            src="anh-phai.png"
-            class="image-right"
-            alt="Đại tiệc chào mừng"
-        >
-
-    </section>
+    </header>
 
 
-    <!-- ĐƯỜNG KẺ -->
-    <div class="gold-line"></div>
-
-
-    <!-- =====================================
+    <!-- =========================
          NỘI DUNG
-    ====================================== -->
+    ========================== -->
 
     <main class="content">
-
 
         <!-- TIÊU ĐỀ -->
 
@@ -698,9 +532,9 @@
         <!-- INPUT -->
 
         <input
-            type="text"
             id="username"
             class="username"
+            type="text"
             placeholder="Nhập tên người dùng"
             autocomplete="off"
         >
@@ -710,21 +544,18 @@
 
         <div class="notice">
 
-            <div class="success-icon">
+            <div class="notice-icon">
                 ✓
             </div>
 
-
-            <div class="success-text">
-
-                Thành công!
-
+            <div class="notice-text">
+                Đã sẵn sàng
             </div>
 
+            <div class="notice-right">
 
-            <div class="cloudflare">
+                <strong>THÔNG BÁO</strong>
 
-                <strong>CLOUDFLARE</strong>
                 <br>
 
                 Privacy - Terms
@@ -754,7 +585,6 @@
                 Thông tin chương trình &gt;
             </a>
 
-
             <a href="#">
                 Trang phát code &gt;
             </a>
@@ -762,7 +592,7 @@
         </div>
 
 
-        <!-- MẠNG XÃ HỘI -->
+        <!-- SOCIAL -->
 
         <div class="social">
 
@@ -770,14 +600,12 @@
                 Theo dõi thêm:
             </span>
 
-
             <a
                 href="#"
                 class="social-icon telegram"
             >
                 ✈
             </a>
-
 
             <a
                 href="#"
@@ -793,38 +621,42 @@
 
     <!-- FOOTER -->
 
-    <div class="gold-line"></div>
-
+    <div class="bottom-line"></div>
 
 </div>
 
 
 <script>
 
-    function checkAccount() {
+function checkAccount() {
 
-        const username =
-            document
-            .getElementById("username")
-            .value
-            .trim();
+    const username =
+        document
+        .getElementById("username")
+        .value
+        .trim();
 
-
-        if (username === "") {
-
-            alert("Vui lòng nhập tên người dùng!");
-
-            return;
-
-        }
-
+    if (!username) {
 
         alert(
-            "Đã kiểm tra tài khoản: "
-            + username
+            "Vui lòng nhập tên người dùng."
         );
 
+        return;
     }
+
+    /*
+       Đây là xử lý giao diện mẫu.
+       Nếu có backend/API thật,
+       bạn có thể gửi username tới
+       server để kiểm tra.
+    */
+
+    alert(
+        "Đã nhận tên người dùng: "
+        + username
+    );
+}
 
 </script>
 
