@@ -1,591 +1,230 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
-    <title>Đại tiệc chào mừng 2 triệu thành viên</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html,
-        body {
-            width: 100%;
-            min-height: 100%;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #087d73;
-            color: #ffffff;
-        }
-
-        .page {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 55px;
-        }
-
-        /* =========================
-           LOGO
-        ========================= */
-
-        .logo-area {
-            width: 55%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo {
-            display: block;
-            width: 100%;
-            max-width: 680px;
-            height: auto;
-            object-fit: contain;
-        }
-
-        .logo-fallback {
-            display: none;
-            text-align: center;
-            color: #ffd21c;
-            font-size: 38px;
-            line-height: 1.15;
-            font-weight: 900;
-            text-transform: uppercase;
-        }
-
-        /* =========================
-           CARD
-        ========================= */
-
-        .card {
-            width: 430px;
-            max-width: 100%;
-            padding: 38px 36px;
-            border: 3px solid #ffc400;
-            border-radius: 20px;
-            background: #087d73;
-            text-align: center;
-        }
-
-        .event {
-            border: 3px solid #ffc400;
-            border-radius: 60px;
-            padding: 18px 25px;
-            margin-bottom: 40px;
-
-            color: #ffd21c;
-            font-size: 27px;
-            line-height: 1.15;
-            font-weight: 900;
-        }
-
-        .label {
-            display: block;
-            margin-bottom: 15px;
-
-            color: #ffd21c;
-            font-size: 23px;
-            font-weight: 700;
-        }
-
-        .username {
-            width: 100%;
-            height: 62px;
-            border: 3px solid #ffc400;
-            border-radius: 40px;
-
-            background: #ffffff;
-            color: #222222;
-
-            text-align: center;
-            font-size: 21px;
-            outline: none;
-        }
-
-        .username::placeholder {
-            color: #999999;
-        }
-
-        .username:focus {
-            box-shadow: 0 0 0 3px rgba(255, 196, 0, 0.2);
-        }
-
-        /* =========================
-           MESSAGE
-        ========================= */
-
-        .message {
-            width: 100%;
-            min-height: 65px;
-            margin-top: 22px;
-
-            display: none;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-
-            border-radius: 8px;
-            background: #ffffff;
-            color: #333333;
-
-            font-size: 20px;
-        }
-
-        .checkmark {
-            width: 38px;
-            height: 38px;
-
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 50%;
-            background: #2fbd68;
-            color: white;
-
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        /* =========================
-           BUTTON
-        ========================= */
-
-        .check {
-            width: 100%;
-            min-height: 62px;
-            margin-top: 28px;
-
-            border: 3px solid #ffffff;
-            border-radius: 40px;
-
-            background: #22aec0;
-            color: #ffffff;
-
-            font-size: 23px;
-            font-weight: 900;
-
-            cursor: pointer;
-
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-
-            transition:
-                transform 0.15s ease,
-                background 0.15s ease;
-        }
-
-        .check:hover {
-            background: #159aaa;
-        }
-
-        .check:active {
-            transform: scale(0.98);
-        }
-
-        .check:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-        }
-
-        /* =========================
-           LINKS
-        ========================= */
-
-        .links {
-            margin-top: 30px;
-
-            display: flex;
-            justify-content: space-between;
-            gap: 15px;
-        }
-
-        .links a {
-            color: #ffd21c;
-            text-decoration: none;
-            font-size: 17px;
-            font-weight: 700;
-        }
-
-        .links a:hover {
-            text-decoration: underline;
-        }
-
-        .follow {
-            margin-top: 28px;
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        .social {
-            margin-top: 12px;
-
-            display: flex;
-            justify-content: center;
-            gap: 14px;
-        }
-
-        .social a {
-            width: 46px;
-            height: 46px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 50%;
-            background: #159ddd;
-
-            color: white;
-            text-decoration: none;
-
-            font-weight: bold;
-            font-size: 19px;
-        }
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 800px) {
-
-            .page {
-                align-items: flex-start;
-                padding: 35px 18px 50px;
-            }
-
-            .container {
-                flex-direction: column;
-                gap: 18px;
-                max-width: 560px;
-            }
-
-            .logo-area {
-                width: 100%;
-            }
-
-            .logo {
-                width: 90%;
-                max-width: 500px;
-            }
-
-            .card {
-                width: 100%;
-                padding: 32px 22px;
-            }
-
-            .event {
-                font-size: 23px;
-                padding: 17px 18px;
-                margin-bottom: 38px;
-            }
-
-            .label {
-                font-size: 21px;
-            }
-
-            .username {
-                height: 58px;
-                font-size: 19px;
-            }
-
-            .check {
-                font-size: 21px;
-            }
-
-            .links a {
-                font-size: 15px;
-            }
-        }
-
-        /* =========================
-           IPHONE
-        ========================= */
-
-        @media (max-width: 480px) {
-
-            .page {
-                padding: 25px 14px 40px;
-            }
-
-            .container {
-                gap: 8px;
-            }
-
-            .logo {
-                width: 96%;
-            }
-
-            .card {
-                border-width: 2px;
-                border-radius: 0;
-                padding: 28px 18px;
-            }
-
-            .event {
-                font-size: 21px;
-                border-width: 2px;
-                padding: 16px 15px;
-                margin-bottom: 38px;
-            }
-
-            .label {
-                font-size: 20px;
-            }
-
-            .username {
-                height: 58px;
-                border-width: 2px;
-            }
-
-            .message {
-                font-size: 17px;
-            }
-
-            .check {
-                min-height: 58px;
-                font-size: 20px;
-            }
-
-            .links {
-                margin-top: 27px;
-            }
-
-            .links a {
-                font-size: 14px;
-            }
-
-            .follow {
-                font-size: 17px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Đại tiệc chào mừng</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #07847d;
+    color: #fff;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 25px 20px 60px;
+    text-align: center;
+}
+
+.title {
+    font-size: 42px;
+    line-height: 1.15;
+    font-weight: 900;
+    color: #ffd400;
+    margin: 10px 0 25px;
+}
+
+.box {
+    border: 3px solid #ffd400;
+    padding: 35px 25px;
+}
+
+.promo {
+    border: 3px solid #ffd400;
+    border-radius: 60px;
+    padding: 25px 15px;
+    font-size: 27px;
+    font-weight: bold;
+    color: #ffd400;
+    margin-bottom: 50px;
+}
+
+.label {
+    font-size: 25px;
+    font-weight: bold;
+    color: #ffd400;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    height: 80px;
+    border-radius: 50px;
+    border: 4px solid #ffd400;
+    background: #fff;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    outline: none;
+    color: #222;
+    padding: 10px 20px;
+}
+
+button {
+    width: 100%;
+    height: 80px;
+    margin-top: 35px;
+    border-radius: 50px;
+    border: 4px solid white;
+    background: #2aaec3;
+    color: white;
+    font-size: 27px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.25);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+    color: #ffd400;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.follow {
+    margin-top: 45px;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.social {
+    margin-top: 20px;
+}
+
+.social span {
+    display: inline-flex;
+    width: 65px;
+    height: 65px;
+    margin: 0 8px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #159de0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.error {
+    color: #ffdddd;
+    font-size: 17px;
+    margin-top: 12px;
+    display: none;
+}
+
+@media (max-width: 500px) {
+    .title {
+        font-size: 38px;
+    }
+
+    .promo {
+        font-size: 23px;
+    }
+
+    .label {
+        font-size: 23px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<div class="page">
+<div class="container">
 
-    <div class="container">
+    <div class="title">
+        ĐẠI TIỆC CHÀO<br>
+        MỪNG<br>
+        2 TRIỆU THÀNH VIÊN
+    </div>
 
-        <!-- =========================
-             LOGO
-        ========================== -->
+    <div class="box">
 
-        <div class="logo-area">
-
-            <img
-                id="logo"
-                class="logo"
-                src="./4387413a-ea82-4d2e-8f1b-b04ddb2ec70b1.png"
-                alt="Đại tiệc chào mừng 2 triệu thành viên"
-                onerror="showLogoFallback()"
-            >
-
-            <div id="logoFallback" class="logo-fallback">
-                ĐẠI TIỆC CHÀO MỪNG<br>
-                2 TRIỆU THÀNH VIÊN
-            </div>
-
+        <div class="promo">
+            ĐẠI TIỆC THÁNG 8 KM 20% GIÁ TRỊ!
         </div>
 
+        <div class="label">
+            Tên tài khoản:
+        </div>
 
-        <!-- =========================
-             FORM
-        ========================== -->
+        <input
+            type="text"
+            id="username"
+            placeholder="Nhập tên tài khoản"
+            autocomplete="off"
+        >
 
-        <div class="card">
+        <div id="error" class="error">
+            Vui lòng nhập tên tài khoản.
+        </div>
 
-            <div class="event">
-                ĐẠI TIỆC THÁNG 8 KM 20% GIÁ TRỊ!
-            </div>
+        <button onclick="checkAccount()">
+            KIỂM TRA NGAY
+        </button>
 
-            <label
-                class="label"
-                for="username">
-                Tên tài khoản:
-            </label>
+        <div class="links">
+            <span>Thông tin chương trình &gt;</span>
+            <span>Trang phát code &gt;</span>
+        </div>
 
-            <input
-                id="username"
-                class="username"
-                type="text"
-                placeholder="Nhập tên người dùng"
-                autocomplete="off"
-                autocapitalize="none"
-                spellcheck="false"
-            >
+        <div class="follow">
+            Theo dõi thêm:
+        </div>
 
-            <div id="message" class="message">
-                <span class="checkmark">✓</span>
-                <span>Đã xác thực</span>
-            </div>
-
-            <button
-                id="checkButton"
-                class="check"
-                type="button">
-                KIỂM TRA NGAY
-            </button>
-
-            <div class="links">
-
-                <a href="#">
-                    Thông tin chương trình &gt;
-                </a>
-
-                <a href="./thanhtoan.html">
-                    Trang phát code &gt;
-                </a>
-
-            </div>
-
-            <div class="follow">
-                Theo dõi thêm:
-            </div>
-
-            <div class="social">
-
-                <a
-                    href="#"
-                    aria-label="Telegram">
-                    ➤
-                </a>
-
-                <a
-                    href="#"
-                    aria-label="Facebook">
-                    f
-                </a>
-
-            </div>
-
+        <div class="social">
+            <span>➤</span>
+            <span>f</span>
         </div>
 
     </div>
 
 </div>
 
-
 <script>
+function checkAccount() {
 
-    /* =========================
-       LOGO FALLBACK
-    ========================== */
+    const username = document
+        .getElementById("username")
+        .value
+        .trim();
 
-    function showLogoFallback() {
+    const error = document.getElementById("error");
 
-        const logo = document.getElementById("logo");
-        const fallback = document.getElementById("logoFallback");
-
-        if (logo) {
-            logo.style.display = "none";
-        }
-
-        if (fallback) {
-            fallback.style.display = "block";
-        }
+    if (username === "") {
+        error.style.display = "block";
+        return;
     }
 
+    error.style.display = "none";
 
-    /* =========================
-       KIỂM TRA TÀI KHOẢN
-    ========================== */
+    /*
+      Không dùng localStorage.
+      Tên chỉ được truyền sang trang thanh toán
+      thông qua URL.
+    */
 
-    document.addEventListener("DOMContentLoaded", function () {
+    const url =
+        "thanhtoan.html?user=" +
+        encodeURIComponent(username);
 
-        const usernameInput =
-            document.getElementById("username");
-
-        const checkButton =
-            document.getElementById("checkButton");
-
-        const message =
-            document.getElementById("message");
-
-
-        /* Nếu trước đó đã nhập tên,
-           tự điền lại tên */
-
-        const savedAccount =
-            localStorage.getItem("gameAccount");
-
-        if (savedAccount) {
-            usernameInput.value = savedAccount;
-        }
-
-
-        checkButton.addEventListener("click", function () {
-
-            const username =
-                usernameInput.value.trim();
-
-
-            /* Không cho bỏ trống */
-
-            if (username === "") {
-
-                alert("Vui lòng nhập tên người dùng!");
-
-                usernameInput.focus();
-
-                return;
-            }
-
-
-            /* Lưu tên tài khoản */
-
-            localStorage.setItem(
-                "gameAccount",
-                username
-            );
-
-
-            /* Hiện Đã xác thực */
-
-            message.style.display = "flex";
-
-
-            /* Khóa nút trong lúc chuyển trang */
-
-            checkButton.disabled = true;
-
-
-            /*
-             * Chuyển sang thanhtoan.html
-             * Đường dẫn tương đối,
-             * chạy được trên GitHub Pages.
-             */
-
-            setTimeout(function () {
-
-                window.location.href =
-                    "./thanhtoan.html";
-
-            }, 500);
-
-        });
-
-    });
-
+    window.location.href = url;
+}
 </script>
 
 </body>
