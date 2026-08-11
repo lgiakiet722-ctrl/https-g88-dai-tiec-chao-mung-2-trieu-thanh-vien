@@ -1,515 +1,665 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Đại tiệc chào mừng 2 triệu thành viên</title>
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Thanh toán</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
 
-html,
 body {
     margin: 0;
-    padding: 0;
-    min-height: 100%;
+    background: #f1f3f4;
     font-family: Arial, Helvetica, sans-serif;
+    color: #222;
 }
 
-body {
-    background: #0d8278;
-    color: #ffffff;
-}
-
-/* ===== TRANG ===== */
-.page {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px 20px;
-}
-
-/* ===== BỐ CỤC PC ===== */
-.container {
-    width: min(1100px, 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 55px;
-}
-
-/* ===== LOGO ===== */
-.logo-area {
-    width: 52%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo {
-    display: block;
-    width: 100%;
-    max-width: 650px;
-    height: auto;
-    object-fit: contain;
-}
-
-/* ===== FORM ===== */
-.card {
-    width: 430px;
-    max-width: 100%;
-    border: 3px solid #ffc400;
-    border-radius: 20px;
-    padding: 38px 35px;
-    background: #0d8278;
-    text-align: center;
-}
-
-/* Tiêu đề chương trình */
-.event {
-    border: 3px solid #ffc400;
-    border-radius: 60px;
-    padding: 20px 18px;
-    color: #ffc400;
-    font-size: 25px;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 42px;
-}
-
-/* Label */
-.label {
-    display: block;
-    color: #ffc400;
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 16px;
-}
-
-/* Input */
-.username {
-    width: 100%;
-    height: 64px;
-    border: 3px solid #ffc400;
-    border-radius: 40px;
-    padding: 0 25px;
-    font-size: 20px;
-    text-align: center;
-    outline: none;
-    background: #ffffff;
-    color: #222222;
-}
-
-.username:focus {
-    border-color: #ffffff;
-}
-
-/* Thông báo */
-.message {
-    display: none;
-    width: 100%;
-    min-height: 70px;
-    margin-top: 22px;
-    background: #ffffff;
-    border-radius: 8px;
-    color: #333333;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    font-size: 20px;
-}
-
-.message.show {
-    display: flex;
-}
-
-.checkmark {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: #2dbb67;
-    color: white;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 25px;
-}
-
-/* Nút */
-.check {
-    width: 100%;
-    height: 64px;
-    margin-top: 22px;
-    border: 3px solid #ffffff;
-    border-radius: 40px;
-    background: #27b5c5;
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: 900;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0,0,0,.25);
-}
-
-.check:hover {
-    background: #20a7b6;
-}
-
-.check:active {
-    transform: scale(.98);
-}
-
-/* Links */
-.links {
+.header {
+    width: min(1000px, 94%);
+    margin: 25px auto 15px;
     display: flex;
     justify-content: space-between;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.links a {
-    color: #ffc400;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: bold;
-}
-
-.links a:hover {
-    text-decoration: underline;
-}
-
-/* Theo dõi */
-.follow {
-    margin-top: 28px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.social {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 12px;
-}
-
-.social a {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: #159ddd;
-    color: #ffffff;
-    text-decoration: none;
-    display: flex;
     align-items: center;
-    justify-content: center;
+}
+
+.logo-text {
+    font-size: 34px;
+    font-weight: 900;
+    color: #18b5b1;
+}
+
+.account-header {
+    color: red;
+    font-size: 16px;
     font-weight: bold;
+}
+
+.container {
+    width: min(1070px, 94%);
+    margin: auto;
+    background: white;
+    padding: 18px;
+    border-radius: 15px;
+    box-shadow: 0 3px 20px rgba(0,0,0,.12);
+}
+
+.promotion {
+    background: linear-gradient(
+        90deg,
+        #ff3737,
+        #ff6548
+    );
+    color: white;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.timer {
+    background: #fff4d5;
+    border: 1px solid #ffb800;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+
+.timer strong {
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.account-box {
+    background: #f5f5f5;
+    padding: 14px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+}
+
+.account-box strong {
+    color: red;
+}
+
+/* ===== PAYMENT ===== */
+
+.payment-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.payment-card {
+    border: 1px dashed #ccc;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.payment-card h2 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.payment-card p {
+    color: #888;
+}
+
+/* ===== QR ===== */
+
+.qr-box {
+    width: 100%;
+    min-height: 280px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    text-align: center;
+}
+
+.qr-box img {
+    width: 280px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.qr-error {
+    color: #555;
+    padding: 30px;
+}
+
+/* ===== AMOUNT ===== */
+
+.amount {
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.receive {
+    text-align: center;
+    color: #00a944;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* ===== MANUAL ===== */
+
+.manual {
+    margin-top: 15px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 180px 1fr 70px;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.value {
+    color: red;
+    font-weight: bold;
+}
+
+.copy-btn {
+    border: none;
+    background: #13b86b;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.copy-btn:hover {
+    background: #0ca45d;
 }
 
 /* ===== MOBILE ===== */
-@media (max-width: 768px) {
 
-    .page {
-        padding: 20px 15px 40px;
-        align-items: flex-start;
-    }
+@media (max-width: 700px) {
 
-    .container {
-        width: 100%;
+    .header {
         flex-direction: column;
-        gap: 15px;
-    }
-
-    .logo-area {
-        width: 100%;
-    }
-
-    .logo {
-        width: 90%;
-        max-width: 500px;
-    }
-
-    .card {
-        width: 100%;
-        max-width: 500px;
-        padding: 28px 20px;
-        border-radius: 0;
-        border-width: 2px;
-    }
-
-    .event {
-        font-size: 21px;
-        padding: 17px 12px;
-        margin-bottom: 35px;
-    }
-
-    .label {
-        font-size: 20px;
-    }
-
-    .username {
-        height: 60px;
-        font-size: 18px;
-    }
-
-    .check {
-        height: 60px;
-        font-size: 21px;
-    }
-
-    .message {
-        font-size: 18px;
-    }
-
-    .links a {
-        font-size: 15px;
-    }
-}
-
-/* ===== IPHONE ===== */
-@media (max-width: 430px) {
-
-    .page {
-        padding: 10px 10px 30px;
-    }
-
-    .container {
-        gap: 5px;
-    }
-
-    .logo {
-        width: 95%;
-    }
-
-    .card {
-        padding: 25px 15px;
-    }
-
-    .event {
-        font-size: 19px;
-    }
-
-    .label {
-        font-size: 19px;
-    }
-
-    .links {
+        align-items: flex-start;
         gap: 8px;
     }
 
-    .links a {
-        font-size: 14px;
+    .account-header {
+        align-self: flex-end;
     }
+
+    .payment-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .row {
+        grid-template-columns: 1fr auto;
+    }
+
+    .row .value {
+        grid-column: 1;
+    }
+
+    .row .copy-btn {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
-<div class="page">
 
-    <div class="container">
+<header class="header">
 
-        <!-- LOGO -->
-        <div class="logo-area">
+    <div class="logo-text">
+        GG88
+    </div>
 
-            <img
-                id="logo"
-                class="logo"
-                src="4387413a-ea82-4d2e-8f1b-b04ddb2ec70b1.png"
-                alt="Đại tiệc chào mừng 2 triệu thành viên"
-                onerror="showLogoError()"
-            >
+    <div class="account-header">
+        Tên tài khoản:
+        <span id="headerAccount"></span>
+    </div>
 
-        </div>
+</header>
 
 
-        <!-- FORM -->
-        <div class="card">
+<main class="container">
 
-            <div class="event">
-                ĐẠI TIỆC THÁNG 8 KM 20% GIÁ TRỊ!
-            </div>
 
-            <label class="label" for="username">
-                Tên tài khoản:
-            </label>
+    <!-- KHUYẾN MÃI -->
 
-            <input
-                id="username"
-                class="username"
-                type="text"
-                placeholder="Nhập tên người dùng"
-                autocomplete="off"
-                spellcheck="false"
-            >
+    <div class="promotion">
+        🎁 Khuyến mãi tháng 8: Nạp tiền +20% giá trị nạp ngay hôm nay!
+    </div>
 
-            <div id="message" class="message">
 
-                <span class="checkmark">✓</span>
+    <!-- THỜI GIAN -->
 
-                <span>Đã xác thực</span>
+    <div class="timer">
 
-            </div>
+        ⏳ Thời gian thanh toán còn lại:
 
-            <button
-                id="checkButton"
-                class="check"
-                type="button"
-            >
-                KIỂM TRA NGAY
-            </button>
+        <strong id="countdown">
+            10:00
+        </strong>
 
-            <div class="links">
+    </div>
 
-                <a href="#">
-                    Thông tin chương trình &gt;
-                </a>
 
-                <a href="thanhtoan.html">
-                    Trang phát code &gt;
-                </a>
+    <!-- TÀI KHOẢN -->
 
-            </div>
+    <div class="account-box">
 
-            <div class="follow">
+        👤 Tài khoản:
 
-                Theo dõi thêm:
+        <strong id="gameAccount">
+            Đang tải...
+        </strong>
 
-                <div class="social">
+    </div>
 
-                    <a href="#" aria-label="Telegram">
-                        ➤
-                    </a>
 
-                    <a href="#" aria-label="Facebook">
-                        f
-                    </a>
+    <div class="payment-layout">
 
+
+        <!-- =============================
+             PHƯƠNG THỨC QR
+        ============================== -->
+
+        <section class="payment-card">
+
+            <h2>
+                Cách 1: Chuyển khoản bằng mã QR
+            </h2>
+
+            <p>
+                Mở ứng dụng ngân hàng và quét QRCode
+            </p>
+
+
+            <div class="qr-box">
+
+                <!--
+                Đặt file QR của bạn cùng thư mục
+                với thanhtoan.html và đặt tên:
+
+                qr.png
+                -->
+
+                <img
+                    id="qrImage"
+                    src="qr.png"
+                    alt="Mã QR thanh toán"
+                    onerror="showQrError()"
+                >
+
+                <div
+                    id="qrError"
+                    class="qr-error"
+                    style="display:none;"
+                >
+                    Không tải được mã QR.
                 </div>
 
             </div>
 
-        </div>
+
+            <div class="amount">
+                300.000 VND
+            </div>
+
+            <div class="receive">
+                +20% KM = 60.000 VND
+            </div>
+
+            <div class="receive">
+                Thực nhận: 360.000 VND
+            </div>
+
+        </section>
+
+
+        <!-- =============================
+             CHUYỂN KHOẢN THỦ CÔNG
+        ============================== -->
+
+        <section class="payment-card">
+
+            <h2>
+                Cách 2: Chuyển khoản
+                <span style="color:red;">
+                    thủ công
+                </span>
+            </h2>
+
+
+            <div class="manual">
+
+
+                <!-- NGÂN HÀNG -->
+
+                <div class="row">
+
+                    <div>
+                        Ngân hàng
+                    </div>
+
+                    <div class="value">
+                        Sacombank
+                    </div>
+
+                    <button
+                        class="copy-btn"
+                        onclick="copyText('Sacombank')"
+                    >
+                        Copy
+                    </button>
+
+                </div>
+
+
+                <!-- TÀI KHOẢN GAME -->
+
+                <div class="row">
+
+                    <div>
+                        Tài khoản Game
+                    </div>
+
+                    <div
+                        class="value"
+                        id="gameAccountManual"
+                    >
+                        Đang tải...
+                    </div>
+
+                    <button
+                        class="copy-btn"
+                        onclick="copyGameAccount()"
+                    >
+                        Copy
+                    </button>
+
+                </div>
+
+
+                <!-- SỐ TÀI KHOẢN -->
+
+                <div class="row">
+
+                    <div>
+                        Số TK
+                    </div>
+
+                    <div class="value">
+                        070137130244
+                    </div>
+
+                    <button
+                        class="copy-btn"
+                        onclick="copyText('070137130244')"
+                    >
+                        Copy
+                    </button>
+
+                </div>
+
+
+                <!-- CHỦ TÀI KHOẢN -->
+
+                <div class="row">
+
+                    <div>
+                        Chủ TK
+                    </div>
+
+                    <div class="value">
+                        LE GIA KIET
+                    </div>
+
+                    <button
+                        class="copy-btn"
+                        onclick="copyText('LE GIA KIET')"
+                    >
+                        Copy
+                    </button>
+
+                </div>
+
+
+                <!-- SỐ TIỀN -->
+
+                <div class="row">
+
+                    <div>
+                        Số tiền
+                    </div>
+
+                    <div class="value">
+                        300.000 VND
+                    </div>
+
+                    <button
+                        class="copy-btn"
+                        onclick="copyText('300000')"
+                    >
+                        Copy
+                    </button>
+
+                </div>
+
+
+                <!-- NỘI DUNG -->
+
+                <div class="row">
+
+                    <div>
+                        Nội dung
+                    </div>
+
+                    <div class="value">
+                        taxikzou7jz
+                    </div>
+
+                    <button
+                        class="copy-btn"
+                        onclick="copyText('taxikzou7jz')"
+                    >
+                        Copy
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
 
     </div>
 
-</div>
+</main>
 
 
 <script>
 
 /*
-=================================================
-LƯU TÊN TÀI KHOẢN
-=================================================
+=====================================================
+ĐỌC TÊN TÀI KHOẢN TỪ INDEX.HTML
+=====================================================
 */
 
-const usernameInput = document.getElementById("username");
-const message = document.getElementById("message");
-const checkButton = document.getElementById("checkButton");
+const savedAccount =
+    localStorage.getItem("gameAccount");
 
 
 /*
-=================================================
-KHI BẤM KIỂM TRA NGAY
-=================================================
+=====================================================
+NẾU CHƯA CÓ TÊN
+=====================================================
 */
 
-checkButton.addEventListener("click", function () {
-
-    const username = usernameInput.value.trim();
-
-    if (username === "") {
-
-        alert("Vui lòng nhập tên tài khoản.");
-
-        usernameInput.focus();
-
-        return;
-    }
-
+if (
+    !savedAccount ||
+    savedAccount.trim() === ""
+) {
 
     /*
-    Lưu chính xác tên người dùng
-    vào localStorage.
+    Quay về index.html
     */
 
-    localStorage.setItem(
-        "gameAccount",
-        username
-    );
-
-
-    /*
-    Hiện Đã xác thực
-    */
-
-    message.classList.add("show");
-
-
-    /*
-    Chuyển sang thanhtoan.html
-    sau một khoảng ngắn.
-    */
-
-    setTimeout(function () {
-
-        window.location.href = "thanhtoan.html";
-
-    }, 500);
-
-});
-
-
-/*
-=================================================
-CHO PHÉP NHẤN ENTER
-=================================================
-*/
-
-usernameInput.addEventListener("keydown", function (event) {
-
-    if (event.key === "Enter") {
-
-        checkButton.click();
-
-    }
-
-});
-
-
-/*
-=================================================
-NẾU LOGO KHÔNG TẢI ĐƯỢC
-=================================================
-*/
-
-function showLogoError() {
-
-    const logo = document.getElementById("logo");
-
-    logo.style.display = "none";
-
-    const logoArea = document.querySelector(".logo-area");
-
-    logoArea.innerHTML = `
-        <div style="
-            color:#ffc400;
-            font-size:28px;
-            font-weight:900;
-            text-align:center;
-            line-height:1.3;
-        ">
-            ĐẠI TIỆC CHÀO MỪNG<br>
-            2 TRIỆU THÀNH VIÊN
-        </div>
-    `;
+    window.location.href = "index.html";
 
 }
+
+
+/*
+=====================================================
+HIỂN THỊ TÊN TÀI KHOẢN
+=====================================================
+*/
+
+document.getElementById(
+    "headerAccount"
+).textContent = savedAccount;
+
+
+document.getElementById(
+    "gameAccount"
+).textContent = savedAccount;
+
+
+document.getElementById(
+    "gameAccountManual"
+).textContent = savedAccount;
+
+
+/*
+=====================================================
+COPY TÊN TÀI KHOẢN
+=====================================================
+*/
+
+function copyGameAccount() {
+
+    copyText(savedAccount);
+
+}
+
+
+/*
+=====================================================
+COPY
+=====================================================
+*/
+
+function copyText(text) {
+
+    navigator.clipboard.writeText(text)
+        .then(function () {
+
+            alert("Đã copy: " + text);
+
+        })
+        .catch(function () {
+
+            alert("Không thể copy.");
+
+        });
+
+}
+
+
+/*
+=====================================================
+QR ERROR
+=====================================================
+*/
+
+function showQrError() {
+
+    const qrImage =
+        document.getElementById("qrImage");
+
+    const qrError =
+        document.getElementById("qrError");
+
+    qrImage.style.display = "none";
+
+    qrError.style.display = "block";
+
+}
+
+
+/*
+=====================================================
+ĐỒNG HỒ 10 PHÚT
+=====================================================
+*/
+
+let timeLeft = 10 * 60;
+
+
+const countdown =
+    document.getElementById("countdown");
+
+
+function updateCountdown() {
+
+    const minutes =
+        Math.floor(timeLeft / 60);
+
+    const seconds =
+        timeLeft % 60;
+
+    countdown.textContent =
+        String(minutes).padStart(2, "0")
+        + ":"
+        + String(seconds).padStart(2, "0");
+
+
+    if (timeLeft > 0) {
+
+        timeLeft--;
+
+    }
+
+}
+
+
+updateCountdown();
+
+setInterval(
+    updateCountdown,
+    1000
+);
 
 </script>
 
