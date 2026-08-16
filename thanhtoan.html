@@ -1254,16 +1254,14 @@ document.getElementById(
 
 const qrURL =
     "https://img.vietqr.io/image/" +
-    BANK_ID +
-    "-" +
-    ACCOUNT_NUMBER +
-    "-compact2.png" +
-    "?amount=" + AMOUNT +
+    "STB-" +
+    encodeURIComponent(ACCOUNT_NUMBER) +
+    "-compact.png" +
+    "?amount=" + encodeURIComponent(AMOUNT) +
     "&addInfo=" + encodeURIComponent(noiDungCK) +
     "&accountName=" + encodeURIComponent(ACCOUNT_NAME);
 
 document.getElementById("qr").src = qrURL;
-
 
 
 /* =====================================================
