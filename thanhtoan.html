@@ -1245,17 +1245,28 @@ document.getElementById(
     - Nội dung chuyển khoản
 */
 
+/* =====================================================
+   TẠO QR VIETQR
+   QR sẽ chứa sẵn:
+   - Số tiền
+   - Nội dung chuyển khoản
+===================================================== */
+
 const qrURL =
-    "https://vietqr.app/img?" +
-    "bank=" + encodeURIComponent(BANK_NAME) +
-    "&acc=" + encodeURIComponent(ACCOUNT_NUMBER) +
-    "&template=standard" +
-    "&amount=" + AMOUNT +
-    "&holder=" + encodeURIComponent(ACCOUNT_NAME) +
-    "&addInfo=" + encodeURIComponent(noiDungCK);
+    "https://img.vietqr.io/image/" +
+    "STB-" +
+    encodeURIComponent(ACCOUNT_NUMBER) +
+    "-compact2.png" +
+    "?amount=" +
+    encodeURIComponent(AMOUNT) +
+    "&addInfo=" +
+    encodeURIComponent(noiDungCK) +
+    "&accountName=" +
+    encodeURIComponent(ACCOUNT_NAME);
 
+
+/* Hiển thị QR */
 document.getElementById("qr").src = qrURL;
-
 
 
 
