@@ -1254,20 +1254,15 @@ document.getElementById(
 
 const qrURL =
     "https://img.vietqr.io/image/" +
-    "STB-" +
-    encodeURIComponent(ACCOUNT_NUMBER) +
+    BANK_ID +
+    "-" +
+    ACCOUNT_NUMBER +
     "-compact2.png" +
-    "?amount=" +
-    encodeURIComponent(AMOUNT) +
-    "&addInfo=" +
-    encodeURIComponent(noiDungCK) +
-    "&accountName=" +
-    encodeURIComponent(ACCOUNT_NAME);
+    "?amount=" + AMOUNT +
+    "&addInfo=" + encodeURIComponent(noiDungCK) +
+    "&accountName=" + encodeURIComponent(ACCOUNT_NAME);
 
-
-/* Hiển thị QR */
 document.getElementById("qr").src = qrURL;
-
 
 
 
