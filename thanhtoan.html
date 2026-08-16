@@ -1247,39 +1247,17 @@ document.getElementById(
 
 const qrURL =
     "https://vietqr.app/img?" +
-
-    "bank=" +
-    encodeURIComponent(
-        BANK_NAME
-    ) +
-
-    "&acc=" +
-    encodeURIComponent(
-        ACCOUNT_NUMBER
-    ) +
-
+    "bank=" + encodeURIComponent(BANK_NAME) +
+    "&acc=" + encodeURIComponent(ACCOUNT_NUMBER) +
     "&template=standard" +
+    "&amount=" + AMOUNT +
+    "&holder=" + encodeURIComponent(ACCOUNT_NAME) +
+    "&addInfo=" + encodeURIComponent(noiDungCK);
 
-    "&amount=" +
-    encodeURIComponent(
-        AMOUNT
-    ) +
-
-    "&holder=" +
-    encodeURIComponent(
-        ACCOUNT_NAME
-    ) +
-
-    "&addInfo=" +
-    encodeURIComponent(
-        noiDungCK
-    );
+document.getElementById("qr").src = qrURL;
 
 
-document.getElementById(
-    "qr"
-).src =
-    qrURL;
+
 
 
 /* =====================================================
